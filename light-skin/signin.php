@@ -30,14 +30,14 @@
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                     <h1 class="font-weight-bold">ورود</h1>
                     <p class="text-dark mb-3">ما متفاوت هستیم، ما شما را متفاوت می کنیم.</p>
-                    <form class="mb-3" method="post" action="login.php" >
+                    <form class="mb-3"  method="post" action="login.php" >
                         <div class="form-group">
                             <label for="email" class="sr-only">آدرس ایمیل</label>
-                            <input type="email" class="form-control form-control-md" id="email" name = "email" placeholder="ایمیل خود را وارد کنید">
+                            <input type="email" class="form-control form-control-md" id="email" name = "email" placeholder="ایمیل خود را وارد کنید"    placeholder="username" required>
                         </div>
                         <div class="form-group">
                             <label for="password" class="sr-only">رمز عبور</label>
-                            <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="رمز عبور خود را وارد کنید">
+                            <input type="password" class="form-control form-control-md" id="password" name="password" placeholder="رمز عبور خود را وارد کنید"    placeholder="username" required>
                         </div>
                         <div class="form-group d-flex justify-content-between">
                             <div class="custom-control custom-checkbox">
@@ -51,65 +51,23 @@
 
                     <p>حساب کاربری ندارید؟ <a class="font-weight-medium" href="signup.html">ثبت نام کنید</a>.</p>
 
-                    <div class="btn-danger"> <?php
+                    <div > <?php
                     // Check if the message parameter is set in the URL
                     if(isset($_GET['message'])) {
                     // Get the message from the URL
-                    $message = $_GET['message'];  // Output the message
+                    $message = $_GET['message'];  // Output the message in alert
                     echo '<script type="text/javascript">alert("' . $message . '")</script>';
-
+                    
+                    
+                    $message = "<div class='btn-warning btn-primary'>$message</div>";
                     echo $message;
                     } else {
                              // If the message parameter is not set, show a default message
                              echo "";
                     }
-                    
-                  
+                        ?>
 
-
-
-                     ?>
-
-                    <tr>
-                        
-                            <?php
-                             
-                        if(isset($_SESSION['passerror'])){
-
-                      
-                            $num = $_SESSION['passerror'];
-                            switch($num){
-
-                                case 1:
-                                    {
-                                        echo "  <td>Password Error:</td>";
-                                        echo "رمز را وارد کنید";
-                                        break;
-                                    }
-                                    case 2:{
-                                        echo "  <td>Password Error:</td>";
-                                        echo "ایمیل یا رمز اشتباه است";
-                                        break;
-                                    }
-                                   
-                                    default:
-                                    break;
-                            }
-                        }  
-
-                            ?>
-                          
-                    </td>
-                    </tr>
-                    <tr>
-                    <?php if(isset($_SESSION['emailerror']))
-                            
-                            echo "  <td>pass Error:</td>";
-                            echo "ایمیل را درست وارد کنید";
-                            
-                            ?>
-                    </tr>
-                    </div>
+                     </div>
         
                 </div>
             </div> 
@@ -124,7 +82,50 @@
     <script src="../assets/vendors/svg-inject/svg-inject.min.js"></script>
     <script src="../assets/js/app.min.js"></script>
 
-  <!-- sdfsd -->
+    <script>
+         
+
+
+        // function where the focus displays a message if the current input field is empty or it's length is less than 5
+        function checkifinputisemptyorlessthan5(){
+
+            //const submitBtn = document.getElementById('submitBtn');
+            const form =document.querySelector('form')
+            const inputEmail = document.getElementById('email');
+            const inputPassword = document.getElementById('password');
+            const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
+
+            form.addEventListener('click', function(event) {
+                 
+                    //check conditions for email input
+                    if (inputEmail.value.trim() === '' || !emailRegex.test(inputEmail.value)) {
+                        inputEmail.setCustomValidity('فرمت ایمیل را درست وارد کنید');
+                    } else {
+                        inputEmail.setCustomValidity('');
+                    }
+
+                    //check conditions for email input
+                    if (inputPassword.value.trim() === '' ) {
+                        inputPassword.setCustomValidity('  رمز  را وارد کنید');
+                    } else {
+                        inputPassword.setCustomValidity('');
+                    }
+
+                    });
+                    
+
+                    inputEmail.addEventListener("mouseover", function() {
+                        this.title = "ایمیل را وارد کنید";});
+
+                    inputPassword.addEventListener("mouseover", function() {
+                        this.title = "رمز را وارد کنید";});
+        }
+        
+        checkifinputisemptyorlessthan5();
+
+    </script>
+  <!-- new  -->
 
 </body>
 </html>
