@@ -1317,8 +1317,8 @@ include 'dataBase.php';
                                             <li class="list-group-item py-2">
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
-                                                        <p class="small text-muted mb-0">تاریخ تولد</p>
-                                                        <p class="mb-0">01/11/1992</p>
+                                                        <p class="small text-muted mb-0 " >تاریخ تولد</p>
+                                                        <p class="mb-0 birthDateleft" >11111111</p>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1336,7 +1336,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">تلفن</p>
-                                                        <p class="mb-0" dir="ltr">+98-012-3456789</p>
+                                                        <p class="mb-0 phoneleft" dir="ltr">+98-012-3456789</p>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1354,7 +1354,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">پست الکترونیک</p>
-                                                        <p class="mb-0">ingo@yoursite.com</p>
+                                                        <p class="mb-0 emailleft">ingo@yoursite.com</p>
                                                     </div>
 
                                                     <!-- Default :: Inline SVG -->
@@ -1373,7 +1373,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">سایت اینترنتی</p>
-                                                        <p class="mb-0">www.yoursite.com</p>
+                                                        <p class="mb-0 siteleft">www.yoursite.com</p>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1391,7 +1391,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">نشانی</p>
-                                                        <p class="mb-0">ایران، مازندران، بابل، خ نادر، پلاک 1234</p>
+                                                        <p class="mb-0 addressleft">ایران، مازندران، بابل، خ نادر، پلاک 1234</p>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2075,7 +2075,7 @@ include 'dataBase.php';
 
                             <div class="card-footer d-flex justify-content-end">
                                 <button type="button" class="btn btn-link text-muted mx-1">بازنشانی کنید</button>
-                                <button type="button" class="btn btn-primary">ذخیره تغییرات</button>
+                                <button type="button" class="save_personal_info btn btn-primary">ذخیره تغییرات</button>
                             </div>
                         </div>
 
@@ -2891,6 +2891,132 @@ include 'dataBase.php';
 <script src="../assets/vendors/svg-inject/svg-inject.min.js"></script>
 <script src="../assets/vendors/modal-stepes/modal-steps.min.js"></script>
 <script src="../assets/js/app.min.js"></script>
+
+      <script>
+
+
+
+   
+  
+      
+      //AJAX call to get data from database
+      function ajaxgetdata(){
+
+           $.ajax({
+                    url: 'fetchUserData.php', //URL of the server-side script
+                    type: 'POST',
+                    success: function(data) {
+                        //Handle the response data
+                        console.log(data);
+                        const response = JSON.parse(data);
+                        console.log(response);
+                        document.getElementById('firstName').value =response[0].firstName;
+                        document.getElementById('lastName').value = response[0].lastName;
+                        document.getElementById('mobileNumber').value = response[0].mobileNumber;
+                        document.getElementById('birthDate').value = response[0].birthDate;
+                        document.getElementById('emailAddress').value =response[0].emailAddress;
+                        document.getElementById('webSite').value = response[0].webSite;
+                        document.getElementById('Address').value = response[0].Address;
+
+                        // Get the <p> element with class name "mb-0"
+                        const paragraphElement = document.querySelector('.birthDateleft');
+                        // Set the text content of the <p> element to the desired value (e.g., response[0].birthDate)
+                        paragraphElement.textContent = response[0].birthDate;
+
+                        //setting phone value
+                        const phone = document.querySelector('.phoneleft');
+                        phone.textContent = response[0].mobileNumber;
+                        //setting phone value
+                        const email = document.querySelector('.emailleft');
+                        email.textContent = response[0].emailAddress;
+
+                        //setting site value
+                        const site = document.querySelector('.siteleft');
+                        site.textContent = response[0].webSite;
+                        
+                        //setting address value
+                        const address = document.querySelector('.addressleft');
+                        address.textContent = response[0].Address;
+
+
+                    },
+                    error: function(xhr, status, error) {
+                        //Handle any errors
+                        console.error('Error fetching user data:', error);
+                    }
+                    });
+
+        }
+        ajaxgetdata();
+
+
+         //save personal data from inputs into database
+         function update_userinfo(){
+
+                    document.querySelector('.save_personal_info').addEventListener('click', function() {
+                    const firstName = document.getElementById('firstName').value;
+                    const lastName = document.getElementById('lastName').value;
+                    const mobileNumber = document.getElementById('mobileNumber').value;
+                    const birthDate = document.getElementById('birthDate').value;
+                    const emailAddress = document.getElementById('emailAddress').value;
+                    const webSite = document.getElementById('webSite').value;
+                    const address = document.getElementById('Address').value;
+
+                    const formData = {
+                        firstName: firstName,
+                        lastName: lastName,
+                        mobileNumber: mobileNumber,
+                        birthDate: birthDate,
+                        emailAddress: emailAddress,
+                        webSite: webSite,
+                        address: address
+                    };
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'userinfochange.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                // Log the response from the PHP page
+                                console.log(xhr.responseText);
+                                
+                                    // Handle the response from the PHP page
+                                    try {
+                                        const response = JSON.parse(xhr.responseText);
+                                        // You can now access the data in the response object
+                                        console.log(response);
+                                        
+                                        // Update the input fields with the response data
+                                        document.getElementById('firstName').value = response.additional_data.name;
+                                        document.getElementById('lastName').value = response.additional_data.lastName;
+                                        document.getElementById('mobileNumber').value = response.additional_data.mobileNumber;
+                                        document.getElementById('birthDate').value = response.additional_data.birthDate;
+                                        document.getElementById('emailAddress').value = response.additional_data.emailAddress;
+                                        document.getElementById('webSite').value = response.additional_data.webSite;
+                                        document.getElementById('Address').value = response.additional_data.Address;
+                                        
+
+                                    
+
+                                    } catch (error) {
+                                        console.error("Error parsing JSON response: ", error);
+                                    }
+                            }
+
+
+                        }
+                    };
+
+                    xhr.send(JSON.stringify(formData));
+                });
+           }
+           update_userinfo();
+
+
+                
+
+    </script>
 
 </body>
 </html>
