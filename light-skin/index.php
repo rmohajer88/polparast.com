@@ -1421,7 +1421,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">فیس بوک</p>
-                                                        <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
+                                                        <a class="font-size-sm font-weight-medium leftfacebook" style="color: red" href="#">youruserid</a>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1439,7 +1439,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">توییتر</p>
-                                                        <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
+                                                        <a class="font-size-sm font-weight-medium lefttwitter" href="#">youruserid</a>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1457,7 +1457,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">اینستاگرام</p>
-                                                        <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
+                                                        <a class="font-size-sm font-weight-medium leftinstagram" href="#">youruserid</a>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1477,7 +1477,7 @@ include 'dataBase.php';
                                                 <div class="media align-items-center">
                                                     <div class="media-body">
                                                         <p class="small text-muted mb-0">لینکدین</p>
-                                                        <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
+                                                        <a class="font-size-sm font-weight-medium leftlinked" href="#">youruserid</a>
                                                     </div>
                                                     <!-- Default :: Inline SVG -->
                                                     <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -2116,7 +2116,7 @@ include 'dataBase.php';
 
                             <div class="card-footer d-flex justify-content-end">
                                 <button type="button" class="btn btn-link text-muted mx-1">بازنشانی کنید</button>
-                                <button type="button" class="btn btn-primary">ذخیره تغییرات</button>
+                                <button type="button" class="save_social_user_info btn btn-primary">ذخیره تغییرات</button>
                             </div>
                         </div>
 
@@ -3013,8 +3013,119 @@ include 'dataBase.php';
            }
            update_userinfo();
 
+         
 
+         // changing usersocialinfo
+            function socialuserinfo(){
+
+
+                function update_userinfo(){
+
+                    document.querySelector('.save_social_user_info').addEventListener('click', function() {
+                    const face = document.getElementById('facebookId').value;
+                    const twi = document.getElementById('twitterId').value;
+                    const ins = document.getElementById('InstaCgramId').value;
+                    const lin = document.getElementById('linkedinId').value;
+              
+                    const formData = {
+                        fabcebookId: face,
+                        twitterId: twi,
+                        instagramId: ins,
+                        linkedId: lin
+                        
+                    };
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'usersocialinfochange.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                // Log the response from the PHP page
+                                console.log(xhr.responseText);
+                                
+                                    // Handle the response from the PHP page
+                                    try {
+                                        const response = JSON.parse(xhr.responseText);
+                                        // You can now access the data in the response object
+                                        console.log(response);
+                                        
+                                        // Update the input fields with the response data
+                                        document.getElementById('facebookId').value = response.additional_data.fabcebookId;
+                                        document.getElementById('twitterId').value = response.additional_data.twitterId;
+                                        document.getElementById('InstaCgramId').value = response.additional_data.instagramId;
+                                        document.getElementById('linkedinId').value = response.additional_data.linkedId;
+                                        
+                                        
+
+                                    
+
+                                    } catch (error) {
+                                        console.error("Error parsing JSON response: ", error);
+                                    }
+                            }
+
+
+                        }
+                    };
+
+                    xhr.send(JSON.stringify(formData));
+                });
+           }
+           update_userinfo();
+
+
+
+
+
+                //AJAX call to get data from database
+                function ajaxgetsocialdata(){
+
+                    $.ajax({
+                                url: 'fetchUserSocialinfoData.php', //URL of the server-side script
+                                type: 'POST',
+                                success: function(data) {
+                                    //Handle the response data
+                                    console.log(data);
+                                    const response = JSON.parse(data);
+                                    console.log(response);
+                                    document.getElementById('facebookId').value =response[0].fabcebookId;
+                                    document.getElementById('twitterId').value = response[0].twitterId;
+                                    document.getElementById('InstaCgramId').value = response[0].instagramId;
+                                    document.getElementById('linkedinId').value = response[0].linkedId;
+
+
+                                    // Get the <p> element with class name "mb-0"
+                                    const paragraphElement = document.querySelector('.leftfacebook');
+                                    // Set the text content of the <p> element to the desired value (e.g., response[0].birthDate)
+                                    paragraphElement.innerText = response[0].fabcebookId;
+
+                                    //setting twitter value
+                                    const twi = document.querySelector('.lefttwitter');
+                                    twi.innerText = response[0].twitterId;
+                                    //setting instagram value
+                                    const ins = document.querySelector('.leftinstagram');
+                                    ins.innerText = response[0].instagramId;
+
+                                    //setting site value
+                                    const lin = document.querySelector('.leftlinked');
+                                    lin.innerText = response[0].linkedId;
+                                    
+
+
+
+                                },
+                                error: function(xhr, status, error) {
+                                    //Handle any errors
+                                    console.error('Error fetching user data:', error);
+                                }
+                                });
+
+                    }
+                    ajaxgetsocialdata();
                 
+            }
+            socialuserinfo();
 
     </script>
 

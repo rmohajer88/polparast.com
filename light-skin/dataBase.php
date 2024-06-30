@@ -1,10 +1,9 @@
 <?php
 // Connect to the database
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mohajerDataBase";
-
+$username = "polparas_tableuser";
+$password = "o9f2u:!7DTZ7pY";
+$dbname = "polparas_database";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

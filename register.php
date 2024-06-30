@@ -1,9 +1,9 @@
 <?php
 // Connect to the database
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mohajerDataBase";
+$username = "polparas_tableuser";
+$password = "o9f2u:!7DTZ7pY";
+$dbname = "polparas_database";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -58,10 +58,16 @@ if ($conn->query($sql) === TRUE) {
   
         }
     }
+    
+
+    //create usersocialinfo user meanwhile new user is added to database
+    $sqlusersocialinfo = "INSERT INTO usersocialinfo (id,twitterId,instagramId,linkedId) VALUES ('$id','','','')";
+    $conn->query($sqlusersocialinfo);
 
     //create userinfo user meanwhile new user is added to database
-    $sqluserinfo = "INSERT INTO userinfo (id,firstName,lastName,mobileNumber,birthDate,emailAddress,webSite,Address) VALUES ('$id','$name','','','', '$email','','' )";
+    $sqluserinfo = "INSERT INTO userinfo (id,firstName,lastName,mobileNumber,birthDate,emailAddress,webSite,Address) VALUES ('$id','$name','','',NULL, '$email','','' )";
     $conn->query($sqluserinfo);
+    
     echo "<script>alert('ثبت نام با موفقیت انجام شد');</script>";
     echo "<script>setTimeout(function(){ window.location='light-skin/signin.php' }, 1000);</script>";
 
