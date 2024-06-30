@@ -35,15 +35,37 @@ if ($result->num_rows > 0) {
 }
 
 
+
+
+
 // Insert user data into the database
 $name = $_POST['name'];
 $password = $_POST['password'];
+$hashed_password_value = hash('sha256', $password);
 
-$sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$password')";
+$sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password_value')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "ثبت نام با موفقیت انجام شد";
-      header("Location: light-skin/signin.php"); // Redirect to the log in page  
+
+    $newsql = "SELECT * FROM users WHERE email = '$email' and password = '$hashed_password_value'";
+    $result = $conn->query($newsql);
+    $id;
+    if ($result->num_rows > 0) {
+      
+        while($row = $result->fetch_assoc()) {
+        
+                $id = $row['id'];// Storing the value in golobal variable
+  
+        }
+    }
+
+    //create userinfo user meanwhile new user is added to database
+    $sqluserinfo = "INSERT INTO userinfo (id,firstName,lastName,mobileNumber,birthDate,emailAddress,webSite,Address) VALUES ('$id','$name','','','', '$email','','' )";
+    $conn->query($sqluserinfo);
+    echo "<script>alert('ثبت نام با موفقیت انجام شد');</script>";
+    echo "<script>setTimeout(function(){ window.location='light-skin/signin.php' }, 1000);</script>";
+
+    
 } else {
     echo "خطا: " . $conn->error;
 }

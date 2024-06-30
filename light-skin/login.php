@@ -6,10 +6,9 @@ include 'dataBase.php';
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
-
-    
+    $hashed_password_value = hash('sha256', $password);
     // SQL query to select user with the given email and password
-    $sql = "SELECT * FROM users WHERE email = '$email' and password = '$password'";
+    $sql = "SELECT * FROM users WHERE email = '$email' and password = '$hashed_password_value'";
     $result = $conn->query($sql);
  
     if ($result->num_rows > 0) {
