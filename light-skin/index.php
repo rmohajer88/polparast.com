@@ -1,20 +1,7 @@
-<?php session_start();?>
-<?php
-if (!isset($_SESSION['id'])) {      // condition Check: if session is not set. 
-  header('location: signin.php');   // if not set the user is sendback to login page.
-}
-?>
-<?php
-// Connect to the database
-include 'dataBase.php';
-?>
-
-
-
 <!DOCTYPE html>
-<html lang="fa">
- <head>
-    <meta charset="UTF-8">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <!-- SEO Meta Tags-->
@@ -29,15 +16,48 @@ include 'dataBase.php';
     <link rel="shortcut icon" href="../assets/fav/favicon.ico" />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <link rel="stylesheet" href="../assets/css/app.min.css">   
+    <link rel="stylesheet" href="../assets/css/app.min.css"> 
+
+  <style>
+            body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            }
+
+            #main-content {
+            padding: 2rem;
+            }
+
+            #drawer {
+            width: 287px;
+            height: 100vh;
+            position: absolute; /* Allows for translation */
+            background-color: white;
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(-100%); /* Initially hidden off-screen */
+            z-index: 1; /* Ensure drawer is above main content */
+            top:172px;
+
+            }
+
+            #drawer.open {
+            transform: translateX(0); /* Show the drawer */
+            }
+
+            #drawer-toggle {
+            padding: 1rem;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            }
+
+
+  </style>
 </head>
-
-<body class="chats-tab-open modal-open">
-
-<!-- Main Layout Start -->
-<div class="main-layout is-rtl">
-    <!-- Navigation Start -->
-    <div class="navigation navbar navbar-light bg-primary">
+<body>
+  <!-- Navigation Start -->
+      <div class="navigation navbar navbar-light bg-primary">
         <!-- Logo Start -->
         <a class="d-none d-xl-block bg-light rounded p-1" href="../index.html">
             <!-- Default :: Inline SVG -->
@@ -111,8 +131,9 @@ include 'dataBase.php';
     </div>
     <!-- Navigation End -->
 
+
     <!-- Sidebar Start -->
-    <aside class="sidebar">
+    <aside class="sidebar is-rtl"">
         <!-- Tab Content Start -->
         <div class="tab-content">
             <!-- Chat Tab Content Start -->
@@ -1243,7 +1264,7 @@ include 'dataBase.php';
 
                                                     <span>خروج</span>
                                                     <?php if(isset($_POST['signout'])) {//destroys session  
-                                                       //header('location: ../register.php');
+                                                       //header('location: register.php');
                                                        echo "<script>window.location.href='../index.html'</script>";
                                                        session_destroy();
                                                     }
@@ -1511,1623 +1532,366 @@ include 'dataBase.php';
     </aside>
     <!-- Sidebar End -->
 
-    <!-- Main Start -->
-    <main class="main">
 
-        <!-- Chats Page Start -->
-        <div class="chats">
-            <div class="d-flex flex-column justify-content-center text-center h-100 w-100">
-                <div class="container">
-                    <div class="avatar avatar-lg mb-2">
-                        <img class="avatar-img" src="../assets/media/avatar/4.png" alt="">
-                    </div>
 
-                    <h5>خوش آمدی کریستینا!</h5>
-                    <p class="text-muted">لطفاً یک چت را برای شروع پیام‌رسانی انتخاب کنید.</p>
 
-                    <button class="btn btn-outline-primary no-box-shadow" type="button" data-toggle="modal" data-target="#startConversation">
-                        یک مکالمه را شروع کنید
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Chats Page End -->
+<!-- Profile Tab Content Start -->
+  <div id="drawer">
 
-        <!-- Call Log Page Start -->
-        <div class="calls px-0 py-2 p-xl-3">
-            <div class="container-xl">
-                <div class="row">
-                    <div class="col">
-                        <div class="card card-bg-1 mb-3">
-                            <div class="card-body">
-                                <div class="d-flex flex-column align-items-center">
-                                    <div class="avatar avatar-lg mb-3">
-                                        <img class="avatar-img" src="../assets/media/avatar/2.png" alt="">
-                                    </div>
+    <!-- Profile Tab Content Start -->
 
-                                    <div class="d-flex flex-column align-items-center">
-                                        <h5 class="mb-1">کاترین ریچاردسون</h5>
-                                        <p class="text-white rounded px-2 bg-primary">98123456789</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-options">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                        </svg>
-
-                                        <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-left">
-                                        <a class="dropdown-item" href="#">پاک کردن گزارش تماس</a>
-                                        <a class="dropdown-item" href="#">مسدود کردن</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="chat-closer d-xl-none">
-                                <!-- Chat Back Button (Visible only in Small Devices) -->
-                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-close="">
-                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                                    </svg>
-
-                                    <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/arrow-left.svg" alt=""> -->
-                                </button>
-                            </div>
-
+            <div class="tab-pane" id="profile-content">
+                <div class="d-flex flex-column h-100">
+                    <div class="hide-scrollbar">
+                        <!-- Sidebar Header Start -->
+                        <div class="sidebar-header sticky-top p-2 mb-3">
+                            <h5 class="font-weight-semibold">مشخصات</h5>
+                            <p class="text-muted mb-0">اطلاعات و تنظیمات شخصی</p>
                         </div>
-                    </div>
-                </div>
+                        <!-- Sidebar Header end -->
 
-                <div class="row calls-log">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar avatar-primary mr-2">
-                                            <span>
-                                                <svg class="hw-24" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                            </span>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6>تماس ورودی</h6>
-
-                                        <div class="d-flex flex-column flex-sm-row align-items-sm-center align-items-start">
-                                            <p class="text-muted mb-0">همین الان</p><span class="d-none d-sm-block text-muted mx-2">•</span>
-                                            <p class="text-muted mb-0">2دقیقه 35ثانیه</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="media-options ml-1 d-none d-sm-block">
-                                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                            </svg>
-
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar avatar-primary mr-2">
-                                            <span>
-                                                <svg class="hw-24" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M17.924 2.617a.997.997 0 00-.215-.322l-.004-.004A.997.997 0 0017 2h-4a1 1 0 100 2h1.586l-3.293 3.293a1 1 0 001.414 1.414L16 5.414V7a1 1 0 102 0V3a.997.997 0 00-.076-.383z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                  </svg>
-
-                                                <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/solid/phone-outgoing.svg" alt=""> -->
-                                            </span>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6>تماس خروجی</h6>
-
-                                        <div class="d-flex flex-column flex-sm-row align-items-sm-center align-items-start">
-                                            <p class="text-muted mb-0">5 دقیقه پیش</p><span class="d-none d-sm-block text-muted mx-2">•</span>
-                                            <p class="text-muted mb-0">12دقیقه 35ثانیه</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="media-options ml-1 d-none d-sm-block">
-                                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                            </svg>
-
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar avatar-primary mr-2">
-                                            <span>
-                                                <svg class="hw-24" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-                                                <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                            </span>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6 class="text-danger">تماس از دست رفته</h6>
-
-                                        <div class="d-flex flex-column flex-sm-row align-items-sm-center align-items-start">
-                                            <p class="text-muted mb-0">18 دقیقه پیش</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="media-options ml-1 d-none d-sm-block">
-                                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                            </svg>
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar avatar-primary mr-2">
-                                            <span>
-                                                <svg class="hw-24" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M17.924 2.617a.997.997 0 00-.215-.322l-.004-.004A.997.997 0 0017 2h-4a1 1 0 100 2h1.586l-3.293 3.293a1 1 0 001.414 1.414L16 5.414V7a1 1 0 102 0V3a.997.997 0 00-.076-.383z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/solid/phone-outgoing.svg" alt=""> -->
-                                            </span>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6>تماس خروجی</h6>
-
-                                        <div class="d-flex flex-column flex-sm-row align-items-sm-center align-items-start">
-                                            <p class="text-muted mb-0">دیروز در ساعت 22:45</p><span class="d-none d-sm-block text-muted mx-2">•</span>
-                                            <p class="text-muted mb-0">25دقیقه 18 ثانیه</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="media-options ml-1 d-none d-sm-block">
-                                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                            </svg>
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar avatar-primary mr-2">
-                                            <span>
-                                                <svg class="hw-24" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-                                                <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                            </span>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6>تماس ورودی</h6>
-
-                                        <div class="d-flex flex-column flex-sm-row align-items-sm-center align-items-start">
-                                            <p class="text-muted mb-0">01/05/15 11:49 صبح</p><span class="d-none d-sm-block text-muted mx-2">•</span>
-                                            <p class="text-muted mb-0">0دقیقه 56ثانیه</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="media-options ml-1 d-none d-sm-block">
-                                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                            </svg>
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="media">
-                                    <div class="avatar avatar-primary mr-2">
-                                            <span>
-                                                <svg class="hw-24" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-                                                <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                            </span>
-                                    </div>
-
-                                    <div class="media-body">
-                                        <h6>تماس ورودی</h6>
-
-                                        <div class="d-flex flex-column flex-sm-row align-items-sm-center align-items-start">
-                                            <p class="text-muted mb-0">01/05/14 11:49 صبح</p><span class="d-none d-sm-block text-muted mx-2">•</span>
-                                            <p class="text-muted mb-0">19دقیقه 24ثانیه</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="media-options ml-1 d-none d-sm-block">
-                                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                            </svg>
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Call Log Page End -->
-
-        <!-- Friends Page Start -->
-        <div class="friends px-0 py-2 p-xl-3">
-            <div class="container-xl">
-                <div class="row">
-                    <div class="col">
-                        <div class="card card-body card-bg-1 mb-3">
-                            <div class="d-flex flex-column align-items-center">
-                                <div class="avatar avatar-lg mb-3">
-                                    <img class="avatar-img" src="../assets/media/avatar/3.png" alt="">
-                                </div>
-
-                                <div class="d-flex flex-column align-items-center">
-                                    <h5 class="mb-1">کاترین ریچاردسون</h5>
-                                    <!-- <p class="text-white rounded px-2 bg-primary">+01-202-265462</p> -->
-                                    <div class="d-flex mt-2">
-                                        <div class="btn btn-primary btn-icon rounded-circle text-light mx-2">
-                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                                            </svg>
-                                            <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/chat.svg" alt=""> -->
-                                        </div>
-                                        <div class="btn btn-success btn-icon rounded-circle text-light mx-2">
-                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                            </svg>
-
-                                            <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-options">
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                        </svg>
-
-                                        <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                    </button>
-                                    <div class="dropdown-menu dropdown-menu-left">
-                                        <a class="dropdown-item" href="#">برداشتن</a>
-                                        <a class="dropdown-item" href="#">مسدود کردن</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="chat-closer d-xl-none">
-                                <!-- Chat Back Button (Visible only in Small Devices) -->
-                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-close="">
-                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                                    </svg>
-
-                                    <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/arrow-left.svg" alt=""> -->
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row friends-info">
-                    <div class="col">
-                        <div class="card">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">زمان محلی</p>
-                                            <p class="mb-0">10:25 ب.ظ</p>
-                                        </div>
-                                        <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/clock.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">تاریخ تولد</p>
-                                            <p class="mb-0">01/11/20</p>
-                                        </div>
-                                        <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                        </svg>
-
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/calendar.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">تلفن</p>
-                                            <p class="mb-0" dir="ltr">+98-012-3456789</p>
-                                        </div>
-                                        <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">پست الکترونیک</p>
-                                            <p class="mb-0">ingo@yoursite.com</p>
-                                        </div>
-                                        <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/mail.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">سایت اینترنتی</p>
-                                            <p class="mb-0">www.yoursite.com</p>
-                                        </div>
-                                        <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/globe.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">نشانی</p>
-                                            <p class="mb-0">ایران، مازندران، بابل، خ نادر، پلاک 1234</p>
-                                        </div>
-                                        <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/home.svg" alt=""> -->
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-
-                        <div class="card">
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">فیس بوک</p>
-                                            <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
-                                        </div>
-                                        <svg class="text-muted hw-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/icons/facebook.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">توییتر</p>
-                                            <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
-                                        </div>
-                                        <svg class="text-muted hw-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/icons/twitter.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">اینستاگرام اینستاگرام</p>
-                                            <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
-                                        </div>
-                                        <svg class="text-muted hw-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/icons/InstaCgram.svg" alt=""> -->
-                                    </div>
-                                </li>
-                                <li class="list-group-item">
-                                    <div class="media align-items-center">
-                                        <div class="media-body">
-                                            <p class="small text-muted mb-0">لینکدین</p>
-                                            <a class="font-size-sm font-weight-medium" href="#">youruserid</a>
-                                        </div>
-                                        <svg class="text-muted hw-20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                            <rect x="2" y="9" width="4" height="12"></rect>
-                                            <circle cx="4" cy="4" r="2"></circle>
-                                        </svg>
-                                        <!-- <img class="injectable text-muted hw-20" src="./../assets/media/icons/linkedin.svg" alt=""> -->
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- Friends Page End -->
-
-        <!-- Profile Settings Start -->
-        <div class="profile">
-            <div class="page-main-heading sticky-top py-2 px-3 mb-3">
-
-                <!-- Chat Back Button (Visible only in Small Devices) -->
-                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted d-xl-none" type="button" data-close="">
-                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-                    </svg>
-                    <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/arrow-left.svg" alt=""> -->
-                </button>
-
-                <div class="pl-2 pl-xl-0">
-                    <h5 class="font-weight-semibold">تنظیمات</h5>
-                    <p class="text-muted mb-0">اطلاعات و تنظیمات شخصی را به روز کنید</p>
-                </div>
-            </div>
-
-            <div class="container-xl px-2 px-sm-3">
-                <div class="row">
-                    <div class="col">
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h6 class="mb-1">حساب</h6>
-                                <p class="mb-0 text-muted small">اطلاعات شخصی و تماس را به روز کنید</p>
-                            </div>
-
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="firstName">نام کوچک</label>
-                                            <input type="text" class="form-control form-control-md" id="firstName" placeholder="نام کوچک خود را تایپ کنید" value="کاترین">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="lastName">نام خانوادگی</label>
-                                            <input type="text" class="form-control form-control-md" id="lastName" placeholder="نام خانوادگی خود را تایپ کنید" value="ریچاردسون">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="mobileNumber">شماره موبایل</label>
-                                            <input type="text" class="form-control form-control-md" id="mobileNumber" placeholder="شماره موبایل خود را تایپ کنید" value="98123456789">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="birthDate">تاریخ تولد</label>
-                                            <input type="text" class="form-control form-control-md" id="birthDate" placeholder="yyyy/mm/dd" value="1400/1/20">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="emailAddress">آدرس ایمیل</label>
-                                            <input type="email" class="form-control form-control-md" id="emailAddress" placeholder="آدرس ایمیل خود را تایپ کنید" value="info@yoursite.com">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="webSite">سایت اینترنتی</label>
-                                            <input type="text" class="form-control form-control-md" id="webSite" placeholder="وب سایت خود را تایپ کنید" value="www.yoursite.com">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label for="Address">نشانی</label>
-                                            <input type="text" class="form-control form-control-md" id="Address" placeholder="آدرس خود را تایپ کنید" value="ایران، مازندران، بابل، خ نادر، پلاک 1234">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-footer d-flex justify-content-end">
-                                <button type="button" class="btn btn-link text-muted mx-1">بازنشانی کنید</button>
-                                <button type="button" class="save_personal_info btn btn-primary">ذخیره تغییرات</button>
-                            </div>
-                        </div>
-
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h6 class="mb-1">پروفایل شبکه های اجتماعی</h6>
-                                <p class="mb-0 text-muted small">اطلاعات شخصی و تماس را به روز کنید</p>
-                            </div>
-
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="facebookId">فیس بوک</label>
-                                            <input type="text" class="form-control form-control-md" id="facebookId" placeholder="نام کاربری">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="twitterId">توییتر</label>
-                                            <input type="text" class="form-control form-control-md" id="twitterId" placeholder="نام کاربری">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="InstaCgramId">اینستاگرام</label>
-                                            <input type="text" class="form-control form-control-md" id="InstaCgramId" placeholder="نام کاربری">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-12">
-                                        <div class="form-group">
-                                            <label for="linkedinId">لینکدین</label>
-                                            <input type="text" class="form-control form-control-md" id="linkedinId" placeholder="نام کاربری">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card-footer d-flex justify-content-end">
-                                <button type="button" class="btn btn-link text-muted mx-1">بازنشانی کنید</button>
-                                <button type="button" class="save_social_user_info btn btn-primary">ذخیره تغییرات</button>
-                            </div>
-                        </div>
-
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h6 class="mb-1">کلمه عبور</h6>
-                                <p class="mb-0 text-muted small">اطلاعات شخصی و تماس را به روز کنید</p>
-                            </div>
-
-                            <div class="card-body">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="current-password">رمز عبور فعلی</label>
-                                                <input type="password" class="form-control form-control-md" id="current-password" placeholder="رمز عبور فعلی" autocomplete="on">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="new-password">رمز عبور جدید</label>
-                                                <input type="password" class="form-control form-control-md" id="new-password" placeholder="رمز عبور جدید" autocomplete="off">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="repeat-password">تکرار رمز عبور</label>
-                                                <input type="password" class="form-control form-control-md" id="repeat-password" placeholder="تکرار رمز عبور" autocomplete="off">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="card-footer d-flex justify-content-end">
-                                <button type="button" class="btn btn-link text-muted mx-1">بازنشانی کنید</button>
-                                <button type="button" class="btn btn-primary">ذخیره تغییرات</button>
-                            </div>
-                        </div>
-
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h6 class="mb-1">حریم خصوصی</h6>
-                                <p class="mb-0 text-muted small">اطلاعات شخصی و تماس را به روز کنید</p>
-                            </div>
-
-                            <div class="card-body p-0">
-                                <ul class="list-group list-group-flush list-group-sm-column">
-
-                                    <li class="list-group-item py-2">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <p class="mb-0">عکس پروفایل</p>
-                                                <p class="small text-muted mb-0">انتخاب کنید چه کسی می تواند عکس نمایه من را ببیند</p>
-                                            </div>
-                                            <div class="dropdown mr-2">
-                                                <button class="btn btn-outline-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    عمومی
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-left">
-                                                    <a class="dropdown-item" href="#">عمومی</a>
-                                                    <a class="dropdown-item" href="#">دوستان</a>
-                                                    <a class="dropdown-item" href="#">دوستان منتخب</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item py-2">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <p class="mb-0">آخرین بازدید</p>
-                                                <p class="small text-muted mb-0">انتخاب کنید چه کسی می تواند آخرین حضور من را ببیند</p>
-                                            </div>
-                                            <div class="dropdown mr-2">
-                                                <button class="btn btn-outline-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    عمومی
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-left">
-                                                    <a class="dropdown-item" href="#">عمومی</a>
-                                                    <a class="dropdown-item" href="#">دوستان</a>
-                                                    <a class="dropdown-item" href="#">دوستان منتخب</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item py-2">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <p class="mb-0">گروه ها</p>
-                                                <p class="small text-muted mb-0">انتخاب کنید چه کسی می تواند شما را در گروه ها اضافه کند</p>
-                                            </div>
-                                            <div class="dropdown mr-2">
-                                                <button class="btn btn-outline-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    عمومی
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-left">
-                                                    <a class="dropdown-item" href="#">عمومی</a>
-                                                    <a class="dropdown-item" href="#">دوستان</a>
-                                                    <a class="dropdown-item" href="#">دوستان منتخب</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item py-2">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <p class="mb-0">وضعیت</p>
-                                                <p class="small text-muted mb-0">انتخاب کنید چه کسی می‌تواند به‌روزرسانی‌های وضعیت من را ببیند</p>
-                                            </div>
-                                            <div class="dropdown mr-2">
-                                                <button class="btn btn-outline-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    عمومی
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-left">
-                                                    <a class="dropdown-item" href="#">عمومی</a>
-                                                    <a class="dropdown-item" href="#">دوستان</a>
-                                                    <a class="dropdown-item" href="#">دوستان منتخب</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <li class="list-group-item py-2">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <p class="mb-0">رسیدها را بخوانید</p>
-                                                <p class="small text-muted mb-0">اگر این گزینه را خاموش کنید، نمی‌توانید رسپی‌های خواندن را ببینید</p>
-                                            </div>
-                                            <div class="custom-control custom-switch mr-2">
-                                                <input type="checkbox" class="custom-control-input" id="readReceiptsSwitch" checked="">
-                                                <label class="custom-control-label" for="readReceiptsSwitch">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-
-                            <div class="card-footer d-flex justify-content-end">
-                                <button type="button" class="btn btn-link text-muted mx-1">بازنشانی کنید</button>
-                                <button type="button" class="btn btn-primary">ذخیره تغییرات</button>
-                            </div>
-                        </div>
-
-                        <div class="card mb-3">
-                            <div class="card-header">
-                                <h6 class="mb-1">امنیت</h6>
-                                <p class="mb-0 text-muted small">اطلاعات شخصی و تماس را به روز کنید</p>
-                            </div>
-
-                            <div class="card-body p-0">
-                                <ul class="list-group list-group-flush list-group-sm-column">
-                                    <li class="list-group-item py-2">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <p class="mb-0">از احراز هویت دو مرحله ای استفاده کنید</p>
-                                                <p class="small text-muted mb-0">در صورت تلاش برای ورود از یک دستگاه یا مرورگر ناشناس، یک کد بخواهید.</p>
-                                            </div>
-                                            <div class="custom-control custom-switch mr-2">
-                                                <input type="checkbox" class="custom-control-input" id="twoFactorSwitch" checked="">
-                                                <label class="custom-control-label" for="twoFactorSwitch">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item py-2">
-                                        <div class="media align-items-center">
-                                            <div class="media-body">
-                                                <p class="mb-0">در مورد ورودهای ناشناس هشدار دریافت کنید</p>
-                                                <p class="small text-muted mb-0">اگر کسی از دستگاه یا مرورگری که معمولاً از آن استفاده نمی کنید وارد سیستم شود، به شما اطلاع داده می شود</p>
-                                            </div>
-                                            <div class="custom-control custom-switch mr-2">
-                                                <input type="checkbox" class="custom-control-input" id="unrecognisedSwitch" checked="">
-                                                <label class="custom-control-label" for="unrecognisedSwitch">&nbsp;</label>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-
-                            <div class="card-footer d-flex justify-content-end">
-                                <button class="btn btn-link text-muted mx-1">بازنشانی کنید</button>
-                                <button class="btn btn-primary" type="button">ذخیره تغییرات</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Profile Settings End -->
-
-    </main>
-    <!-- Main End -->
-
-    <!-- All Modals Start -->
-
-    <!-- Modal 1 :: Start a Conversation-->
-    <div class="modal modal-lg-fullscreen fade" id="startConversation" tabindex="-1" role="dialog" aria-labelledby="startConversationLabel" aria-hidden="true" >
-        <div class="modal-dialog show modal-dialog-centered modal-dialog-scrollable" >
-            <div class="modal-content" >
-                <div class="modal-header">
-                    <h5 class="modal-title" id="startConversationLabel">چت جدید</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body p-0 hide-scrollbar">
-                    <div class="row">
-                        <div class="col-12">
-                            <!-- Search Start -->
-                            <form class="form-inline w-100 p-2 border-bottom">
-                                <div class="input-group w-100 bg-light">
-                                    <input type="text" class="form-control form-control-md search border-right-0 transparent-bg pr-0" placeholder="جستجو کردن...">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text transparent-bg border-left-0" role="button">
-                                            <!-- Default :: Inline SVG -->
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                            </svg>
-
-                                            <!-- Alternate :: External File link -->
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/search.svg" alt=""> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- Search End -->
-                        </div>
-
-                        <div class="col-12">
-                            <!-- List Group Start -->
-                            <ul class="list-group list-group-flush">
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-online mr-2">
-                                            <img src="../assets/media/avatar/1.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate">
-                                                <a href="#" class="text-reset">کاترین ریچاردسون</a>
-                                            </h6>
-
-                                            <p class="text-muted mb-0">آنلاین</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-online mr-2">
-                                            <img src="../assets/media/avatar/2.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate">
-                                                <a href="#" class="text-reset">کاترین اشنایدر</a>
-                                            </h6>
-
-                                            <p class="text-muted mb-0">آنلاین</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-offline mr-2">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate">
-                                                <a href="#" class="text-reset">بریتنی کی ویلیامز</a>
-                                            </h6>
-
-                                            <p class="text-muted mb-0">آفلاین</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-busy mr-2">
-                                            <img src="../assets/media/avatar/4.png" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="text-truncate"><a href="#" class="text-reset">کریستینا ترنر</a></h6>
-                                            <p class="text-muted mb-0">مشغول</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-away mr-2">
-                                            <img src="../assets/media/avatar/5.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate"><a href="#" class="text-reset">آنی ریچاردسون</a></h6>
-                                            <p class="text-muted mb-0">دور</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                            </ul>
-                            <!-- List Group End -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 2 :: Create Group -->
-    <div class="modal modal-lg-fullscreen fade" id="createGroup" tabindex="-1" role="dialog" aria-labelledby="createGroupLabel" aria-hidden="true" >
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title js-title-step" id="createGroupLabel">&nbsp;</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body py-0 hide-scrollbar">
-                    <div class="row hide pt-2" data-step="1" data-title="ایجاد گروه جدید">
-
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label for="groupName">اسم گروه</label>
-                                <input type="text" class="form-control form-control-md" id="groupName" placeholder="نام گروه را در اینجا تایپ کنید">
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-group">
-                                <label>عکس پروفایل را انتخاب کنید</label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="profilePictureInput" accept="image/*">
-                                    <label class="custom-file-label" for="profilePictureInput">انتخاب فایل</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-12">
+                        <!-- Sidebar Content Start -->
+                        <div class="container-xl">
                             <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group mb-0">
-                                        <label>حریم خصوصی گروه</label>
-                                    </div>
-                                </div>
                                 <div class="col">
-                                    <div class="form-group rounded p-2 border">
-                                        <div class="custom-control custom-radio">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked="">
-                                            <label class="form-check-label" for="exampleRadios1">
-                                                گروه عمومی
-                                            </label>
+
+                                    <!-- Card Start -->
+                                    <div class="card card-body card-bg-5">
+
+                                        <!-- Card Details Start -->
+                                        <div class="d-flex flex-column align-items-center">
+                                            <div class="avatar avatar-lg mb-3">
+                                                <img class="avatar-img" src="../assets/media/avatar/3.png" alt="">
+                                            </div>
+                                                 
+                                            <div class="d-flex flex-column align-items-center">
+                                                <!-- php code  -->
+                                                <h5><?php   echo $_SESSION['name'];?> </h5>
+                                            </div>
+
+                                            <div class="d-flex">
+                                             <form method="post">
+                                                <button class="btn btn-outline-default mx-1" type="submit" name='signout' >
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/logout.svg" alt=""> -->
+                                                 
+
+                                                    <span>خروج</span>
+                                                    <?php if(isset($_POST['signout'])) {//destroys session  
+                                                       //header('location: register.php');
+                                                       echo "<script>window.location.href='../index.html'</script>";
+                                                       session_destroy();
+                                                    }
+                                                    ?>
+                                                </button>
+                                             </form>
+                                             
+                                                <button class="btn btn-outline-default mx-1 d-xl-none" data-profile-edit="" type="button">
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/cog.svg" alt=""> -->
+                                                    <span>تنظیمات</span>
+                                                </button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="form-group rounded p-2 border">
-                                        <div class="custom-control custom-radio">
-                                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                            <label class="form-check-label" for="exampleRadios2">
-                                                گروه خصوصی
-                                            </label>
+                                        <!-- Card Details End -->
+
+                                        <!-- Card Options Start -->
+                                        <div class="card-options">
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-left">
+                                                    <a class="dropdown-item" href="#">تغییر عکس پروفایل</a>
+                                                    <a class="dropdown-item" href="#">تغییر شماره</a>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <!-- Card Options End -->
+
                                     </div>
+                                    <!-- Card End -->
+
+                                    <!-- Card Start -->
+                                    <div class="card mt-3">
+
+                                        <!-- List Group Start -->
+                                        <ul class="list-group list-group-flush">
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">زمان محلی</p>
+                                                        <p class="mb-0">10:25 ب.ظ</p>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/clock.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0 " >تاریخ تولد</p>
+                                                        <p class="mb-0 birthDateleft" >11111111</p>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/calendar.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">تلفن</p>
+                                                        <p class="mb-0 phoneleft" dir="ltr">+98-012-3456789</p>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">پست الکترونیک</p>
+                                                        <p class="mb-0 emailleft">ingo@yoursite.com</p>
+                                                    </div>
+
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/mail.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">سایت اینترنتی</p>
+                                                        <p class="mb-0 siteleft">www.yoursite.com</p>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/globe.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item pt-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">نشانی</p>
+                                                        <p class="mb-0 addressleft">ایران، مازندران، بابل، خ نادر، پلاک 1234</p>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/home.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                        </ul>
+                                        <!-- List Group End -->
+
+                                    </div>
+                                    <!-- Card End -->
+
+                                    <!-- Card Start -->
+                                    <div class="card my-3">
+
+                                        <!-- List Group Start -->
+                                        <ul class="list-group list-group-flush">
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">فیس بوک</p>
+                                                        <a class="font-size-sm font-weight-medium leftfacebook" style="color: red" href="#">youruserid</a>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/icons/facebook.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">توییتر</p>
+                                                        <a class="font-size-sm font-weight-medium lefttwitter" href="#">youruserid</a>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/icons/twitter.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">اینستاگرام</p>
+                                                        <a class="font-size-sm font-weight-medium leftinstagram" href="#">youruserid</a>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/icons/InstaCgram.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                            <!-- List Group Item Start -->
+                                            <li class="list-group-item py-2">
+                                                <div class="media align-items-center">
+                                                    <div class="media-body">
+                                                        <p class="small text-muted mb-0">لینکدین</p>
+                                                        <a class="font-size-sm font-weight-medium leftlinked" href="#">youruserid</a>
+                                                    </div>
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="text-muted hw-20 ml-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                                        <rect x="2" y="9" width="4" height="12"></rect>
+                                                        <circle cx="4" cy="4" r="2"></circle>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/icons/linkedin.svg" alt=""> -->
+                                                </div>
+                                            </li>
+                                            <!-- List Group Item End -->
+
+                                        </ul>
+                                        <!-- List Group End -->
+
+                                    </div>
+                                    <!-- Card End -->
+
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Sidebar Content End -->
                     </div>
-
-                    <div class="row hide pt-2" data-step="2" data-title="افزودن کاربران به گروه">
-                        <div class="col-12 px-0">
-                            <!-- Search Start -->
-                            <form class="form-inline w-100 px-2 pb-2 border-bottom">
-                                <div class="input-group w-100 bg-light">
-                                    <input type="text" class="form-control form-control-md search border-right-0 transparent-bg pr-0" placeholder="جستجو کردن...">
-                                    <div class="input-group-append">
-                                        <div class="input-group-text transparent-bg border-left-0" role="button">
-                                            <!-- Default :: Inline SVG -->
-                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                            </svg>
-
-                                            <!-- Alternate :: External File link -->
-                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/search.svg" alt=""> -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- Search End -->
-                        </div>
-
-                        <div class="col-12 px-0">
-                            <!-- List Group Start -->
-                            <ul class="list-group list-group-flush">
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-online mr-2">
-                                            <img src="../assets/media/avatar/1.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate">
-                                                <a href="#" class="text-reset">کاترین ریچاردسون</a>
-                                            </h6>
-
-                                            <p class="text-muted mb-0">آنلاین</p>
-                                        </div>
-
-                                        <div class="media-options">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" value="" id="chx-user-1" checked="">
-                                                <label class="custom-control-label" for="chx-user-1"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="media-label" for="chx-user-1"></label>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-online mr-2">
-                                            <img src="../assets/media/avatar/2.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate">
-                                                <a href="#" class="text-reset">کاترین اشنایدر</a>
-                                            </h6>
-
-                                            <p class="text-muted mb-0">آنلاین</p>
-                                        </div>
-
-                                        <div class="media-options">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" value="" id="chx-user-2" checked="">
-                                                <label class="custom-control-label" for="chx-user-2"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="media-label" for="chx-user-2"></label>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-offline mr-2">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate">
-                                                <a href="#" class="text-reset">بریتنی کی ویلیامز</a>
-                                            </h6>
-
-                                            <p class="text-muted mb-0">آفلاین</p>
-                                        </div>
-                                        <div class="media-options">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" value="" id="chx-user-3">
-                                                <label class="custom-control-label" for="chx-user-3"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="media-label" for="chx-user-3"></label>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-busy mr-2">
-                                            <img src="../assets/media/avatar/4.png" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <h6 class="text-truncate"><a href="#" class="text-reset">کریستینا ترنر</a></h6>
-                                            <p class="text-muted mb-0">مشغول</p>
-                                        </div>
-                                        <div class="media-options">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" value="" id="chx-user-4" checked="">
-                                                <label class="custom-control-label" for="chx-user-4"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="media-label" for="chx-user-4"></label>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="avatar avatar-away mr-2">
-                                            <img src="../assets/media/avatar/5.png" alt="">
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6 class="text-truncate"><a href="#" class="text-reset">آنی ریچاردسون</a></h6>
-                                            <p class="text-muted mb-0">دور</p>
-                                        </div>
-                                        <div class="media-options">
-                                            <div class="custom-control custom-checkbox">
-                                                <input class="custom-control-input" type="checkbox" value="" id="chx-user-5">
-                                                <label class="custom-control-label" for="chx-user-5"></label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <label class="media-label" for="chx-user-5"></label>
-                                </li>
-                                <!-- List Group Item End -->
-
-                            </ul>
-                            <!-- List Group End -->
-                        </div>
-                    </div>
-
-                    <div class="row pt-2 h-100 hide" data-step="3" data-title="پایان">
-                        <div class="col-12">
-                            <div class="d-flex justify-content-center align-items-center flex-column h-100">
-                                <div class="btn btn-success btn-icon rounded-circle text-light mb-3">
-                                    <!-- Default :: Inline SVG -->
-                                    <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                    </svg>
-
-                                    <!-- Alternate :: External File link -->
-                                    <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/check.svg" alt=""> -->
-                                </div>
-                                <h6>گروه با موفقیت ایجاد شد</h6>
-                                <p class="text-muted text-center">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله است. </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-link text-muted js-btn-step mr-auto" data-orientation="cancel" data-dismiss="modal"></button>
-                    <button type="button" class="btn btn-secondary  js-btn-step" data-orientation="previous"></button>
-                    <button type="button" class="btn btn-primary js-btn-step" data-orientation="next"></button>
                 </div>
             </div>
-        </div>
-    </div>
+            <!-- Profile Tab Content End -->
+    
+  </div>
+<!-- Profile Tab Content End -->
 
-    <!-- Modal 3 :: Invite Others -->
-    <div class="modal modal-lg-fullscreen fade" id="inviteOthers" tabindex="-1" role="dialog" aria-labelledby="inviteOthersLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="inviteOthersLabel">دیگران را دعوت کنید</h5>
-
-                    <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body hide-scrollbar">
-                    <form>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="inviteEmailAddress">آدرس ایمیل</label>
-                                    <input type="email" class="form-control form-control-md" id="inviteEmailAddress" placeholder="آدرس ایمیل را در اینجا تایپ کنید" value="">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="inviteMessage">پیام دعوت</label>
-                                    <textarea class="form-control form-control-md no-resize hide-scrollbar" id="inviteMessage" placeholder="پیام خود را اینجا بنویسید" rows="3"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-link text-muted" data-dismiss="modal">نزدیک</button>
-                    <button type="button" class="btn btn-primary">ارسال دعوتنامه</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal 4 :: Notifications -->
-    <div class="modal modal-lg-fullscreen fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="notificationModalLabel">اطلاعیه</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body p-0 hide-scrollbar">
-                    <div class="row">
-
-                        <div class="col-12">
-                            <!-- List Group Start -->
-                            <ul class="list-group list-group-flush  py-2">
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="btn btn-primary btn-icon rounded-circle text-light mr-2">
-                                            <!-- Default :: Inline SVG -->
-                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
-                                            </svg>
-
-                                            <!-- Alternate :: External File link -->
-                                            <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/user-add.svg" alt=""> -->
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6>
-                                                <a href="#">کاترین ریچاردسون</a> برای شما درخواست دوستی ارسال می کند
-                                            </h6>
-
-                                            <p class="text-muted mb-0">5 دقیقه پیش</p>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex justify-content-center mt-2">
-                                        <button type="button" class="btn btn-outline-danger mx-1">رد کردن</button>
-                                        <button type="button" class="btn btn-primary mx-1">تایید کنید</button>
-                                    </div>
-
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="btn btn-primary btn-icon rounded-circle text-light mr-2">
-                                            <!-- Default :: Inline SVG -->
-                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-
-                                            <!-- Alternate :: External File link -->
-                                            <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/check-circle.svg" alt=""> -->
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6>
-                                                <a href="#">کاتلین والدز</a> درخواست دوستی شما را پذیرفت
-                                            </h6>
-
-                                            <p class="text-muted mb-0">25 دقیقه پیش</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="btn btn-primary btn-icon rounded-circle text-light mr-2">
-                                            <!-- Default :: Inline SVG -->
-                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                            </svg>
-
-                                            <!-- Alternate :: External File link -->
-                                            <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/photograph.svg" alt=""> -->
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6>
-                                                <a href="#">اوا واکر</a> تصویر نمایه را به‌روزرسانی
-                                                کرد</h6>
-
-                                            <p class="text-muted mb-0">5 دقیقه پیش</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="btn btn-primary btn-icon rounded-circle text-light mr-2">
-                                            <!-- Default :: Inline SVG -->
-                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                            </svg>
-
-                                            <!-- Alternate :: External File link -->
-                                            <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/check-circle.svg" alt=""> -->
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6>
-                                                <a href="#">بانی تورس</a> درخواست دوستی شما را پذیرفت
-                                            </h6>
-
-                                            <p class="text-muted mb-0">5 دقیقه پیش</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-                                <!-- List Group Item Start -->
-                                <li class="list-group-item">
-                                    <div class="media">
-                                        <div class="btn btn-primary btn-icon rounded-circle text-light mr-2">
-                                            <!-- Default :: Inline SVG -->
-                                            <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                            </svg>
-
-                                            <!-- Alternate :: External File link -->
-                                            <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/photograph.svg" alt=""> -->
-                                        </div>
-
-                                        <div class="media-body">
-                                            <h6>
-                                                <a href="#">کریستوفر گارسیا</a> عکس پروفایل را به روز کرد
-                                            </h6>
-
-                                            <p class="text-muted mb-0">5 دقیقه پیش</p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- List Group Item End -->
-
-
-                            </ul>
-                            <!-- List Group End -->
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-link text-muted">همه را پاک کن</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- All Modals End -->
-</div>
-<!-- Main Layout End -->
-
-
-<!-- Javascript Files -->
-<script src="../assets/vendors/jquery/jquery-3.5.0.min.js"></script>
-<script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
-<script src="../assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="../assets/vendors/svg-inject/svg-inject.min.js"></script>
-<script src="../assets/vendors/modal-stepes/modal-steps.min.js"></script>
-<script src="../assets/js/app.min.js"></script>
-
-      <script>
-
-
-
-   
   
-      
-      //AJAX call to get data from database
-      function ajaxgetdata(){
+    <script src="../assets/vendors/jquery/jquery-3.5.0.min.js"></script>
+    <script src="../assets/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendors/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="../assets/vendors/svg-inject/svg-inject.min.js"></script>
+    <script src="../assets/vendors/modal-stepes/modal-steps.min.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+  <script>
+  
+   
+    const drawer = document.getElementById('drawer');
+    let startX = 0;
+    let startY = 0; // Store starting Y-coordinate (for vertical swipe check)
 
-           $.ajax({
-                    url: 'fetchUserData.php', //URL of the server-side script
-                    type: 'POST',
-                    success: function(data) {
-                        //Handle the response data
-                        console.log(data);
-                        const response = JSON.parse(data);
-                        console.log(response);
-                        document.getElementById('firstName').value =response[0].firstName;
-                        document.getElementById('lastName').value = response[0].lastName;
-                        document.getElementById('mobileNumber').value = response[0].mobileNumber;
-                        document.getElementById('birthDate').value = response[0].birthDate;
-                        document.getElementById('emailAddress').value =response[0].emailAddress;
-                        document.getElementById('webSite').value = response[0].webSite;
-                        document.getElementById('Address').value = response[0].Address;
+    document.addEventListener('touchstart', (event) => {
+      startX = event.changedTouches[0].clientX;
+      startY = event.changedTouches[0].clientY; // Capture initial touch position
+    });
 
-                        // Get the <p> element with class name "mb-0"
-                        const paragraphElement = document.querySelector('.birthDateleft');
-                        // Set the text content of the <p> element to the desired value (e.g., response[0].birthDate)
-                        paragraphElement.textContent = response[0].birthDate;
+    document.addEventListener('touchend', (event) => {
+      const endX = event.changedTouches[0].clientX;
+      const swipeDistanceX = endX - startX;
+      const swipeDistanceY = Math.abs(event.changedTouches[0].clientY - startY); // Absolute value for vertical distance
 
-                        //setting phone value
-                        const phone = document.querySelector('.phoneleft');
-                        phone.textContent = response[0].mobileNumber;
-                        //setting phone value
-                        const email = document.querySelector('.emailleft');
-                        email.textContent = response[0].emailAddress;
+      // Minimum swipe distance threshold (optional, adjust value as needed)
+      const minSwipeDistance = 50;
 
-                        //setting site value
-                        const site = document.querySelector('.siteleft');
-                        site.textContent = response[0].webSite;
-                        
-                        //setting address value
-                        const address = document.querySelector('.addressleft');
-                        address.textContent = response[0].Address;
+      if (swipeDistanceX > minSwipeDistance && swipeDistanceY < minSwipeDistance) {
+        // Check for right swipe (positive X) and minimal vertical movement
+        drawer.classList.add('open');
+      }
+    });
 
 
-                    },
-                    error: function(xhr, status, error) {
-                        //Handle any errors
-                        console.error('Error fetching user data:', error);
-                    }
-                    });
+    // Hide drawer on click outside it
+    document.addEventListener('click', (event) => {
+    const isDrawerOpen = drawer.classList.contains('open');
+    if (isDrawerOpen && !event.target.closest('#drawer')) {
+        drawer.classList.remove('open');
+    }
+    });
 
-        }
-        ajaxgetdata();
-
-
-         //save personal data from inputs into database
-         function update_userinfo(){
-
-                    document.querySelector('.save_personal_info').addEventListener('click', function() {
-                    const firstName = document.getElementById('firstName').value;
-                    const lastName = document.getElementById('lastName').value;
-                    const mobileNumber = document.getElementById('mobileNumber').value;
-                    const birthDate = document.getElementById('birthDate').value;
-                    const emailAddress = document.getElementById('emailAddress').value;
-                    const webSite = document.getElementById('webSite').value;
-                    const address = document.getElementById('Address').value;
-
-                    const formData = {
-                        firstName: firstName,
-                        lastName: lastName,
-                        mobileNumber: mobileNumber,
-                        birthDate: birthDate,
-                        emailAddress: emailAddress,
-                        webSite: webSite,
-                        address: address
-                    };
-
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'userinfochange.php', true);
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 200) {
-                                // Log the response from the PHP page
-                                console.log(xhr.responseText);
-                                
-                                    // Handle the response from the PHP page
-                                    try {
-                                        const response = JSON.parse(xhr.responseText);
-                                        // You can now access the data in the response object
-                                        console.log(response);
-                                        
-                                        // Update the input fields with the response data
-                                        document.getElementById('firstName').value = response.additional_data.name;
-                                        document.getElementById('lastName').value = response.additional_data.lastName;
-                                        document.getElementById('mobileNumber').value = response.additional_data.mobileNumber;
-                                        document.getElementById('birthDate').value = response.additional_data.birthDate;
-                                        document.getElementById('emailAddress').value = response.additional_data.emailAddress;
-                                        document.getElementById('webSite').value = response.additional_data.webSite;
-                                        document.getElementById('Address').value = response.additional_data.Address;
-                                        
-
-                                    
-
-                                    } catch (error) {
-                                        console.error("Error parsing JSON response: ", error);
-                                    }
-                            }
-
-
-                        }
-                    };
-
-                    xhr.send(JSON.stringify(formData));
-                });
-           }
-           update_userinfo();
-
-         
-
-         // changing usersocialinfo
-            function socialuserinfo(){
-
-
-                function update_userinfo(){
-
-                    document.querySelector('.save_social_user_info').addEventListener('click', function() {
-                    const face = document.getElementById('facebookId').value;
-                    const twi = document.getElementById('twitterId').value;
-                    const ins = document.getElementById('InstaCgramId').value;
-                    const lin = document.getElementById('linkedinId').value;
-              
-                    const formData = {
-                        fabcebookId: face,
-                        twitterId: twi,
-                        instagramId: ins,
-                        linkedId: lin
-                        
-                    };
-
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('POST', 'usersocialinfochange.php', true);
-                    xhr.setRequestHeader('Content-Type', 'application/json');
-                    xhr.onreadystatechange = function() {
-                        if (xhr.readyState === XMLHttpRequest.DONE) {
-                            if (xhr.status === 200) {
-                                // Log the response from the PHP page
-                                console.log(xhr.responseText);
-                                
-                                    // Handle the response from the PHP page
-                                    try {
-                                        const response = JSON.parse(xhr.responseText);
-                                        // You can now access the data in the response object
-                                        console.log(response);
-                                        
-                                        // Update the input fields with the response data
-                                        document.getElementById('facebookId').value = response.additional_data.fabcebookId;
-                                        document.getElementById('twitterId').value = response.additional_data.twitterId;
-                                        document.getElementById('InstaCgramId').value = response.additional_data.instagramId;
-                                        document.getElementById('linkedinId').value = response.additional_data.linkedId;
-                                        
-                                        
-
-                                    
-
-                                    } catch (error) {
-                                        console.error("Error parsing JSON response: ", error);
-                                    }
-                            }
-
-
-                        }
-                    };
-
-                    xhr.send(JSON.stringify(formData));
-                });
-           }
-           update_userinfo();
-
-
-
-
-
-                //AJAX call to get data from database
-                function ajaxgetsocialdata(){
-
-                    $.ajax({
-                                url: 'fetchUserSocialinfoData.php', //URL of the server-side script
-                                type: 'POST',
-                                success: function(data) {
-                                    //Handle the response data
-                                    console.log(data);
-                                    const response = JSON.parse(data);
-                                    console.log(response);
-                                    document.getElementById('facebookId').value =response[0].fabcebookId;
-                                    document.getElementById('twitterId').value = response[0].twitterId;
-                                    document.getElementById('InstaCgramId').value = response[0].instagramId;
-                                    document.getElementById('linkedinId').value = response[0].linkedId;
-
-
-                                    // Get the <p> element with class name "mb-0"
-                                    const paragraphElement = document.querySelector('.leftfacebook');
-                                    // Set the text content of the <p> element to the desired value (e.g., response[0].birthDate)
-                                    paragraphElement.innerText = response[0].fabcebookId;
-
-                                    //setting twitter value
-                                    const twi = document.querySelector('.lefttwitter');
-                                    twi.innerText = response[0].twitterId;
-                                    //setting instagram value
-                                    const ins = document.querySelector('.leftinstagram');
-                                    ins.innerText = response[0].instagramId;
-
-                                    //setting site value
-                                    const lin = document.querySelector('.leftlinked');
-                                    lin.innerText = response[0].linkedId;
-                                    
-
-
-
-                                },
-                                error: function(xhr, status, error) {
-                                    //Handle any errors
-                                    console.error('Error fetching user data:', error);
-                                }
-                                });
-
-                    }
-                    ajaxgetsocialdata();
-                
-            }
-            socialuserinfo();
-
-    </script>
-
+  </script>
 </body>
 </html>
