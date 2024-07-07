@@ -1,3 +1,20 @@
+.drawer {
+  /* Default styles for the drawer element */
+  width: 250px; /* Adjust width as needed */
+  height: 100vh; /* Adjust height as needed */
+  position: absolute; /* This allows for translation */
+  background-color: white; /* Example background color */
+  transition: transform 0.3s ease-in-out; /* Add smooth transition */
+}
+
+.drawer.drawer-open {
+  transform: translateX(0); /* Show the drawer */
+}
+
+.drawer:not(.drawer-open) {
+  transform: translateX(-100%); /* Hide the drawer off-screen */
+}
+
 @font-face {
     font-family: "body-font";
     src: url('../fonts/vazir/webfonts/Vazirmatn-FD-Thin.woff2') format('woff2');
@@ -11488,7 +11505,7 @@ button.close:focus {
         flex-wrap: nowrap;
         order: 0;
         overflow-y: auto;
-        overflow-x: hidden;
+      
         width: 4.375rem;
         border-top: 0;
         border-left: 1px solid #e5e9f2;
@@ -11499,25 +11516,26 @@ button.close:focus {
 }
 
 .main-layout .sidebar {
-    background: #f8f9fa;
-    flex-grow: 2;
-    order: 1;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-y: auto;
-    overflow-x: hidden
+  background: #f8f9fa;
+  /* Adjust flex-grow as needed (consider 0 or 1) */
+  flex-grow: 0;
+  order: 1;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: auto;
+  /* Allow horizontal overflow for drawer */
+  overflow-x: visible;
 }
-
 .main-layout .sidebar::-webkit-scrollbar {
     display: none
 }
 
 @media (min-width: 1200px) {
-    .main-layout .sidebar {
-        flex-grow: 0;
-        width: 26.25rem;
-        border-left: 1px solid #e5e9f2
-    }
+  .main-layout .sidebar {
+    flex-grow: 0;
+    width: 26.25rem;
+    border-left: 1px solid #e5e9f2;
+  }
 }
 
 .main-layout .main {

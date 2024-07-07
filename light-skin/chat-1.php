@@ -16,10 +16,7 @@
     <link rel="shortcut icon" href="../assets/fav/favicon.ico" />
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-
     <link rel="stylesheet" href="../assets/css/app.min.css">
-
 </head>
 
 <body class="chats-tab-open">
@@ -36,7 +33,7 @@
 
             <!-- Main Nav Start -->
             <ul class="nav nav-minimal flex-row flex-grow-1 justify-content-between flex-xl-column justify-content-xl-center" id="mainNavTab" role="tablist">
-
+                
                 <!-- Chats Tab Start -->
                 <li class="nav-item">
                     <a class="nav-link p-0 py-xl-3 active" id="chats-tab" href="#chats-content" title="Chats">
@@ -58,7 +55,7 @@
                         <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
                         </svg>
-
+                            
                         <!-- Alternate :: External File link -->
                         <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/phone.svg" alt="Phone icon"> -->
                     </a>
@@ -72,7 +69,7 @@
                         <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
                         </svg>
-
+                            
                         <!-- Alternate :: External File link -->
                         <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/users.svg" alt="Friends icon"> -->
                     </a>
@@ -86,7 +83,7 @@
                         <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
-
+                            
                         <!-- Alternate :: External File link -->
                         <!-- <img class="injectable hw-24" src="./../assets/media/heroicons/outline/user-circle.svg" alt="Profile icon"> -->
                     </a>
@@ -197,223 +194,8 @@
                             <!-- Chat Header End -->
 
                             <!-- Chat Contact List Start -->
-                            <ul class="contacts-list" id="chatContactTab" data-chat-list="">
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item friends">
-                                    <a class="contacts-link" href="chat-1.html">
-                                        <div class="avatar avatar-online">
-                                            <img src="../assets/media/avatar/2.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کاترین ریچاردسون</h6>
-                                                <div class="chat-time">الان</div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <p class="text-truncate">متاسفم، متوجه نشدم. میشه لطفا تکرار کنید</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item groups active">
-                                    <a class="contacts-link" href="chat-2.html">
-                                        <div class="avatar bg-success text-light">
-                                            <span>
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable" src="./../assets/media/heroicons/outline/user-group.svg" alt=""> -->
-                                            </span>
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">گروه</h6>
-                                                <div class="chat-time"><span> 10:20 ب.ط</span></div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <p class="text-truncate"><span>جنی:</span> این خیلی معمول است. شنیده ام که افراد زیادی همین تجربه را داشته اند.</p>
-                                                <div class="d-inline-flex align-items-center ml-1">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-16 text-muted" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-16 text-muted" src="./../assets/media/heroicons/solid/lock-closed.svg" alt=""> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item friends unread">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar avatar-offline bg-info text-light">
-                                            <span>EW</span>
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">اوا واکر</h6>
-                                                <div class="chat-time">09:36 ق.ظ</div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <p class="text-truncate">شوخی می کنی! موتور سیکلت هم می رانم. چه نوع دوچرخه ای دارید؟</p>
-                                                <div class="badge badge-rounded badge-primary ml-1">2</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item friends">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar avatar-busy"><img src="../assets/media/avatar/3.png" alt=""></div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">کریستوفر گارسیا</h6>
-                                                <div class="chat-time"><span>دیروز</span></div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20 text-muted" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable text-muted" src="./../assets/media/heroicons/solid/photograph.svg" alt=""> -->
-                                                <p class="text-truncate">عکس</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item unread">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar avatar-online">
-                                            <img src="../assets/media/avatar/4.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">کریستینا ترنر</h6>
-                                                <div class="chat-time">
-                                                    <span>00/05/20</span>
-                                                </div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <p class="text-truncate">من در رشته های ریاضی، فیزیک و شیمی سخت کار می کنم. من قصد دارم بعد از XII در IIT ظاهر شوم.</p>
-                                                <div class="badge badge-rounded badge-primary ml-1">10</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item friends">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar avatar-offline">
-                                            <img src="../assets/media/avatar/5.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">تامی مارتینز</h6>
-                                                <div class="chat-time">
-                                                    <span>01/04/20</span>
-                                                </div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20 text-muted" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable text-muted" src="./../assets/media/heroicons/solid/document-report.svg" alt=""> -->
-                                                <p class="text-truncate">project_guidelines.docs</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item friends">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar avatar-online"><img src="../assets/media/avatar/6.png" alt=""></div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">بانی تورس</h6>
-                                                <div class="chat-time"><span>01/04/20</span></div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <p class="text-truncate">بعد به شما ملحق میشم! خداحافظ!</p>
-                                                <div class="d-inline-flex align-items-center ml-1">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-16 text-muted" viewBox="0 0 20 20" fill="currentColor">
-                                                        <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                                                    </svg>
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-16 text-muted" src="./../assets/media/heroicons/solid/volume-off.svg" alt=""> -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item friends">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar avatar-offline"><img src="../assets/media/avatar/7.png" alt=""></div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">ژاکلین جیمز</h6>
-                                                <div class="chat-time"><span>01/02/20</span></div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                                <p class="text-truncate">تماس از دست رفته</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-
-                                <!-- Chat Item Start -->
-                                <li class="contacts-item archived">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar avatar-away"><img src="../assets/media/avatar/8.png" alt=""></div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name">آنی ریچاردسون</h6>
-                                                <div class="chat-time"><span>01/12/19</span></div>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <p class="text-truncate">فکر می کنم همه چیزهایی را که نیاز دارم، متشکرم!</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- Chat Item End -->
-                            </ul>
+                            <ul class="contacts-list" id="chatContactTab" data-chat-list=""></ul>
+                               
                             <!-- Chat Contact List End -->
                         </div>
                     </div>
@@ -517,271 +299,14 @@
                             <!-- Call Contact List Start -->
                             <ul class="contacts-list" id="callLogTab" data-call-list="">
 
-                                <!-- Call Item Start -->
-                                <li class="contacts-item incoming active">
-                                    <a href="#" class="media-link"></a>
-                                    <div class="contacts-link">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/2.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کاترین ریچاردسون</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
+                                
+                              
+                             
 
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                                <p class="text-muted mb-0">همین الان</p>
-                                            </div>
-                                        </div>
-                                        <div class="contacts-action">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                </svg>
 
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Call Item End -->
+                                
 
-                                <!-- Call Item Start -->
-                                <li class="contacts-item outgoing">
-                                    <a href="#" class="media-link"></a>
-                                    <div class="contacts-link outgoing">
-                                        <div class="avatar bg-info text-light">
-                                            <span>EW</span>
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">اوا واکر</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M17.924 2.617a.997.997 0 00-.215-.322l-.004-.004A.997.997 0 0017 2h-4a1 1 0 100 2h1.586l-3.293 3.293a1 1 0 001.414 1.414L16 5.414V7a1 1 0 102 0V3a.997.997 0 00-.076-.383z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/phone-outgoing.svg" alt=""> -->
-                                                <p class="text-muted mb-0">5 دقیقه پیش</p>
-                                            </div>
-                                        </div>
-                                        <div class="contacts-action">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Call Item End -->
-
-                                <!-- Call Item Start -->
-                                <li class="contacts-item missed">
-                                    <a href="#" class="media-link"></a>
-                                    <div class="contacts-link missed">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کریستوفر گارسیا</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-danger mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-danger mr-1" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                                <p class="text-danger mb-0">20 دقیقه پیش</p>
-                                            </div>
-                                        </div>
-                                        <div class="contacts-action">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Call Item End -->
-
-                                <!-- Call Item Start -->
-                                <li class="contacts-item outgoing">
-                                    <a href="#" class="media-link"></a>
-                                    <div class="contacts-link outgoing">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/4.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کریستینا ترنر</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M17.924 2.617a.997.997 0 00-.215-.322l-.004-.004A.997.997 0 0017 2h-4a1 1 0 100 2h1.586l-3.293 3.293a1 1 0 001.414 1.414L16 5.414V7a1 1 0 102 0V3a.997.997 0 00-.076-.383z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/phone-outgoing.svg" alt=""> -->
-                                                <p class="text-muted mb-0">4 پیش</p>
-                                            </div>
-                                        </div>
-                                        <div class="contacts-action">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Call Item End -->
-
-                                <!-- Call Item Start -->
-                                <li class="contacts-item incoming">
-                                    <a href="#" class="media-link"></a>
-                                    <div class="contacts-link incoming">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/5.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">تامی مارتینز</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                                <p class="text-muted mb-0">دیروز</p>
-                                            </div>
-                                        </div>
-                                        <div class="contacts-action">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Call Item End -->
-
-                                <!-- Call Item Start -->
-                                <li class="contacts-item incoming">
-                                    <a href="#" class="media-link"></a>
-                                    <div class="contacts-link incoming">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/6.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">بانی تورس</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M14.414 7l3.293-3.293a1 1 0 00-1.414-1.414L13 5.586V4a1 1 0 10-2 0v4.003a.996.996 0 00.617.921A.997.997 0 0012 9h4a1 1 0 100-2h-1.586z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/phone-incoming.svg" alt=""> -->
-                                                <p class="text-muted mb-0">12/06/2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="contacts-action">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Call Item End -->
-
-                                <!-- Call Item Start -->
-                                <li class="contacts-item outgoing">
-                                    <a href="#" class="media-link"></a>
-                                    <div class="contacts-link outgoing">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/7.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">ژاکلین جیمز</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path d="M17.924 2.617a.997.997 0 00-.215-.322l-.004-.004A.997.997 0 0017 2h-4a1 1 0 100 2h1.586l-3.293 3.293a1 1 0 001.414 1.414L16 5.414V7a1 1 0 102 0V3a.997.997 0 00-.076-.383z"></path>
-                                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/phone-outgoing.svg" alt=""> -->
-                                                <p class="text-muted mb-0">16/05/2020</p>
-                                            </div>
-                                        </div>
-                                        <div class="contacts-action">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- Call Item End -->
+                         
 
                             </ul>
                             <!-- Call Contact List Start -->
@@ -892,55 +417,9 @@
                                 </li>
                                 <!-- Item Series End -->
 
-                                <!-- friends Item Start -->
-                                <li class="contacts-item active">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">آلبرت کی یوهانسن</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
+                          
 
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">سان فرانسیسکو، کالیفرنیا</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
-
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">آلیس آر. بوتلو</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">برنت وود، نیویورک</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
+                            
 
                                 <!-- Item Series Start -->
                                 <li>
@@ -948,30 +427,7 @@
                                 </li>
                                 <!-- Item Series End -->
 
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">بریتنی کی ویلیامز</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">اسکرانتون، پی</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
+                            
 
                                 <!-- Item Series Start -->
                                 <li>
@@ -979,55 +435,8 @@
                                 </li>
                                 <!-- Item Series End -->
 
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کریستوفر گارسیا</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">ریورساید، کالیفرنیا</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
-
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کیسی مک براید</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">زفیر، NC</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
+                               
+                         
 
                                 <!-- Item Series Start -->
                                 <li>
@@ -1035,29 +444,7 @@
                                 </li>
                                 <!-- Item Series End -->
 
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">جما مندز</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">فردریک، MD</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                            
                                 <!-- friends Item End -->
 
                                 <!-- Item Series Start -->
@@ -1066,54 +453,9 @@
                                 </li>
                                 <!-- Item Series End -->
 
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کاتلین والدز</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
+                           
 
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">جکسون، تی ان</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
-
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">کاترین اشنایدر</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">ساگیناو، MI</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                            
                                 <!-- friends Item End -->
 
                                 <!-- Item Series Start -->
@@ -1122,30 +464,7 @@
                                 </li>
                                 <!-- Item Series End -->
 
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">میزی ادواردز</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">گرینزبورو، NC</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
+                            
 
                                 <!-- Item Series Start -->
                                 <li>
@@ -1153,30 +472,6 @@
                                 </li>
                                 <!-- Item Series End -->
 
-                                <!-- friends Item Start -->
-                                <li class="contacts-item">
-                                    <a class="contacts-link" href="#">
-                                        <div class="avatar">
-                                            <img src="../assets/media/avatar/3.png" alt="">
-                                        </div>
-                                        <div class="contacts-content">
-                                            <div class="contacts-info">
-                                                <h6 class="chat-name text-truncate">سوزان کی تیلور</h6>
-                                            </div>
-                                            <div class="contacts-texts">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-16 text-muted mr-1" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-16 text-muted mr-1" src="./../assets/media/heroicons/solid/location-marker.svg" alt=""> -->
-                                                <p class="text-muted mb-0">سنترویل، ویرجینیا</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <!-- friends Item End -->
 
                             </ul>
                             <!-- Friends Contact List End -->
@@ -1490,33 +785,30 @@
 
             <!-- Chats Page Start -->
             <div class="chats">
-                <!-- Chat Body Start -->
                 <div class="chat-body">
 
                     <!-- Chat Header Start-->
                     <div class="chat-header">
                         <!-- Chat Back Button (Visible only in Small Devices) -->
-                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm d-xl-none" type="button" data-close="">
+                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted d-xl-none" type="button" data-close="">
+                            <!-- Default :: Inline SVG -->
                             <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
                             </svg>
+
+                            <!-- Alternate :: External File link -->
                             <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/arrow-left.svg" alt=""> -->
                         </button>
 
                         <!-- Chat participant's Name -->
                         <div class="media chat-name align-items-center text-truncate">
-                            <div class="avatar bg-success text-light d-none d-sm-inline-block mr-3">
-                                <span>
-                                    <svg class="hw-24" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                    </svg>
-                                    <!-- <img class="injectable" src="./../assets/media/heroicons/outline/user-group.svg" alt=""> -->
-                                </span>
+                            <div class="comingavatar avatar avatar-online d-none d-sm-inline-block mr-3">
+                                <img src="../assets/media/avatar/2.png" alt="" >
                             </div>
 
-                            <div class="media-body align-self-center ">
-                                <h6 class="text-truncate mb-0">گروه</h6>
-                                <small class="text-muted">252 شرکت کننده</small>
+                            <div class="comingname media-body align-self-center ">
+                                <h6 class="text-truncate mb-0" id="changingname">کاترین ریچاردسون</h6>
+                                <small class="text-muted" id="comingstatus">برخط</small>
                             </div>
                         </div>
 
@@ -1524,77 +816,99 @@
                         <ul class="nav flex-nowrap">
                             <li class="nav-item list-inline-item d-none d-sm-block mr-1">
                                 <a class="nav-link text-muted px-1" data-toggle="collapse" data-target="#searchCollapse" href="#" aria-expanded="false">
+                                    <!-- Default :: Inline SVG -->
                                     <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                     </svg>
 
+                                    <!-- Alternate :: External File link -->
                                     <!-- <img src="./../assets/media/heroicons/outline/search.svg" alt="" class="injectable hw-20"> -->
                                 </a>
                             </li>
 
                             <li class="nav-item list-inline-item d-none d-sm-block mr-1">
                                 <a class="nav-link text-muted px-1" href="#" title="اضافه کردن مردم">
+                                    <!-- Default :: Inline SVG -->
                                     <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                     </svg>
+
+                                    <!-- Alternate :: External File link -->
                                     <!-- <img src="./../assets/media/heroicons/outline/phone.svg" alt="" class="injectable hw-20"> -->
                                 </a>
                             </li>
                             <li class="nav-item list-inline-item d-none d-sm-block mr-0">
                                 <div class="dropdown">
                                     <a class="nav-link text-muted px-1" href="#" role="button" title="جزئیات" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <!-- Default :: Inline SVG -->
                                         <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
                                         </svg>
+
+                                        <!-- Alternate :: External File link -->
                                         <!-- <img src="./../assets/media/heroicons/outline/dots-vertical.svg" alt="" class="injectable hw-20"> -->
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-left">
                                         <a class="dropdown-item align-items-center d-flex" href="#" data-chat-info-toggle="">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/information-circle.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>مشاهده اطلاعات</span>
                                         </a>
 
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
                                             </svg>
+
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/volume-off.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>نادیده گرفتن اعلان ها</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                             </svg>
+
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/photograph.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>کاغذ دیواری</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/archive.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>بایگانی</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/trash.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>حذف</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex text-danger" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/ban.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>مسدود کردن</span>
                                         </a>
@@ -1604,72 +918,96 @@
                             <li class="nav-item list-inline-item d-sm-none mr-0">
                                 <div class="dropdown">
                                     <a class="nav-link text-muted px-1" href="#" role="button" title="جزئیات" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <!-- Default :: Inline SVG -->
                                         <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
                                         </svg>
+
+                                        <!-- Alternate :: External File link -->
                                         <!-- <img src="./../assets/media/heroicons/outline/dots-vertical.svg" alt="" class="injectable hw-20"> -->
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-left">
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                                             </svg>
+
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/phone.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>زنگ زدن</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex" href="#" data-toggle="collapse" data-target="#searchCollapse" aria-expanded="false">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
                                             </svg>
+
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/search.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>جستجو کردن</span>
                                         </a>
 
                                         <a class="dropdown-item align-items-center d-flex" href="#" data-chat-info-toggle="">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/information-circle.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>مشاهده اطلاعات</span>
                                         </a>
 
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd"></path>
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
                                             </svg>
+
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/volume-off.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>نادیده گرفتن اعلان ها</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                             </svg>
+
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/photograph.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>کاغذ دیواری</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
                                             </svg>
+
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/archive.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>بایگانی</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/trash.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>حذف</span>
                                         </a>
                                         <a class="dropdown-item align-items-center d-flex text-danger" href="#">
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img src="./../assets/media/heroicons/outline/ban.svg" alt="" class="injectable hw-20 mr-2"> -->
                                             <span>مسدود کردن</span>
                                         </a>
@@ -1684,13 +1022,15 @@
                     <div class="collapse border-bottom px-3" id="searchCollapse">
                         <div class="container-xl py-2 px-0 px-md-3">
                             <div class="input-group bg-light ">
-                                <input type="text" class="form-control form-control-md border-right-0 bg-transparent pr-0" placeholder="جستجو کردن...">
+                                <input type="text" class="form-control form-control-md border-right-0 transparent-bg pr-0" placeholder="جستجو کردن...">
                                 <div class="input-group-append">
-                                    <span class="input-group-text bg-transparent border-left-0">
-                                        <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <span class="input-group-text transparent-bg border-left-0">
+                                        <!-- Default :: Inline SVG -->
+                                        <svg class="hw-20 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                                          </svg>
+                                        </svg>
 
+                                        <!-- Alternate :: External File link -->
                                         <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/search.svg" alt="Search icon"> -->
                                     </span>
                                 </div>
@@ -1701,7 +1041,7 @@
                     <!-- Search End -->
 
                     <!-- Chat Content Start-->
-                    <div class="chat-content p-2">
+                    <div class="chat-content p-2" id="messageBody">
                         <div class="container">
 
                             <!-- Message Day Start -->
@@ -1713,13 +1053,12 @@
                                 <div class="message">
                                     <div class="message-wrapper">
                                         <div class="message-content">
-                                            <h6 class="text-dark">بریتنی ویلیامز</h6>
-                                            <span>وای! امروز 30 اکتبر است! هالووین فردا است! آیا هنوز تصمیم گرفته‌ای که برای هالووین چه لباسی بپوشی، سارا؟</span>
+                                            <span id="message">من باید روز جمعه در مورد گرم شدن کره زمین سخنرانی کنم و خیلی عصبی هستم.</span>
                                         </div>
                                     </div>
                                     <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/1.png"></div>
-                                        <span class="message-date">9:12 صبح</span>
+                                        <div class="comingavatar avatar avatar-sm" ><img alt="" src="../assets/media/avatar/6.png"></div>
+                                        <span class="message-date" id="time">9:12 صبح</span>
                                         <div class="dropdown">
                                             <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <!-- Default :: Inline SVG -->
@@ -1791,429 +1130,8 @@
                                 <!-- Self Message Start -->
                                 <div class="message self">
                                     <div class="message-wrapper">
-                                        <div class="message-content">من هنوز مطمئن نیستم که چه چیزی می خواهم باشم. من می خواهم یا پروانه باشم یا کدو تنبل. اما چرا برای هالووین لباس می پوشیم؟</div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/6.png"></div>
-
-                                        <span class="message-date">9:12 صبح</span>
-                                        <span class="message-status">ویرایش شده</span>
-
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/pencil.svg" alt="message edit"> -->
-                                                    <span>ویرایش کنید</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Self Message End -->
-
-                                <!-- Received Message Start -->
-                                <div class="message">
-                                    <div class="message-wrapper">
                                         <div class="message-content">
-                                            <h6 class="text-dark">ژاکلین جیمز</h6>
-                                            <span>هالووین جشنواره ای برای کودکان است و لباس ها آن را خاص تر می کند. فکر می‌کنم بعد از غروب آفتاب با لباس‌های مورد علاقه‌مان از خانه به خانه رفتن و درخواست آب‌نبات (ترفند) لذت بیشتری می‌بریم.</span>
-                                        </div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/7.png"></div>
-                                        <span class="message-date">9:12 صبح</span>
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Received Message End -->
-
-                                <!-- Received Message Start -->
-                                <div class="message">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">
-                                            <h6 class="text-dark">بانی تورس</h6>
-                                            <span>بله، یادم می آید که سال گذشته زمانی که مامان با لباس خرگوش من را به آنجا برد، خیلی خوش گذشت. می دانی هنوز چه می خواهی باشی، پاتریک؟</span>
-                                        </div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/2.png"></div>
-                                        <span class="message-date">9:12 صبح</span>
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Received Message End -->
-
-                                <!-- Self Message Start -->
-                                <div class="message self">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">من می خواهم بتمن باشم! من پوشیدن شنل و ماسک را دوست دارم. به نظر من شما باید یک پروانه باشید. تو خیلی کوتاه‌تر از من هستی و لباس کدو تنبل پوشیده‌ای، ممکن است کسی فکر کند که تو واقعاً یکی هستی و سعی کند از تو کیک درست کند.</div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/6.png"></div>
-
-                                        <span class="message-date">9:12 صبح</span>
-
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/pencil.svg" alt="message edit"> -->
-                                                    <span>ویرایش کنید</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Self Message End -->
-
-                                <!-- Received Message Start -->
-                                <div class="message">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">
-                                            <h6 class="text-dark">آنی ریچاردسون</h6>
-                                            <span>چطور ممکن است کسی مرا با یک کدو تنبل واقعی اشتباه بگیرد؟ کدو تنبل های واقعی سر، دست و پا ندارند. اما فکر می کنم به هر حال من یک پروانه خواهم بود. من می توانم بال های زیبایی داشته باشم</span>
-                                        </div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/5.png"></div>
-                                        <span class="message-date">9:12 صبح</span>
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Received Message End -->
-                            </div>
-                            <!-- Message Day End -->
-
-                            <!-- Message Day Start -->
-                            <div class="message-day">
-
-                                <div class="message-divider sticky-top pb-2" data-label="امروز">&nbsp;</div>
-
-                                <!-- Self Message Start -->
-                                <div class="message self">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">
-                                            <span>عالی! پس تو پروانه میشی و من بتمن. بیا برویم از مامان بپرسیم که آیا می توانیم فردا شب خودمان ترفند کنیم؟ گرچه تو هنوز جوانی، فکر می‌کنم آنقدر بزرگ شده‌ام که بتوانم مراقب هر دوی ما باشم.</span>
+                                            <span id="message-chat">اول از همه، شما باید موضوع را به طور کامل درک کنید. شما باید بدانید گرمایش زمین چیست، چه چیزی باعث گرم شدن کره زمین می شود و مردم برای کاهش اثرات گرمایش جهانی چه باید بکنند.</span>
                                         </div>
                                     </div>
                                     <div class="message-options">
@@ -2221,342 +1139,6 @@
 
                                         <span class="message-date">9:12 صبح</span>
                                         <span class="message-status">ویرایش شده</span>
-
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/pencil.svg" alt="message edit"> -->
-                                                    <span>ویرایش کنید</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Self Message End -->
-
-                                <!-- Received Message Start -->
-                                <div class="message">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">
-                                            <h6 class="text-dark">کاترین اشنایدر</h6>
-                                            <span>باشه بریم از مامان بپرسیم</span>
-                                        </div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/4.png"></div>
-                                        <span class="message-date">9:12 صبح</span>
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Received Message End -->
-
-                                <!-- Self Message Start -->
-                                <div class="message self">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">
-                                            <span>مامان! آیا من و سارا می‌توانیم فردا به تنهایی دست به ترفند بزنیم؟ من می توانم مراقب سارا باشم و مطمئن شوم که او از دردسر دور می شود.</span>
-                                        </div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/6.png"></div>
-
-                                        <span class="message-date">9:12 صبح</span>
-
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/pencil.svg" alt="message edit"> -->
-                                                    <span>ویرایش کنید</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Self Message End -->
-
-                                <!-- Received Message Start -->
-                                <div class="message">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">
-                                            <h6 class="text-dark">جما مندز</h6>
-                                            <span>بله مامان. اگر خودمان برویم، پس می توانید در خانه بمانید و استراحت کنید. شما مجبور نخواهید بود در انتظار ما سرد شوید.</span>
-                                        </div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/3.png"></div>
-                                        <span class="message-date">9:12 صبح</span>
-                                        <div class="dropdown">
-                                            <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <!-- Default :: Inline SVG -->
-                                                <svg class="hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-                                                </svg>
-
-                                                <!-- Alternate :: External File link -->
-                                                <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/dots-horizontal.svg" alt="message options"> -->
-                                            </a>
-
-                                            <div class="dropdown-menu dropdown-menu-left">
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/duplicate.svg" alt="message options"> -->
-                                                    <span>کپی</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message replay"> -->
-                                                    <span>بازپخش</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 rotate-y mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable rotate-y hw-18 mr-2" src="./../assets/media/heroicons/outline/reply.svg" alt="message forward"> -->
-                                                    <span>رو به جلو</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/star.svg" alt="message favourite"> -->
-                                                    <span>مورد علاقه</span>
-                                                </a>
-                                                <a class="dropdown-item d-flex align-items-center text-danger" href="#">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18 mr-2" src="./../assets/media/heroicons/outline/trash.svg" alt="message delete"> -->
-                                                    <span>حذف</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Received Message End -->
-
-                                <!-- Self Message Start -->
-                                <div class="message self">
-                                    <div class="message-wrapper">
-                                        <div class="message-content">از پیشنهادت متشکرم، پاتریک. با این حال، اگر شما و برادرتان تا زمانی که من در خانه می مانم، خودتان بروید، نگران می شوم و نمی توانم آرام بگیرم. بگذارید از کریستین یا ایان بپرسم که آیا یکی از آنها می تواند با هر دوی شما همراه شود. سپس می توانم در خانه بمانم و استراحت کنم. کریستین! ایان!</div>
-                                    </div>
-                                    <div class="message-options">
-                                        <div class="avatar avatar-sm"><img alt="" src="../assets/media/avatar/6.png"></div>
-
-                                        <span class="message-date">9:12 صبح</span>
 
                                         <div class="dropdown">
                                             <a class="text-muted" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -2656,59 +1238,74 @@
                                         <!-- Attachment Start -->
                                         <div class="input-group-prepend mr-sm-2 mr-1">
                                             <div class="dropdown">
-                                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <!-- Default :: Inline SVG -->
                                                     <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                                     </svg>
 
+                                                    <!-- Alternate :: External File link -->
                                                     <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/plus-circle.svg" alt=""> -->
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-left">
                                                     <a class="dropdown-item" href="#">
+                                                        <!-- Default :: Inline SVG -->
                                                         <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                                         </svg>
+
+                                                        <!-- Alternate :: External File link -->
                                                         <!-- <img class="injectable hw-20 mr-2" src="./../assets/media/heroicons/outline/photograph.svg" alt=""> -->
                                                         <span>گالری</span>
                                                     </a>
                                                     <a class="dropdown-item" href="#">
+                                                        <!-- Default :: Inline SVG -->
                                                         <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
                                                         </svg>
 
+                                                        <!-- Alternate :: External File link -->
                                                         <!-- <img class="injectable hw-20 mr-2" src="./../assets/media/heroicons/outline/volume-up.svg" alt=""> -->
                                                         <span>سمعی</span>
                                                     </a>
                                                     <a class="dropdown-item" href="#">
+                                                        <!-- Default :: Inline SVG -->
                                                         <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                                                         </svg>
 
+                                                        <!-- Alternate :: External File link -->
                                                         <!-- <img class="injectable hw-20 mr-2" src="./../assets/media/heroicons/outline/document.svg" alt=""> -->
                                                         <span>سند</span>
                                                     </a>
                                                     <a class="dropdown-item" href="#">
+                                                        <!-- Default :: Inline SVG -->
                                                         <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                                                         </svg>
 
+                                                        <!-- Alternate :: External File link -->
                                                         <!-- <img class="injectable hw-20 mr-2" src="./../assets/media/heroicons/outline/user.svg" alt=""> -->
                                                         <span>مخاطب</span>
                                                     </a>
                                                     <a class="dropdown-item" href="#">
+                                                        <!-- Default :: Inline SVG -->
                                                         <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                                         </svg>
 
+                                                        <!-- Alternate :: External File link -->
                                                         <!-- <img class="injectable hw-20 mr-2" src="./../assets/media/heroicons/outline/location-marker.svg" alt=""> -->
                                                         <span>محل</span>
                                                     </a>
                                                     <a class="dropdown-item" href="#">
+                                                        <!-- Default :: Inline SVG -->
                                                         <svg class="hw-20 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                                                         </svg>
 
+                                                        <!-- Alternate :: External File link -->
                                                         <!-- <img class="injectable hw-20 mr-2" src="./../assets/media/heroicons/outline/chart-square-bar.svg" alt=""> -->
                                                         <span>نظرسنجی</span>
                                                     </a>
@@ -2719,18 +1316,22 @@
 
                                         <!-- Emoji Start -->
                                         <div class="input-group-prepend mr-sm-2 mr-1">
-                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm" type="button">
+                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button">
+                                                <!-- Default :: Inline SVG -->
                                                 <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                                 </svg>
 
+                                                <!-- Alternate :: External File link -->
                                                 <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/emoji-happy.svg" alt=""> -->
                                             </button>
                                         </div>
                                         <!-- Emoji End -->
 
+
+
                                         <!-- Textarea Start-->
-                                        <textarea class="form-control bg-transparent border-0 no-resize hide-scrollbar" placeholder="پیام خود را بنویسید..." rows="1"></textarea>
+                                        <textarea class="form-control transparent-bg border-0 no-resize hide-scrollbar" placeholder="پیام خود را بنویسید..." rows="1"></textarea>
                                         <!-- Textarea End -->
                                     </div>
                                 </div>
@@ -2739,11 +1340,13 @@
                                 <!-- Submit Button Start -->
                                 <div class="col-auto">
                                     <div class="btn btn-primary btn-icon rounded-circle text-light mb-1" role="button">
+                                        <!-- Default :: Inline SVG -->
                                         <svg class="hw-24 rotate-y" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                                         </svg>
 
-                                        <!-- <img src="./../assets/media/heroicons/outline/arrow-right.svg" alt="" class="injectable"> -->
+                                        <!-- Alternate :: External File link -->
+                                        <!-- <img src="./../assets/media/heroicons/outline/arrow-right.svg" alt="" class="injectable hw-24"> -->
                                     </div>
                                 </div>
                                 <!-- Submit Button End-->
@@ -2752,7 +1355,6 @@
                     </div>
                     <!-- Chat Footer End-->
                 </div>
-                <!-- Chat Body End -->
 
                 <!-- Chat Info Start -->
                 <div class="chat-info chat-info-visible">
@@ -2771,11 +1373,12 @@
                                     <!-- Close Sidebar Start -->
                                     <li class="nav-item list-inline-item">
                                         <a class="nav-link text-muted px-0" href="#" data-chat-info-close="">
-
+                                            <!-- Default :: Inline SVG -->
                                             <svg class="hw-22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                                             </svg>
 
+                                            <!-- Alternate :: External File link -->
                                             <!-- <img class="injectable hw-22" src="./../assets/media/heroicons/outline/x.svg" alt=""> -->
 
                                         </a>
@@ -2788,221 +1391,109 @@
 
                         <!-- Chat Info Body Start  -->
                         <div class="hide-scrollbar flex-fill">
+
                             <!-- User Profile Start -->
-                            <div class="border-bottom text-center p-3">
+                            <div class="text-center p-3">
 
                                 <!-- User Profile Picture -->
-                                <div class="avatar bg-success text-light avatar-xl mx-5 mb-3">
-                                    <span>
-                                        <svg class="hw-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                        </svg>
-                                        <!-- <img class="injectable hw-50" src="./../assets/media/heroicons/outline/user-group.svg" alt=""> -->
-                                    </span>
+                                <div class="comingavatar avatar avatar-xl mx-5 mb-3">
+                                    <img class=" avatar-img" src="../assets/media/avatar/2.png" alt="">
                                 </div>
 
                                 <!-- User Info -->
-                                <h5 class="mb-1">گروه</h5>
+                                <div class="comingname">
+                                <h6 class=" mb-1">کاترین ریچاردسون</h6>
+                                </div>
                                 <p class="text-muted d-flex align-items-center justify-content-center">
-                                    <svg class="mr-1 hw-18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <!-- Default :: Inline SVG -->
+                                    <svg class="hw-18 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                     </svg>
 
+                                    <!-- Alternate :: External File link -->
                                     <!-- <img class="injectable mr-1 hw-18" src="./../assets/media/heroicons/outline/location-marker.svg" alt=""> -->
-                                    <span>252 شرکت کننده</span>
+                                    <span>سان فرانسیسکو، کالیفرنیا</span>
                                 </p>
+
+                                <!-- User Quick Options -->
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <div class="btn btn-outline-default btn-icon rounded-circle mx-1">
+                                        <!-- Default :: Inline SVG -->
+                                        <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path>
+                                        </svg>
+
+                                        <!-- Alternate :: External File link -->
+                                        <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/user-add.svg" alt=""> -->
+                                    </div>
+                                    <div class="btn btn-primary btn-icon rounded-circle text-light mx-1">
+                                        <!-- Default :: Inline SVG -->
+                                        <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                        </svg>
+
+                                        <!-- Alternate :: External File link -->
+                                        <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/heart.svg" alt=""> -->
+                                    </div>
+                                    <div class="btn btn-danger btn-icon rounded-circle text-light mx-1">
+                                        <!-- Default :: Inline SVG -->
+                                        <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"></path>
+                                        </svg>
+
+                                        <!-- Alternate :: External File link -->
+                                        <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/ban.svg" alt=""> -->
+                                    </div>
+                                </div>
                             </div>
                             <!-- User Profile End -->
 
-
-                            <!-- Participants Start -->
+                            <!-- User Information Start -->
                             <div class="chat-info-group">
-                                <a class="chat-info-group-header" data-toggle="collapse" href="#participants-list" role="button" aria-expanded="true" aria-controls="participants-list">
-                                    <h6 class="mb-0">شرکت کنندگان گروه</h6>
+                                <a class="chat-info-group-header" data-toggle="collapse" href="#profile-info" role="button" aria-expanded="true" aria-controls="profile-info">
+                                    <h6 class="mb-0">اطلاعات کاربر</h6>
 
+                                    <!-- Default :: Inline SVG -->
                                     <svg class="hw-20 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
-                                    <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/user-group.svg" alt=""> -->
+
+                                    <!-- Alternate :: External File link -->
+                                    <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/information-circle.svg" alt=""> -->
                                 </a>
 
-                                <div class="chat-info-group-body collapse show" id="participants-list">
+                                <div class="chat-info-group-body collapse show" id="profile-info">
                                     <div class="chat-info-group-content list-item-has-padding">
                                         <!-- List Group Start -->
-                                        <ul class="list-group list-group-flush">
+                                        <ul class="list-group list-group-flush ">
 
                                             <!-- List Group Item Start -->
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="avatar mr-2">
-                                                        <img src="../assets/media/avatar/1.png" alt="">
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="text-truncate">
-                                                            <a href="#" class="text-reset">کاترین ریچاردسون</a>
-                                                        </h6>
-                                                        <p class="text-muted mb-0">طراح محصول</p>
-                                                    </div>
-
-                                                    <div class="media-options ml-1">
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                                </svg>
-                                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-left">
-                                                                <a class="dropdown-item" href="#">ساختن مدیر</a>
-                                                                <a class="dropdown-item" href="#">حذف از گروه</a>
-                                                                <a class="dropdown-item" href="#">مسدود کردن</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <li class="list-group-item border-0">
+                                                <p class="small text-muted mb-0">تلفن</p>
+                                                <p class="mb-0">98123456789</p>
                                             </li>
                                             <!-- List Group Item End -->
 
                                             <!-- List Group Item Start -->
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="avatar mr-2">
-                                                        <img src="../assets/media/avatar/2.png" alt="">
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="text-truncate">
-                                                            <a href="#" class="text-reset">میزی ادواردز</a>
-                                                        </h6>
-                                                        <p class="text-muted mb-0">سرگروه</p>
-                                                    </div>
-
-                                                    <div class="media-options ml-1">
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                                </svg>
-                                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-left">
-                                                                <a class="dropdown-item" href="#">ساختن مدیر</a>
-                                                                <a class="dropdown-item" href="#">حذف از گروه</a>
-                                                                <a class="dropdown-item" href="#">مسدود کردن</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <li class="list-group-item border-0">
+                                                <p class="small text-muted mb-0">پست الکترونیک</p>
+                                                <p class="mb-0">info@yoursite.com</p>
                                             </li>
                                             <!-- List Group Item End -->
 
                                             <!-- List Group Item Start -->
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="avatar mr-2">
-                                                        <img src="../assets/media/avatar/3.png" alt="">
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="text-truncate">
-                                                            <a href="#" class="text-reset">بریتنی کی ویلیامز</a>
-                                                        </h6>
-                                                        <p class="text-muted mb-0">طراح UI/UX</p>
-                                                    </div>
-
-                                                    <div class="media-options ml-1">
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                                </svg>
-                                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-left">
-                                                                <a class="dropdown-item" href="#">ساختن مدیر</a>
-                                                                <a class="dropdown-item" href="#">حذف از گروه</a>
-                                                                <a class="dropdown-item" href="#">مسدود کردن</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                            <li class="list-group-item border-0">
+                                                <p class="small text-muted mb-0">نشانی</p>
+                                                <p class="mb-0">ایران، مازندران، بابل، خ نادر، پلاک 1234</p>
                                             </li>
                                             <!-- List Group Item End -->
-
-                                            <!-- List Group Item Start -->
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="avatar mr-2">
-                                                        <img src="../assets/media/avatar/4.png" alt="">
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="text-truncate">
-                                                            <a href="#" class="text-reset">آلبرت کی یوهانسن</a>
-                                                        </h6>
-                                                        <p class="text-muted mb-0">توسعه دهنده Sr</p>
-                                                    </div>
-
-                                                    <div class="media-options ml-1">
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                                </svg>
-                                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-left">
-                                                                <a class="dropdown-item" href="#">ساختن مدیر</a>
-                                                                <a class="dropdown-item" href="#">حذف از گروه</a>
-                                                                <a class="dropdown-item" href="#">مسدود کردن</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!-- List Group Item End -->
-
-                                            <!-- List Group Item Start -->
-                                            <li class="list-group-item">
-                                                <div class="media align-items-center">
-                                                    <div class="avatar mr-2">
-                                                        <img src="../assets/media/avatar/5.png" alt="">
-                                                    </div>
-
-                                                    <div class="media-body">
-                                                        <h6 class="text-truncate">
-                                                            <a href="#" class="text-reset">کریستوفر گارسیا</a>
-                                                        </h6>
-                                                        <p class="text-muted mb-0">مدیر پروژه</p>
-                                                    </div>
-
-                                                    <div class="media-options ml-1">
-                                                        <div class="dropdown">
-                                                            <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                                </svg>
-                                                                <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                            </button>
-                                                            <div class="dropdown-menu dropdown-menu-left">
-                                                                <a class="dropdown-item" href="#">ساختن مدیر</a>
-                                                                <a class="dropdown-item" href="#">حذف از گروه</a>
-                                                                <a class="dropdown-item" href="#">مسدود کردن</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <!-- List Group Item End -->
-
                                         </ul>
                                         <!-- List Group End -->
                                     </div>
                                 </div>
                             </div>
-                            <!-- Participants End -->
+                            <!-- User Information End -->
 
                             <!-- Shared Media Start -->
                             <div class="chat-info-group">
@@ -3016,7 +1507,6 @@
 
                                     <!-- Alternate :: External File link -->
                                     <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/photograph.svg" alt=""> -->
-
                                 </a>
 
                                 <div class="chat-info-group-body collapse show" id="shared-media">
@@ -3048,6 +1538,7 @@
                             <div class="chat-info-group">
                                 <a class="chat-info-group-header" data-toggle="collapse" href="#shared-files" role="button" aria-expanded="true" aria-controls="shared-files">
                                     <h6 class="mb-0">اسناد</h6>
+
                                     <!-- Default :: Inline SVG -->
                                     <svg class="hw-20 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
@@ -3217,7 +1708,6 @@
                                 </div>
                             </div>
                             <!-- Shared Files End -->
-
 
                         </div>
                         <!-- Chat Info Body Start  -->
@@ -4007,8 +2497,10 @@
                 </div>
             </div>
             <!-- Profile Settings End -->
+
         </main>
         <!-- Main End -->
+
 
         <!-- All Modals Start -->
 
@@ -4592,6 +3084,248 @@
             block: 'end',               // "start" | "center" | "end" | "nearest",
             behavior: 'auto'          //"auto"  | "InstaCnt" | "smooth",
         });
+
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('data');
+        console.log(id);
+
+         $.ajax({
+                url: 'fetchchatDetail.php?id=' + id, //URL of the server-side script
+                type: 'POST',
+              
+                success: function(data) {
+                    //Handle the response data
+                    console.log(data);
+                    const response = JSON.parse(data);
+                    console.log(response);
+
+                    document.getElementById('time').innerHTML = response.created_at;
+                    document.getElementById('message').innerHTML = response.last_message;
+                   // document.getElementById('comingname').innerHTML = response.sender_name;
+                    document.getElementById('comingstatus').innerHTML = response.status;
+                  
+                 
+                    // Get references to both h6 elements
+                    const h6Elements = document.querySelectorAll(".comingname h6"); // Target all h6 elements within divs with class "comingname"
+
+                    // Update the text content of all h6 elements
+                    h6Elements.forEach(h6 => {
+                    h6.textContent = response.sender_name;
+                    });
+
+
+                    const sharedAvatars = document.querySelectorAll(".comingavatar");
+                    sharedAvatars.forEach(avatar => {
+                    avatar.querySelector("img").src = response.avatar;
+                    });
+
+
+
+
+                                     
+                    
+               
+                               
+
+
+                        },
+                        error: function(xhr, status, error) {
+                            //Handle any errors
+                            console.error('Error fetching user data:', error);
+                        }
+                        });
+
+
+
+                         // ajax call for chat contact tab
+                         $.ajax({
+                                url: 'chatcontacts.php', //URL of the server-side script
+                                type: 'POST',
+                                success: function(data) {
+                                    //Handle the response data
+                                    console.log(data);
+                                    const response = JSON.parse(data);
+                                    
+                                   
+                                            // Loop through each contact and populate the template
+                                            response.forEach(contact => {
+                                            const chatTemplate = `
+                                                <li class="contacts-item friends"> 
+                                                <a class="contacts-link" href=${contact.chatDetailPage}?data=${contact.id}>
+                                                    <div class="avatar avatar-online">
+                                                        <img id="avatarimage" src="${contact.avatar}" alt="">
+                                                    </div>
+                                                    <div class="contacts-content">
+                                                        <div class="contacts-info">
+                                                            <h6 class="chat-name text-truncate" id="chat-name"> ${contact.sender_name} </h6>
+                                                            <div class="chat-time" id="chat-time"> ${contact.created_at} </div>
+                                                        </div>
+                                                        <div class="contacts-texts">
+                                                            <p class="text-truncate" id="chat-texts"> ${contact.last_message} </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+
+                                              
+                                            `;
+
+                                            
+                                            // Append the template to the chat container
+                                            document.getElementById("chatContactTab").innerHTML += chatTemplate;
+                                            });
+
+                               
+
+
+                                },
+                                error: function(xhr, status, error) {
+                                    //Handle any errors
+                                    console.error('Error fetching user data:', error);
+                                }
+                                });
+
+                               // drop down option on the right for category of chats
+                                function dropdown(){
+
+                                                                        // Get the dropdown button element
+                                const dropdownButton = document.querySelector(".dropdown-toggle");
+
+                                // Add an event listener for the 'click' event on the button
+                                dropdownButton.addEventListener("click", function() {
+                                // Get the dropdown menu element
+                                const dropdownMenu = this.nextElementSibling; // Access the next sibling element (the dropdown menu)
+
+                                // Get all dropdown items within the menu
+                                const dropdownItems = dropdownMenu.querySelectorAll(".dropdown-item");
+
+                                // Loop through each dropdown item
+                                dropdownItems.forEach(item => {
+                                    // Add a 'click' event listener to each item
+                                    item.addEventListener("click", function() {
+                                    const selectedFilter = this.dataset.select; // Access the data-select attribute
+                                    console.log("Selected filter:", selectedFilter); // For demonstration purposes
+
+                                    // Implement your logic to switch functionality based on the selected filter
+                                    switch (selectedFilter) {
+                                        case "all-chats":
+                                        // Code to handle "all chats" selection
+                                        break;
+                                        case "friends":
+                                        // Code to handle "friends" selection
+                                        break;
+                                        case "groups":
+                                        // Code to handle "groups" selection
+                                        break;
+                                        case "unread":
+                                          // Fetch unread chat data using AJAX
+                                        const xhttp = new XMLHttpRequest();
+                                        xhttp.onreadystatechange = function() {
+                                            if (this.readyState === 4 && this.status === 200) {
+                                            // Parse the response (assuming JSON format)
+                                            const unreadChats = JSON.parse(this.responseText);
+
+                                            // Update the chatContactTab element with unread chat data
+                                            updateChatContactTab(unreadChats);
+                                            }
+                                        };
+                                        xhttp.open("GET", "chatcontacts.php?filter=unread", true); // Set filter parameter for unread chats
+                                        xhttp.send();
+                                        break;
+                                        case "archived":
+                                        // Code to handle "archived" selection
+                                        break;
+                                        default:
+                                        // Handle any unexpected selection
+                                    }
+                                    });
+                                });
+                                });
+
+
+                                }
+                                
+                                dropdown();
+
+                                // Function to update chatContactTab with unread message(implementation details depend on your HTML structure)
+                                function updateChatContactTab(unreadChats) {
+                                const chatContactTab = document.getElementById("chatContactTab"); // Replace with your actual element ID
+                                chatContactTab.innerHTML = ""; // Clear existing content
+
+                                // Loop through unreadChats and create UI elements (replace with your HTML generation logic)
+                                unreadChats.forEach(chat => {
+                                    const contactElement = document.createElement("div"); // Create a container element
+                                    contactElement.classList.add("chat-contact"); // Add a class for styling
+
+                                    // Add content based on chat data (name, avatar, etc.)
+                                    contactElement.innerHTML = `
+                                    
+                                    <li class="contacts-item friends"> 
+                                                <a class="contacts-link" href=>
+                                                    <div class="avatar avatar-online">
+                                                        <img id="avatarimage" src="${chat.avatar}" alt="">
+                                                    </div>
+                                                    <div class="contacts-content">
+                                                        <div class="contacts-info">
+                                                            <h6 class="chat-name text-truncate" id="chat-name"> ${chat.sender_name} </h6>
+                                                            <div class="chat-time" id="chat-time"> ${chat.created_at} </div>
+                                                        </div>
+                                                        <div class="contacts-texts">
+                                                            <p class="text-truncate" id="chat-texts"> ${chat.last_message} </p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                   `
+                                                
+                                    ;
+                                    
+                                    chatContactTab.appendChild(contactElement);
+                                });
+                                }
+
+
+                                // set message-content
+                                $(document).ready(function() {
+                                    // Attach click event listener to each contact item
+                                    $('.contacts-item').click(function() {
+                                        const contactId = $(this).data('contactId');
+
+                                        // Fetch chat content for the selected contact using AJAX
+                                        $.ajax({
+                                        url: '"chatcontacts.php', // Replace with your actual endpoint
+                                        dataType: 'json',
+                                        data: { contactId: contactId },
+                                        success: function(data) {
+                                            // Clear existing chat content
+                                            $('#messageBody').empty();
+
+                                            // Loop through retrieved chat data and create elements
+                                            data.messages.forEach(function(message) {
+                                            const messageHtml = `
+                                                <div class="message">
+                                                <div class="message-wrapper">
+                                                    <div class="message-content">
+                                                    <span id="message">${message.text}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="message-options">
+                                                    <div class="comingavatar avatar avatar-sm"><img alt="" src="${message.sender.avatar}"></div>
+                                                    <span class="message-date" id="time">${message.timestamp}</span>
+                                                    </div>
+                                                </div>`;
+
+                                            // Append the message element to chat content
+                                            $('#messageBody').append(messageHtml);
+                                            });
+                                        }
+                                        });
+                                    });
+                                    });
+
     </script>
 </body>
+
 </html>
