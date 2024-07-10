@@ -1,0 +1,617 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1720387252722,
+    "data": [
+        {
+            "type": "folder",
+            "name": "assets"
+        },
+        {
+            "type": "folder",
+            "name": "dark-skin"
+        },
+        {
+            "type": "file",
+            "name": "index.html",
+            "size": 32444,
+            "hash": "a95796b62b11202b0297e42a36f8eacfa651c7fa8d631b4451935e813fa22e30"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 6484,
+            "hash": "0ddd0d1b0d0b6572aafa86680358e98b6e2ccf8585d29204132ab4075dc0f5f1"
+        },
+        {
+            "type": "file",
+            "name": "index1.php",
+            "size": 34213,
+            "hash": "8c8b8caaf9daeae8532c9571f6f53a74d55418addec43e5b4e55474e71d2db5c"
+        },
+        {
+            "type": "folder",
+            "name": "light-skin"
+        },
+        {
+            "type": "file",
+            "name": "register.php",
+            "size": 2148,
+            "hash": "dded9c82ae335d7f44fe4c4ce77d3ca2c50ab51e1da94a767871a19f76d045a7"
+        },
+        {
+            "type": "folder",
+            "name": "assets/css"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fav"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fonts"
+        },
+        {
+            "type": "folder",
+            "name": "assets/js"
+        },
+        {
+            "type": "folder",
+            "name": "assets/media"
+        },
+        {
+            "type": "folder",
+            "name": "assets/vendors"
+        },
+        {
+            "type": "file",
+            "name": "dark-skin/chat-2.html",
+            "size": 721065,
+            "hash": "b82283e892c812aedb422d5cd98907ce090af956b654f2aaec56741c799adf56"
+        },
+        {
+            "type": "file",
+            "name": "dark-skin/chat-1.html",
+            "size": 738875,
+            "hash": "de2425772338039c65d17c32207b6cc30062659888530ac5bc4323a2877ffd08"
+        },
+        {
+            "type": "file",
+            "name": "dark-skin/index.html",
+            "size": 418030,
+            "hash": "d74ad966d56923b71643a4308953de036fd55e54e17f7238d8f0b50148c75d13"
+        },
+        {
+            "type": "file",
+            "name": "dark-skin/reset-password.html",
+            "size": 6065,
+            "hash": "9793b69849f56b34758890b4a0450f828ae4d5693b3b2a76d37d7f19c1ffca78"
+        },
+        {
+            "type": "file",
+            "name": "dark-skin/signin.html",
+            "size": 7690,
+            "hash": "23feeb51d8c2bccf1dd67b44e559b2284236046bea8bc16d047ac0b88585416c"
+        },
+        {
+            "type": "file",
+            "name": "dark-skin/signup.html",
+            "size": 7505,
+            "hash": "2b55dd8c9b8c84a94e564bfe48c3b9420559d93daa7e7831c562e3ba26c6380b"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/chat-1.php",
+            "size": 250087,
+            "hash": "a1853f413765e5b164c908eee132e0c01f612f976c6724a0ee9de4ff37daddd4"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/chat-1.html",
+            "size": 388281,
+            "hash": "d455506c0af437c2d1f9aad10601c0f1e1fc671369684b3f8b3b87057b9f99b3"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/chat-2.html",
+            "size": 374142,
+            "hash": "3759e7234f67c3cedd489b22aa97750a17ee57f9d73ed78964a2aec370d1ab18"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/chatcontacts.php",
+            "size": 618,
+            "hash": "16e11094cde7005a63fba5b1f58a6fdabbf8d8aefe80cb9fd82ad2feac7b1dd0"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/chatsample.php",
+            "size": 7453,
+            "hash": "2dd30567ec701ad5e59b0751c0f5d0e48bcc64553ce7cb10f1d2736e9a4923c0"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/dataBase.php",
+            "size": 325,
+            "hash": "ce7b05205a2bc856ce69126ff0364cd2dae5403a988fbbfecf48011e425e389d"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/fetchUserData.php",
+            "size": 605,
+            "hash": "6c1f17f5c1044a45c003f4252e3ae694e5cd95f24ae19059cb646b3eae6e05f1"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/fetchUserSocialinfoData.php",
+            "size": 611,
+            "hash": "87e06c76ba2b23a4571be86b3dc64b3b67a62fd404dd68e5a1016d3f30c887e5"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/fetchchatDetail.php",
+            "size": 1251,
+            "hash": "64f66b072ccb2ffa600d311c0d108397431ce2bf000184603c2d2ade8257e5a7"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/handlechat.php",
+            "size": 1921,
+            "hash": "adbecc6d3175eba844274472759dccb052d22c36124f25a6da25e36213ba8f93"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/index.html",
+            "size": 210756,
+            "hash": "0264675d09e4110259c0b441d1e31c069806de6febdf36aac74305c430af9ca1"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/index.php",
+            "size": 139890,
+            "hash": "36b62507234db58484ebcf01f13330dc538dfe46f939edf649a908d60bf25b78"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/login.php",
+            "size": 1160,
+            "hash": "beb973683716deb1acc74e22776b6ee775a112769340b3d95ae34bbd3326e26c"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/reset-password.html",
+            "size": 6007,
+            "hash": "554cac9827d6f3c3b180db60b51300e408aef22f34e737f9acb6a42a4151dc02"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/signin.html",
+            "size": 7631,
+            "hash": "bd13d8b787571041a0c8efa5e7ffac9dd60243a35fef94839bdd87ea90e0c678"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/signin.php",
+            "size": 6462,
+            "hash": "3f8e0e7d5903dafc5dec8903bcd1af52f12e8cf8b1049b795ce4c954ef60a42d"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/signup.html",
+            "size": 6641,
+            "hash": "059307d3c6f434ddc5b19589686721c5f25959ee47a4ebbb943b916e0fb370ae"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/userinfochange.php",
+            "size": 2018,
+            "hash": "1d298a5e30b75f49ac4a6e6c1e91600c30177af8c8121358f6ad4f1a57fb497b"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/usersocialinfochange.php",
+            "size": 1177,
+            "hash": "4e0d862228e465cbda8c991a38ee1a9b58f88201108e7c40365416211d9e8654"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/app.min.css",
+            "size": 327394,
+            "hash": "00b37c737af02449a8f0d3944d6c78290327966d3aa42b3c43dad4d678e278d1"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/landing-page.min.css",
+            "size": 1506,
+            "hash": "e516816aab87c319f69c284d90cedfa6cf36804f9fd9341a1eb4c0a7f094e7af"
+        },
+        {
+            "type": "folder",
+            "name": "assets/css/skins"
+        },
+        {
+            "type": "file",
+            "name": "assets/fav/apple-touch-icon.png",
+            "size": 5011,
+            "hash": "988556d93dd33b71b878506e87abba9146001fb741c3bdf774bb320f7add72b9"
+        },
+        {
+            "type": "file",
+            "name": "assets/fav/favicon-16x16.png",
+            "size": 1091,
+            "hash": "fdb3ed011f56ff637a5ac740e2b2f6b5111e42c57a46ca1cb4872a5f421b817f"
+        },
+        {
+            "type": "file",
+            "name": "assets/fav/favicon-32x32.png",
+            "size": 1571,
+            "hash": "4f22955b6264f3745e24082b61b39ec0e525ddcce7490d67b85140d0ccfdf4eb"
+        },
+        {
+            "type": "file",
+            "name": "assets/fav/favicon.ico",
+            "size": 15086,
+            "hash": "04e10507c83eb50e96c57f4207d20b10bdac967a62b453f74b8c2f50767d703c"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fonts/vazir"
+        },
+        {
+            "type": "file",
+            "name": "assets/js/app.min.js",
+            "size": 2650,
+            "hash": "f759385aa3b58d7539fced51b9bf17b9f0ee4cabddbb43f75cca5f99d003917a"
+        },
+        {
+            "type": "folder",
+            "name": "assets/media/avatar"
+        },
+        {
+            "type": "folder",
+            "name": "assets/media/icons"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/logo.svg",
+            "size": 1811,
+            "hash": "d765d4c076a0df51ace0f47f5d5aed6b4435bd793932e2a0f6336d543537f10c"
+        },
+        {
+            "type": "folder",
+            "name": "assets/media/shared-photos"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/tools.png",
+            "size": 5027,
+            "hash": "a3fbc9f8804638e0f7f161aa6493b7e8f019147ed867475e120f86ade76922a9"
+        },
+        {
+            "type": "folder",
+            "name": "assets/media/ui"
+        },
+        {
+            "type": "folder",
+            "name": "assets/vendors/bootstrap"
+        },
+        {
+            "type": "folder",
+            "name": "assets/vendors/jquery"
+        },
+        {
+            "type": "folder",
+            "name": "assets/vendors/magnific-popup"
+        },
+        {
+            "type": "folder",
+            "name": "assets/vendors/modal-stepes"
+        },
+        {
+            "type": "folder",
+            "name": "assets/vendors/svg-inject"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/skins/dark-skin.min.css",
+            "size": 5441,
+            "hash": "0c8de4967d11b30f87fb224120b6e9a5d685bfe6f975696e4794134798bb4d89"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fonts/vazir/ttf"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fonts/vazir/webfonts"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/1.png",
+            "size": 11826,
+            "hash": "df453357293e118058368406e339adcedb54573bfe8b59da068750c495c80f7b"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/2.png",
+            "size": 23625,
+            "hash": "895ae38507f1126494281ba3f29007567474f8f1d1bae6e3f11c89ef0da91183"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/3.png",
+            "size": 23566,
+            "hash": "f473f8ebba67c43f5356e8870d06e63436ad0fa62f730d224b795b1b6ec5b72a"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/4.png",
+            "size": 21505,
+            "hash": "46a2c3db5192d1ac981ff236f637de7b2d2a7a606e5eda859e050edb92f09407"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/5.png",
+            "size": 15433,
+            "hash": "586114c00df2bc11e89a4f918a6b219512539b9d7d7589ade55f45ff72e39ee4"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/6.png",
+            "size": 25463,
+            "hash": "c6f1699a46d677442e8905926cc38f7ba8c1fdc10aa6a924b0d8de8e7910d7c2"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/7.png",
+            "size": 8581,
+            "hash": "d0796359dd2273d3113324bb15869b7e0ccdf2d4e9edfdbf8fd36b1a5332449a"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/8.png",
+            "size": 22622,
+            "hash": "9bbe5b6828a3f2d27c57d067d02872f922c09ca063eab4facab8ebfac14f67ae"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/development.svg",
+            "size": 1875,
+            "hash": "94033ae946f3fe81d32a8547e251dbee64cbab3e845366524fdd8928dec8a2ec"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/pencil.svg",
+            "size": 2701,
+            "hash": "c77a484dacc411c4c1ae3c960fe726c20385ff42fd258f57ff7933ce1c1bb94d"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/question.svg",
+            "size": 1248,
+            "hash": "3094296968b497eb90da4c4831efc888e8023b994a7d884a16e640ee123fd681"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/refresh.svg",
+            "size": 2220,
+            "hash": "0df45b64f4a237248e75354a56c86d640bdd1d07075d1790595e22d78ccea59f"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/responsive.svg",
+            "size": 3130,
+            "hash": "9c18f61947170678ea2b1835e0138de1343e3d02d00e638421a2110dd77666bf"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/shared-photos/01.jpg",
+            "size": 23414,
+            "hash": "7a5438fddfb228047d2763c844e4fe077bc04f7e5ba0b6b659b19fd531f7ec2b"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/shared-photos/02.jpg",
+            "size": 51759,
+            "hash": "52d73cb5659ec805bd03ccee3802e239ee065e5397d8238d1ab4371b326959b1"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/shared-photos/03.jpg",
+            "size": 289455,
+            "hash": "7288c23c89eb7a9d3762212ff946971af36bbf285db211523c808eb680d50bd7"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/dark-skin.jpg",
+            "size": 449289,
+            "hash": "972ad62b5dd1fcc467a39c9590bd7fa2fcbc697fac4d8f14a7d452bb76fcfeab"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/ds-reset-password.jpg",
+            "size": 472857,
+            "hash": "c4dde602dd10ffd499a4313a0ab8df4e2af213ba09a07c1c8a178a40b44e0b7b"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/ds-signin.jpg",
+            "size": 457159,
+            "hash": "5e83dd009752a03910ad22cefef9e2e9b3e623fc4a68b32d831110685d87aae1"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/ds-signup.jpg",
+            "size": 451663,
+            "hash": "e00c9efa8303d1500aaa65c43021091b65d93fc360a3de1cdebd2cc19a9ab72b"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/light-skin.jpg",
+            "size": 428979,
+            "hash": "a57b65852bb7a2d60ed88ba9a0d52ced2da676afd33bf867446244ba26926633"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/ls-reset-password.jpg",
+            "size": 557900,
+            "hash": "29b8c9b95211ce59de5b03dbc6aa5df308daf686c9fb0b2b6122311f6832e8a2"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/ls-signin.jpg",
+            "size": 556526,
+            "hash": "2bc63ca2dff31a7b786e318b17969019c538e1a841f9d91cad447ec1c8b4d70a"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/ui/ls-signup.jpg",
+            "size": 501610,
+            "hash": "0d67f50d1dd66ebd146f71fcea6e043139880829a3aa259ef5e28dbc983c85b0"
+        },
+        {
+            "type": "file",
+            "name": "assets/vendors/bootstrap/bootstrap.bundle.min.js",
+            "size": 81085,
+            "hash": "3d5cac646e4cfda09ca1253d8617019f0213c822249ae13f4e1573cd0d8ab71a"
+        },
+        {
+            "type": "file",
+            "name": "assets/vendors/jquery/jquery-3.5.0.min.js",
+            "size": 89493,
+            "hash": "c4dccdd9ae25b64078e0c73f273de94f8894d5c99e4741645ece29aeefc9c5a4"
+        },
+        {
+            "type": "file",
+            "name": "assets/vendors/magnific-popup/default-skin.png",
+            "size": 547,
+            "hash": "fd2d3fed8d73fb4a3265475c444817343f3383348c254428f85e7b4b076c7dcf"
+        },
+        {
+            "type": "file",
+            "name": "assets/vendors/magnific-popup/jquery.magnific-popup.min.js",
+            "size": 20216,
+            "hash": "3fddc6d28aba3c13d64cfd4847c333ff48c71d4a5a58bd1a0494ca6ae8ac1bb4"
+        },
+        {
+            "type": "file",
+            "name": "assets/vendors/modal-stepes/modal-steps.min.js",
+            "size": 4195,
+            "hash": "4d0f34d98f5216e576b5571d82934184ecaf5d0b220ee9e2df806a407adf4a6d"
+        },
+        {
+            "type": "file",
+            "name": "assets/vendors/svg-inject/svg-inject.min.js",
+            "size": 4614,
+            "hash": "c193c902a53486b6b1c0d3ae664e5a60f0459e7079a54531b5d70dd284d402f1"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Black.ttf",
+            "size": 119468,
+            "hash": "ae97991ff13363d347bf9f5e1d77eaf17a6d5bef5b2ffc0ccbe6b6c2e3e37dde"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Bold.ttf",
+            "size": 119204,
+            "hash": "aa017260a464b1061fc7761f03c55c8ff48cc964d3963b2b4e9dd7695b99b992"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-ExtraBold.ttf",
+            "size": 119440,
+            "hash": "8e59e5053fe1e8d7a07ae8609115622707dd58ca78d9252f6d337244e2bc9688"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-ExtraLight.ttf",
+            "size": 119384,
+            "hash": "589aa5fff048c417c9d05527f5ed081982f67bcb0fbdf9c525e998ef73009f27"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Light.ttf",
+            "size": 119064,
+            "hash": "4d9a29c278bddb837c2f68a9a857816a5bdb0bd028d7ede2ed5beb8c09d8bdfa"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Medium.ttf",
+            "size": 118788,
+            "hash": "385e3e7d11cc31e75c9ff395d4c754bab1bf5db1e65b25c651e23ee4f888d869"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Regular.ttf",
+            "size": 118876,
+            "hash": "c2191f8e5b5071a5c1639c21f5324e618a535f1272bbcb6b948a148f2b536e5f"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-SemiBold.ttf",
+            "size": 119048,
+            "hash": "d97341d72a8da62c0674a59ebd89e6d5f06f5fa2eed5562443844bfd43e4bb0f"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Thin.ttf",
+            "size": 120232,
+            "hash": "ec2657b6e9906162a3928fed6d606814d54fafdb041ad3ca974283162905a5f6"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-Black.woff2",
+            "size": 49216,
+            "hash": "c24c84c396284d845955a4d9a7fe7f5ae1901133062c948678aa06b3c9e79c05"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-Bold.woff2",
+            "size": 49668,
+            "hash": "31f633d4a1718fe25be047c1eb3a660a8947bac4c3aae4b6b8ee6375ba34c9eb"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-ExtraBold.woff2",
+            "size": 49656,
+            "hash": "802fe7a0d0af714c6383612890478f07708b7560ff2aaff0016be4175674d2e8"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-ExtraLight.woff2",
+            "size": 49816,
+            "hash": "827db0c762cba6eeb9e81b633cdd9b071879999a3e00b69b0f31aaed50ac57d6"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-Light.woff2",
+            "size": 49636,
+            "hash": "3491f871151fe24bd08f30ac72c783e6b2be1bf95448a23c452421a53e459ff0"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-Medium.woff2",
+            "size": 49600,
+            "hash": "a566be8360cf09dabd50c7de1308660c994039c1f3ebc02382b9f92730ec16ea"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-Regular.woff2",
+            "size": 49148,
+            "hash": "2522765ffc9f235c582373bf45dc5ed54acb756c91ba3655e8d68f8f3ab1bb65"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-SemiBold.woff2",
+            "size": 49628,
+            "hash": "17271a22efc0f2d16c8a9c4bb0bf21360112bcc13d07e8d2c4050662fb04837f"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/webfonts/Vazirmatn-FD-Thin.woff2",
+            "size": 49196,
+            "hash": "b9fd9fdbfacdd29d3103a3db6084029e0642ed2667960d6a225a37d6171adb56"
+        }
+    ]
+}
