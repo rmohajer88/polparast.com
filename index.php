@@ -7,10 +7,10 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <!-- SEO Meta Tags-->
-    <meta name="keywords" content="InstaC, chat, messenger, conversation, social, communication" />
+    <meta name="keywords" content="polparast, chat, messenger, conversation, social, communication" />
     <meta name="description" content="InstaC is a Bootstrap based modern and fully responsive Messaging template to help build Messaging or Chat application fast and easy." />
     <meta name="subject" content="communication">
-    <title>قالب HTML چت و گفتگو کاربران - InstaC Chat Template</title>
+    <title> پول‌ پرست - polparast</title>
     <!-- Favicon and Touch Icons-->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/fav/favicon-32x32.png">
