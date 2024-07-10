@@ -29,7 +29,7 @@
             <div class="row no-gutters text-center align-items-center justify-content-center min-vh-100">
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                     <h1 class="font-weight-bold">ورود</h1>
-                    <p class="text-dark mb-3">ما متفاوت هستیم، ما شما را متفاوت می کنیم.</p>
+                    <p class="text-dark mb-3"> سایت در حال توسعه و آزمایش است.</p>
                     <form class="mb-3"  method="post" action="light-skin/login.php" >
                         <div class="form-group">
                             <label for="email" class="sr-only">آدرس ایمیل</label>
