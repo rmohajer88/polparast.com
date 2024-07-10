@@ -1,19 +1,4 @@
-.drawer {
-  /* Default styles for the drawer element */
-  width: 250px; /* Adjust width as needed */
-  height: 100vh; /* Adjust height as needed */
-  position: absolute; /* This allows for translation */
-  background-color: white; /* Example background color */
-  transition: transform 0.3s ease-in-out; /* Add smooth transition */
-}
 
-.drawer.drawer-open {
-  transform: translateX(0); /* Show the drawer */
-}
-
-.drawer:not(.drawer-open) {
-  transform: translateX(-100%); /* Hide the drawer off-screen */
-}
 
 @font-face {
     font-family: "body-font";
@@ -11484,13 +11469,11 @@ button.close:focus {
 }
 
 .main-layout .navigation {
-    background: #fff;
-    order: 2;
-    min-height: 3.75rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overflow-y: auto;
-    overflow-x: hidden
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 999
 }
 
 .main-layout .navigation::-webkit-scrollbar {
