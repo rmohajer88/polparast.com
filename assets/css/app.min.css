@@ -11536,7 +11536,7 @@ button.close:focus {
         height: 100vh
     }
 }
-
+/* this is the  meda query that hides the main of profile page as well as other 3 tabs
 @media (max-width: 1199.98px) {
     .main-layout .main {
         position: fixed;
@@ -11551,7 +11551,17 @@ button.close:focus {
         transition: transform .3s ease, visibility .3s ease;
         background: #fafbfd
     }
+
+
 }
+*/
+
+
+
+
+
+
+
 
 @media (max-width: 1199.98px) {
     .main-layout .main.main-visible {
@@ -11609,9 +11619,6 @@ button.close:focus {
     overflow-x: hidden
 }
 
-.main-layout .profile::-webkit-scrollbar {
-    display: none
-}
 
 body.chats-tab-open .main .chats {
     display: flex
