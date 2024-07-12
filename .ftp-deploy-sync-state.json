@@ -1,8 +1,14 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1720387252722,
+    "generatedTime": 1720695321945,
     "data": [
+        {
+            "type": "file",
+            "name": ".ftp-deploy-sync-state.json",
+            "size": 21427,
+            "hash": "f2cdb6d0f184133863b097e5e0e5af068e55e68af31ac372c10a31e71b909e00"
+        },
         {
             "type": "folder",
             "name": "assets"
@@ -20,14 +26,14 @@
         {
             "type": "file",
             "name": "index.php",
-            "size": 6484,
-            "hash": "0ddd0d1b0d0b6572aafa86680358e98b6e2ccf8585d29204132ab4075dc0f5f1"
+            "size": 6409,
+            "hash": "a7e0750b673b74f43cb29a516da692758c56d5662c29a54b1f80b52c713eadfc"
         },
         {
             "type": "file",
             "name": "index1.php",
-            "size": 34213,
-            "hash": "8c8b8caaf9daeae8532c9571f6f53a74d55418addec43e5b4e55474e71d2db5c"
+            "size": 34154,
+            "hash": "0b5eec97994aaa5a467896a5fc64387866734113f36d617ca4cb4b674e0dbffd"
         },
         {
             "type": "folder",
@@ -65,15 +71,15 @@
         },
         {
             "type": "file",
-            "name": "dark-skin/chat-2.html",
-            "size": 721065,
-            "hash": "b82283e892c812aedb422d5cd98907ce090af956b654f2aaec56741c799adf56"
-        },
-        {
-            "type": "file",
             "name": "dark-skin/chat-1.html",
             "size": 738875,
             "hash": "de2425772338039c65d17c32207b6cc30062659888530ac5bc4323a2877ffd08"
+        },
+        {
+            "type": "file",
+            "name": "dark-skin/chat-2.html",
+            "size": 721065,
+            "hash": "b82283e892c812aedb422d5cd98907ce090af956b654f2aaec56741c799adf56"
         },
         {
             "type": "file",
@@ -101,15 +107,21 @@
         },
         {
             "type": "file",
-            "name": "light-skin/chat-1.php",
-            "size": 250087,
-            "hash": "a1853f413765e5b164c908eee132e0c01f612f976c6724a0ee9de4ff37daddd4"
+            "name": "light-skin/awsome.php",
+            "size": 7321,
+            "hash": "b457425aa29f5ce98617e000ebaab55744ccf46d7325a147b0e722dfd7155c21"
         },
         {
             "type": "file",
             "name": "light-skin/chat-1.html",
             "size": 388281,
             "hash": "d455506c0af437c2d1f9aad10601c0f1e1fc671369684b3f8b3b87057b9f99b3"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/chat-1.php",
+            "size": 250087,
+            "hash": "a1853f413765e5b164c908eee132e0c01f612f976c6724a0ee9de4ff37daddd4"
         },
         {
             "type": "file",
@@ -168,8 +180,8 @@
         {
             "type": "file",
             "name": "light-skin/index.php",
-            "size": 139890,
-            "hash": "36b62507234db58484ebcf01f13330dc538dfe46f939edf649a908d60bf25b78"
+            "size": 170157,
+            "hash": "a9393e931962677706e589850608399b145bb253c129fb2eb18c64253fdb9cf1"
         },
         {
             "type": "file",
@@ -216,8 +228,14 @@
         {
             "type": "file",
             "name": "assets/css/app.min.css",
-            "size": 327394,
-            "hash": "00b37c737af02449a8f0d3944d6c78290327966d3aa42b3c43dad4d678e278d1"
+            "size": 326837,
+            "hash": "123046abed9ce1e6fd088b7430dc10658b8c1bcd2aeba582c2b7495212e7df0a"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/c.css",
+            "size": 2130,
+            "hash": "3df596f8bd865cfcb40b4b839e1d813d98d6d175a1924c1a0c0ff385dd0a9be1"
         },
         {
             "type": "file",
@@ -345,15 +363,15 @@
         },
         {
             "type": "file",
-            "name": "assets/media/avatar/4.png",
-            "size": 21505,
-            "hash": "46a2c3db5192d1ac981ff236f637de7b2d2a7a606e5eda859e050edb92f09407"
-        },
-        {
-            "type": "file",
             "name": "assets/media/avatar/5.png",
             "size": 15433,
             "hash": "586114c00df2bc11e89a4f918a6b219512539b9d7d7589ade55f45ff72e39ee4"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/4.png",
+            "size": 21505,
+            "hash": "46a2c3db5192d1ac981ff236f637de7b2d2a7a606e5eda859e050edb92f09407"
         },
         {
             "type": "file",
