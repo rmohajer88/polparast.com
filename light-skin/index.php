@@ -18,7 +18,10 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="../assets/css/app.min.css">   
     <link rel="stylesheet" href="../assets/css/c.css">   
+    <style>
+
     
+    </style>
    
 
   </head>
@@ -105,7 +108,7 @@
     
 
     <!-- Sidebar Start -->
-            <aside class="sidebar">
+            <aside class="sidebar" id="sidebarid">
                 <!-- Tab Content Start -->
                 <div class="tab-content">
                     <!-- Chat Tab Content Start -->
@@ -1193,8 +1196,8 @@
                     <!-- Friends Tab Content End -->
 
                     <!-- Profile Tab Content Start -->
-                    <div class="tab-pane" id="profile-content">
-                        <div class="d-flex flex-column h-100">
+                    <div class="tab-pane " id="profile-content" style="width: 100%; position: absolute;">
+                        <div class="d-flex flex-column h-100 ">
                             <div class="hide-scrollbar">
                                 <!-- Sidebar Header Start -->
                                 <div class="sidebar-header sticky-top p-2 mb-3">
@@ -1204,7 +1207,7 @@
                                 <!-- Sidebar Header end -->
 
                                 <!-- Sidebar Content Start -->
-                                <div class="container-xl">
+                                <div class="container-xl  ">
                                     <div class="row">
                                         <div class="col">
 
@@ -1259,31 +1262,14 @@
                                                 </div>
                                                 <!-- Card Details End -->
 
-                                                <!-- Card Options Start -->
-                                                <div class="card-options">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                            <!-- Default :: Inline SVG -->
-                                                            <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                            </svg>
 
-                                                            <!-- Alternate :: External File link -->
-                                                            <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-left">
-                                                            <a class="dropdown-item" href="#">تغییر عکس پروفایل</a>
-                                                            <a class="dropdown-item" href="#">تغییر شماره</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Card Options End -->
 
                                             </div>
                                             <!-- Card End -->
 
                                             <!-- Card Start -->
                                             <div class="card mt-3">
+
 
                                                 <!-- List Group Start -->
                                                 <ul class="list-group list-group-flush">
@@ -1292,8 +1278,8 @@
                                                     <li class="list-group-item py-2">
                                                         <div class="media align-items-center">
                                                             <div class="media-body">
-                                                                <p class="small text-muted mb-0">زمان محلی</p>
-                                                                <p class="mb-0">10:25 ب.ظ</p>
+                                                                <p class="small text-muted mb-0">نام </p>
+                                                                <p class="mb-0">حسین صادقی</p>
                                                             </div>
                                                             <!-- Default :: Inline SVG -->
                                                             <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1306,12 +1292,31 @@
                                                     </li>
                                                     <!-- List Group Item End -->
 
-                                                    <!-- List Group Item Start -->
+                                                <!-- List Group Item Start -->
+                                                    <li class="list-group-item">
+                                                        <div class="media align-items-center">
+                                                            <div class="media-body">
+                                                                <p class="small text-muted mb-0">تلفن</p>
+                                                                <p class="mb-0" dir="ltr">+98-012-3456789</p>
+                                                            </div>
+                                                            <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                                            </svg>
+                                                            <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
+                                                        </div>
+                                                    </li>
+                                                    <!-- List Group Item End -->
+
+
+                                                <!-- List Group Start -->
+                                                <ul class="list-group list-group-flush">
+
+                                                             <!-- List Group Item Start -->
                                                     <li class="list-group-item py-2">
                                                         <div class="media align-items-center">
                                                             <div class="media-body">
                                                                 <p class="small text-muted mb-0 " >تاریخ تولد</p>
-                                                                <p class="mb-0 birthDateleft" >11111111</p>
+                                                                <p class="mb-0 birthDateleft" >1346-12-11</p>
                                                             </div>
                                                             <!-- Default :: Inline SVG -->
                                                             <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1328,19 +1333,22 @@
                                                     <li class="list-group-item py-2">
                                                         <div class="media align-items-center">
                                                             <div class="media-body">
-                                                                <p class="small text-muted mb-0">تلفن</p>
-                                                                <p class="mb-0 phoneleft" dir="ltr">+98-012-3456789</p>
+                                                                <p class="small text-muted mb-0">شغل </p>
+                                                                <p class="mb-0">جوشکار</p>
                                                             </div>
                                                             <!-- Default :: Inline SVG -->
                                                             <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                                                
                                                             </svg>
 
                                                             <!-- Alternate :: External File link -->
-                                                            <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
+                                                             <img class="injectable text-muted hw-20 ml-1" src="../assets/media/icons/job.svg" alt=""> 
                                                         </div>
                                                     </li>
-                                             
+                                                    <!-- List Group Item End -->
+
+                                           
+
 
 
 
@@ -1852,7 +1860,7 @@
 
             <!-- Profile Settings Start -->
             <div class="profile">
-                <div class="page-main-heading sticky-top py-2 px-3 mb-3">
+                <div class="">
 
                     <!-- Chat Back Button (Visible only in Small Devices) -->
                     <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted d-xl-none" type="button" data-close="">
@@ -1862,65 +1870,10 @@
                         <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/arrow-left.svg" alt=""> -->
                     </button>
 
-                    <div class="pl-2 pl-xl-0">
-                        <h5 class="font-weight-semibold">تنظیمات</h5>
-                        <p class="text-muted mb-0">اطلاعات و تنظیمات شخصی را به روز کنید</p>
-                    </div>
+                  
                 </div>
 
-                <div class="container-xl px-2 px-sm-3">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    <h6 class="mb-1">حساب</h6>
-                                    <p class="mb-0 text-muted small">اطلاعات شخصی و تماس را به روز کنید</p>
-                                </div>
-
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="firstName">نام کوچک</label>
-                                                <input type="text" class="form-control form-control-md" id="firstName" placeholder="نام کوچک خود را تایپ کنید" value="کاترین">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="lastName">نام خانوادگی</label>
-                                                <input type="text" class="form-control form-control-md" id="lastName" placeholder="نام خانوادگی خود را تایپ کنید" value="ریچاردسون">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="mobileNumber">شماره موبایل</label>
-                                                <input type="text" class="form-control form-control-md" id="mobileNumber" placeholder="شماره موبایل خود را تایپ کنید" value="98123456789">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12">
-                                            <div class="form-group">
-                                                <label for="birthDate">تاریخ تولد</label>
-                                                <input type="text" class="form-control form-control-md" id="birthDate" placeholder="yyyy/mm/dd" value="1400/1/20">
-                                            </div>
-                                        </div>
-
-                                
-
-                                    </div>
-                                </div>
-
-                                <div class="card-footer d-flex justify-content-end">
-                              
-                                    <button type="button" class="save_personal_info btn btn-primary">ذخیره تغییرات</button>
-                                </div>
-                            </div>
-
-  
-
-        
-                        </div>
-                    </div>
-                </div>
+           
             </div>
             <!-- Profile Settings End -->
 
@@ -1930,181 +1883,75 @@
 
 <!-- Profile Tab Content Start -->
   <div id="drawer">
-
     <!-- Profile Tab Content Start -->
 
             <div class="tab-pane" id="profile-content">
                 <div class="d-flex flex-column h-100">
                     <div class="hide-scrollbar">
-                        <!-- Sidebar Header Start -->
-                        <div class="sidebar-header sticky-top p-2 mb-3">
-                            <h5 class="font-weight-semibold">مشخصات</h5>
-                            <p class="text-muted mb-0">اطلاعات و تنظیمات شخصی</p>
-                        </div>
-                        <!-- Sidebar Header end -->
+
 
                         <!-- Sidebar Content Start -->
                         <div class="container-xl">
                             <div class="row">
                                 <div class="col">
 
+
                                     <!-- Card Start -->
-                                    <div class="card card-body card-bg-5">
+                              <div class="card mt-3">
 
-                                        <!-- Card Details Start -->
-                                        <div class="d-flex flex-column align-items-center">
-                                            <div class="avatar avatar-lg mb-3">
-                                                <img class="avatar-img" src="../assets/media/avatar/3.png" alt="">
-                                            </div>
-                                                 
-                                            <div class="d-flex flex-column align-items-center">
-                                                <!-- php code  -->
-                                                <h5><?php   echo $_SESSION['name'];?> </h5>
-                                            </div>
+                            <div class="container-xl px-2 px-sm-3">
+                                <div class="row">
+                                        <div class="col">
+                                            <div class="card mb-3">
+                                                <div class="card-header">
+                                                    <h6 class="mb-1">حساب</h6>
+                                                    <p class="mb-0 text-muted small">اطلاعات شخصی و تماس را به روز کنید</p>
+                                                </div>
 
-                                            <div class="d-flex">
-                                             <form method="post">
-                                                <button class="btn btn-outline-default mx-1" type="submit" name='signout' >
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                                                    </svg>
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-12">
+                                                            <div class="form-group">
+                                                                <label for="firstName">نام کوچک</label>
+                                                                <input type="text" class="form-control form-control-md" id="firstName" placeholder="نام کوچک خود را تایپ کنید" value="کاترین">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-12">
+                                                            <div class="form-group">
+                                                                <label for="lastName">نام خانوادگی</label>
+                                                                <input type="text" class="form-control form-control-md" id="lastName" placeholder="نام خانوادگی خود را تایپ کنید" value="ریچاردسون">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-12">
+                                                            <div class="form-group">
+                                                                <label for="mobileNumber">شماره موبایل</label>
+                                                                <input type="text" class="form-control form-control-md" id="mobileNumber" placeholder="شماره موبایل خود را تایپ کنید" value="98123456789">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 col-12">
+                                                            <div class="form-group">
+                                                                <label for="birthDate">تاریخ تولد</label>
+                                                                <input type="text" class="form-control form-control-md" id="birthDate" placeholder="yyyy/mm/dd" value="1400/1/20">
+                                                            </div>
+                                                        </div>
 
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/logout.svg" alt=""> -->
-                                                 
+                                                
 
-                                                    <span>خروج</span>
-                                                    <?php if(isset($_POST['signout'])) {//destroys session  
-                                                       //header('location: register.php');
-                                                       echo "<script>window.location.href='../index.html'</script>";
-                                                       session_destroy();
-                                                    }
-                                                    ?>
-                                                </button>
-                                             </form>
-                                             
-                                                <button class="btn btn-outline-default mx-1 d-xl-none" data-profile-edit="" type="button">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                                    </svg>
+                                                    </div>
+                                                </div>
 
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/cog.svg" alt=""> -->
-                                                    <span>تنظیمات</span>
-                                                </button>
-                                            </div>
-                                        </div>
-                                        <!-- Card Details End -->
-
-                                        <!-- Card Options Start -->
-                                        <div class="card-options">
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-left">
-                                                    <a class="dropdown-item" href="#">تغییر عکس پروفایل</a>
-                                                    <a class="dropdown-item" href="#">تغییر شماره</a>
+                                                <div class="card-footer d-flex justify-content-end">
+                                            
+                                                    <button type="button" class="save_personal_info btn btn-primary">ذخیره تغییرات</button>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- Card Options End -->
 
+                
+
+                        
+                                        </div>
                                     </div>
-                                    <!-- Card End -->
-
-                                    <!-- Card Start -->
-                                    <div class="card mt-3">
-
-                                        <!-- List Group Start -->
-                                        <ul class="list-group list-group-flush">
-
-                                            <!-- List Group Item Start -->
-                                            <li class="list-group-item py-2">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <p class="small text-muted mb-0">زمان محلی</p>
-                                                        <p class="mb-0">10:25 ب.ظ</p>
-                                                    </div>
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/clock.svg" alt=""> -->
-                                                </div>
-                                            </li>
-                                            <!-- List Group Item End -->
-
-                                            <!-- List Group Item Start -->
-                                            <li class="list-group-item py-2">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <p class="small text-muted mb-0 " >تاریخ تولد</p>
-                                                        <p class="mb-0 birthDateleft" >11111111</p>
-                                                    </div>
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/calendar.svg" alt=""> -->
-                                                </div>
-                                            </li>
-                                            <!-- List Group Item End -->
-
-                                            <!-- List Group Item Start -->
-                                            <li class="list-group-item py-2">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <p class="small text-muted mb-0">تلفن</p>
-                                                        <p class="mb-0 phoneleft" dir="ltr">+98-012-3456789</p>
-                                                    </div>
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
-                                                </div>
-                                            </li>
-                                            <!-- List Group Item End -->
-
-
-                                          
-
-                                            <!-- List Group Item Start -->
-                                            <li class="list-group-item pt-2">
-                                                <div class="media align-items-center">
-                                                    <div class="media-body">
-                                                        <p class="small text-muted mb-0">نشانی</p>
-                                                        <p class="mb-0 addressleft">ایران، مازندران، بابل، خ نادر، پلاک 1234</p>
-                                                    </div>
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/home.svg" alt=""> -->
-                                                </div>
-                                            </li>
-                                            <!-- List Group Item End -->
-
-                                        </ul>
-                                        <!-- List Group End -->
+                                </div>
 
                                     </div>
                                     <!-- Card End -->
@@ -2176,6 +2023,15 @@
         console.log("I AM FROM DRAWER");
     }
     });
+
+
+
+
+
+ 
+
+
+
 
   </script>
 

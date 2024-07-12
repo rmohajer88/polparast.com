@@ -7,10 +7,10 @@
     <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <!-- SEO Meta Tags-->
-    <meta name="keywords" content="InstaC, chat, messenger, conversation, social, communication" />
+    <meta name="keywords" content="polparast, chat, messenger, conversation, social, communication" />
     <meta name="description" content="InstaC is a Bootstrap based modern and fully responsive Messaging template to help build Messaging or Chat application fast and easy." />
     <meta name="subject" content="communication">
-    <title>قالب HTML چت و گفتگو کاربران - InstaC Chat Template</title>
+    <title> polparast </title>
     <!-- Favicon and Touch Icons-->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/fav/favicon-32x32.png">
@@ -29,7 +29,7 @@
             <div class="row no-gutters text-center align-items-center justify-content-center min-vh-100">
                 <div class="col-12 col-md-6 col-lg-5 col-xl-4">
                     <h1 class="font-weight-bold">ورود</h1>
-                    <p class="text-dark mb-3">ما متفاوت هستیم، ما شما را متفاوت می کنیم.</p>
+                    <p class="text-dark mb-3"> سایت در حال توسعه و آزمایش است.</p>
                     <form class="mb-3"  method="post" action="light-skin/login.php" >
                         <div class="form-group">
                             <label for="email" class="sr-only">آدرس ایمیل</label>
