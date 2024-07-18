@@ -1,3 +1,36 @@
+<?php
+require 'dataBase.php'; // Assuming 'dataBase.php' contains your database connection logic
+
+// Retrieve user information (assuming you have a session or other mechanism)
+session_start();
+$sessionId = $_SESSION["id"]; // Replace with your logic to get the user ID
+$user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM userinfo WHERE id = $sessionId"));
+$currentImage = $user['iconlink']; // Store the current image URL for preview restoration
+
+
+
+
+  if(isset($_FILES["fileImg"]["name"])){
+    $id = $_POST["id"];
+    $src = $_FILES["fileImg"]["tmp_name"];
+    $imageName =uniqid().$_FILES["fileImg"]["name"]; // Ensure unique filename
+
+    $target ="../assets/media/avatar/".$imageName;
+
+         
+         move_uploaded_file($src, $target);
+         $query = "UPDATE userinfo SET iconlink= '$target' WHERE id = $id";
+         mysqli_query($conn, $query);
+        header("Location:index.php#profile-content");
+
+   
+    }
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +41,7 @@
     <meta name="keywords" content="InstaC, chat, messenger, conversation, social, communication" />
     <meta name="description" content="InstaC is a Bootstrap based modern and fully responsive Messaging template to help build Messaging or Chat application fast and easy." />
     <meta name="subject" content="communication">
-    <title>قالب HTML چت و گفتگو کاربران - InstaC Chat Template</title>
+    <title> polparast </title>
     <!-- Favicon and Touch Icons-->
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/fav/favicon-32x32.png">
@@ -18,8 +51,9 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="../assets/css/app.min.css">   
     <link rel="stylesheet" href="../assets/css/c.css">   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <style>
-
+         
     
     </style>
    
@@ -108,7 +142,7 @@
     
 
     <!-- Sidebar Start -->
-            <aside class="sidebar" id="sidebarid">
+            <aside class="sidebar" id="sidebarid" >
                 <!-- Tab Content Start -->
                 <div class="tab-content">
                     <!-- Chat Tab Content Start -->
@@ -1195,176 +1229,226 @@
                     </div>
                     <!-- Friends Tab Content End -->
 
-                    <!-- Profile Tab Content Start -->
-                    <div class="tab-pane " id="profile-content" style="width: 100%; position: absolute;">
-                        <div class="d-flex flex-column h-100 ">
-                            <div class="hide-scrollbar">
-                                <!-- Sidebar Header Start -->
-                                <div class="sidebar-header sticky-top p-2 mb-3">
-                                    <h5 class="font-weight-semibold">مشخصات</h5>
-                                    <p class="text-muted mb-0">اطلاعات و تنظیمات شخصی</p>
-                                </div>
-                                <!-- Sidebar Header end -->
+                
+            <!-- Profile Tab Content Start -->
+            <div class="tab-pane" id="profile-content" style="width: 100%; position: absolute;">
+                <div class="d-flex flex-column h-100">
+                    <div class="hide-scrollbar">
+                        <!-- Sidebar Header Start -->
+                        <div class="sidebar-header sticky-top p-2 mb-3">
+                            <h5 class="font-weight-semibold">مشخصات</h5>
+                            <p class="text-muted mb-0">اطلاعات و تنظیمات شخصی</p>
+                        </div>
+                        <!-- Sidebar Header end -->
 
-                                <!-- Sidebar Content Start -->
-                                <div class="container-xl  ">
-                                    <div class="row">
-                                        <div class="col">
+                        <!-- Sidebar Content Start -->
+                        <div class="container-xl">
+                            <div class="row">
+                                <div class="col">
 
-                                            <!-- Card Start -->
-                                            <div class="card card-body card-bg-5">
+                                    <!-- Card Start -->
+                                    <div class="card card-body card-bg-5">
 
-                                                <!-- Card Details Start -->
-                                                <div class="d-flex flex-column align-items-center">
-                                                    <div class="avatar avatar-lg mb-3">
-                                                        <img class="avatar-img" src="../assets/media/avatar/3.png" alt="">
-                                                    </div>
-                                                        
-                                                    <div class="d-flex flex-column align-items-center">
-                                                        <!-- php code  -->
-                                                        <h5><?php   echo $_SESSION['name'];?> </h5>
-                                                    </div>
+                                        <!-- Card Details Start -->
+                                        <div class="d-flex flex-column align-items-center">
 
-                                                    <div class="d-flex">
-                                                    <form method="post">
-                                                        <button class="btn btn-outline-default mx-1" type="submit" name='signout' >
-                                                            <!-- Default :: Inline SVG -->
-                                                            <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
-                                                            </svg>
 
-                                                            <!-- Alternate :: External File link -->
-                                                            <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/logout.svg" alt=""> -->
-                                                        
 
-                                                            <span>خروج</span>
-                                                            <?php if(isset($_POST['signout'])) {//destroys session  
-                                                            //header('location: register.php');
-                                                            echo "<script>window.location.href='signin.php'</script>";
-                                                            session_destroy();
-                                                            }
-                                                            ?>
-                                                        </button>
-                                                    </form>
-                                                    
-                                                        <button class="btn btn-outline-default mx-1 d-xl-none" data-profile-edit="" type="button">
-                                                            <!-- Default :: Inline SVG -->
-                                                            <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                                            </svg>
+                                            <form class="" action="" enctype="multipart/form-data" method="post">
+                                            <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
 
-                                                            <!-- Alternate :: External File link -->
-                                                            <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/cog.svg" alt=""> -->
-                                                            <span>تنظیمات</span>
-                                                        </button>
-                                                    </div>
+                                            <div class="upload">
+                                                <img src="<?php echo $currentImage; ?>" id="image">
+
+                                                <div class="rightRound" id="upload">
+                                                <input type="file" name="fileImg" id="fileImg" accept="image/*">
+                                                <i class="fa fa-camera"></i>
                                                 </div>
-                                                <!-- Card Details End -->
 
-
-
+                                                <div class="leftRound" id="cancel" style="display: none;">
+                                                <i class="fa fa-times"></i>
+                                                </div>
+                                                <div class="rightRound" id="confirm" style="display: none;">
+                                                <input type="submit" name="" value="">
+                                                <i class="fa fa-check"></i>
+                                                </div>
                                             </div>
-                                            <!-- Card End -->
+                                            </form>
+                                                                                                
+                                            <div class="d-flex flex-column align-items-center namebelowprofilephoto">
+                                                <!-- php code  -->
+                                                <h5><?php   echo $_SESSION['name'];?> </h5>
+                                            </div>
 
-                                            <!-- Card Start -->
-                                            <div class="card mt-3">
+                                            <div class="d-flex">
+                                             <form method="post">
+                                                <button class="btn btn-outline-default mx-1" type="submit" name='signout' >
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                                                    </svg>
 
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/logout.svg" alt=""> -->
+                                                 
 
-                                                <!-- List Group Start -->
-                                                <ul class="list-group list-group-flush">
+                                                    <span>خروج</span>
+                                                
+                                                </button>
+                                             </form>
+                                             
+                                                <button id="openleftnav" class="btn btn-outline-default mx-1 " data-profile-edit="" type="button">
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="hw-18 d-none d-sm-inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                                    </svg>
 
-                                                    <!-- List Group Item Start -->
-                                                    <li class="list-group-item py-2">
-                                                        <div class="media align-items-center">
-                                                            <div class="media-body">
-                                                                <p class="small text-muted mb-0">نام </p>
-                                                                <p class="mb-0">حسین صادقی</p>
-                                                            </div>
-                                                            <!-- Default :: Inline SVG -->
-                                                            <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                            </svg>
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/cog.svg" alt=""> -->
+                                                    <span>تنظیمات</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- Card Details End -->
 
-                                                            <!-- Alternate :: External File link -->
-                                                            <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/clock.svg" alt=""> -->
-                                                        </div>
-                                                    </li>
-                                                    <!-- List Group Item End -->
+                                        <!-- Card Options Start -->
+                                        <div class="card-options">
+                                            <div class="dropdown">
+                                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <!-- Default :: Inline SVG -->
+                                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+                                                    </svg>
+
+                                                    <!-- Alternate :: External File link -->
+                                                    <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-left">
+                                                    <a class="dropdown-item" href="#">تغییر عکس پروفایل</a>
+                                                    <a class="dropdown-item" href="#">تغییر شماره</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Card Options End -->
+
+                                    </div>
+                                    <!-- Card End -->
+
+                                        <!-- Card Start -->
+                                        <div class="card mt-3">
+
+                                            <!-- List Group Start -->
+                                            <ul class="list-group list-group-flush">
 
                                                 <!-- List Group Item Start -->
-                                                    <li class="list-group-item">
-                                                        <div class="media align-items-center">
-                                                            <div class="media-body">
-                                                                <p class="small text-muted mb-0">تلفن</p>
-                                                                <p class="mb-0" dir="ltr">+98-012-3456789</p>
-                                                            </div>
-                                                            <svg class="text-muted hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                                            </svg>
-                                                            <!-- <img class="injectable text-muted hw-20" src="./../assets/media/heroicons/outline/phone.svg" alt=""> -->
+                                                <li class="list-group-item py-2">
+                                                    <div class="media align-items-center">
+                                                        <div class="media-body">
+                                                            <p class="small text-muted mb-0">نام</p>
+                                                            <p class="mb-0 leftname">حسین مهدی</p>
                                                         </div>
-                                                    </li>
-                                                    <!-- List Group Item End -->
+                                                        <!-- Default :: Inline SVG -->
+                                                        <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" ></path>
+                                                        </svg>
 
+                                                        <!-- Alternate :: External File link -->
+                                                        <img class="injectable text-muted hw-20 ml-1" src="../assets/media/icons/name.svg" alt="">
+                                                    </div>
+                                                </li>
+                                                <!-- List Group Item End -->
 
-                                                <!-- List Group Start -->
-                                                <ul class="list-group list-group-flush">
-
-                                                             <!-- List Group Item Start -->
-                                                    <li class="list-group-item py-2">
-                                                        <div class="media align-items-center">
-                                                            <div class="media-body">
-                                                                <p class="small text-muted mb-0 " >تاریخ تولد</p>
-                                                                <p class="mb-0 birthDateleft" >1346-12-11</p>
-                                                            </div>
-                                                            <!-- Default :: Inline SVG -->
-                                                            <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                                            </svg>
-
-                                                            <!-- Alternate :: External File link -->
-                                                            <!-- <img class="injectable text-muted hw-20 ml-1" src="./../assets/media/heroicons/outline/calendar.svg" alt=""> -->
+                                                <!-- List Group Item Start -->
+                                                <li class="list-group-item py-2">
+                                                    <div class="media align-items-center">
+                                                        <div class="media-body">
+                                                            <p class="small text-muted mb-0"> نام خانوادگی</p>
+                                                            <p class="mb-0 leftfamilyname">اکبری</p>
                                                         </div>
-                                                    </li>
-                                                    <!-- List Group Item End -->
+                                                        <!-- Default :: Inline SVG -->
+                                                        <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2""></path>
+                                                        </svg>
 
-                                                    <!-- List Group Item Start -->
-                                                    <li class="list-group-item py-2">
-                                                        <div class="media align-items-center">
-                                                            <div class="media-body">
-                                                                <p class="small text-muted mb-0">شغل </p>
-                                                                <p class="mb-0">جوشکار</p>
-                                                            </div>
-                                                            <!-- Default :: Inline SVG -->
-                                                            <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                
-                                                            </svg>
+                                                        <!-- Alternate :: External File link -->
+                                                        <img class="injectable text-muted hw-20 ml-1" src="../assets/media/icons/family.svg" alt=""> 
+                                                    </div>
+                                                </li>
+                                                <!-- List Group Item End -->
 
-                                                            <!-- Alternate :: External File link -->
-                                                             <img class="injectable text-muted hw-20 ml-1" src="../assets/media/icons/job.svg" alt=""> 
+                                                <!-- List Group Item Start -->
+                                                <li class="list-group-item py-2">
+                                                    <div class="media align-items-center">
+                                                        <div class="media-body">
+                                                            <p class="small text-muted mb-0">تلفن</p>
+                                                            <p class="mb-0 leftphone" dir="ltr">+98-012-3456789</p>
                                                         </div>
-                                                    </li>
-                                                    <!-- List Group Item End -->
+                                                        <!-- Default :: Inline SVG -->
+                                                        <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" ></path>
+                                                        </svg>
 
-                                           
+                                                        <!-- Alternate :: External File link -->
+                                                     <img class="injectable text-muted hw-20 ml-1" src="../assets/media/icons/datebirth.svg" alt=""> 
+                                                    </div>
+                                                </li>
+                                                <!-- List Group Item End -->
 
+                                                <!-- List Group Item Start -->
+                                                <li class="list-group-item py-2">
+                                                    <div class="media align-items-center">
+                                                        <div class="media-body">
+                                                            <p class="small text-muted mb-0">تاریخ تولد</p>
+                                                            <p class="mb-0 leftbirthdate">1379/02/04</p>
+                                                        </div>
 
+                                                        <!-- Default :: Inline SVG -->
+                                                        <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" ></path>
+                                                        </svg>
 
+                                                        <!-- Alternate :: External File link -->
+                                                         <img class="injectable text-muted hw-20 ml-1" src="../assets/media/icons/mobile.svg" alt=""> 
+                                                    </div>
+                                                </li>
+                                                <!-- List Group Item End -->
 
-                                                </ul>
-                                                <!-- List Group End -->
+                                                <!-- List Group Item Start -->
+                                                <li class="list-group-item py-2">
+                                                    <div class="media align-items-center">
+                                                        <div class="media-body">
+                                                            <p class="small text-muted mb-0"> شغل</p>
+                                                            <p class="mb-0 leftjob" id="job">کارگر ساده</p>
+                                                        </div>
+                                                        <!-- Default :: Inline SVG -->
+                                                        <svg class="text-muted hw-20 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" </path>
+                                                        </svg>
 
-                                            </div>
-                                          
+                                                        <!-- Alternate :: External File link -->
+                                                        <img class="injectable text-muted hw-20 ml-1" src="../assets/media/icons/job.svg" alt=""> 
+                                                    </div>
+                                                </li>
+                                                <!-- List Group Item End -->
+
+                                             
+
+                                            </ul>
+                                            <!-- List Group End -->
+
                                         </div>
-                                    </div>
+                                        <!-- Card End -->
+
+
                                 </div>
-                                <!-- Sidebar Content End -->
                             </div>
                         </div>
+                        <!-- Sidebar Content End -->
                     </div>
-                    <!-- Profile Tab Content End -->
+                </div>
+            </div>
+            <!-- Profile Tab Content End -->
                 </div>
                 <!-- Tab Content End -->
             </aside>
@@ -1660,7 +1744,7 @@
                             <div class="card card-body card-bg-1 mb-3">
                                 <div class="d-flex flex-column align-items-center">
                                     <div class="avatar avatar-lg mb-3">
-                                        <img class="avatar-img" src="../assets/media/avatar/3.png" alt="">
+                                        <img  id="" class="avatar-img" src="../assets/media/avatar/3.png" alt="">
                                     </div>
 
                                     <div class="d-flex flex-column align-items-center">
@@ -1914,7 +1998,7 @@
                                                             <div class="form-group">
                                                                 <label for="firstName">نام کوچک</label>
                                                                 <input type="text" class="form-control form-control-md" id="firstName" placeholder="نام کوچک خود را تایپ کنید" value="کاترین">
-                                                            </div>
+                                                            </div>  
                                                         </div>
                                                         <div class="col-md-6 col-12">
                                                             <div class="form-group">
@@ -1935,7 +2019,12 @@
                                                             </div>
                                                         </div>
 
-                                                
+                                                        <div class="col-md-6 col-12">
+                                                            <div class="form-group">
+                                                                <label for="jobInput"> شغل</label>
+                                                                <input  id="jobInput" type="text" class="form-control form-control-md" placeholder="شغل" value="معمار">
+                                                            </div>
+                                                        </div>
 
                                                     </div>
                                                 </div>
@@ -1973,8 +2062,12 @@
   
 
 
-
-
+<!--
+<div class="d-flex flex-column align-items-center">
+  <a href="#" id="profilek">Click me</a>
+  <img id="profile-picture" src="default.png" alt="Profile Picture" width="200" height="200">
+</div>
+-->
 
 </div>
 
@@ -1990,48 +2083,247 @@
 
 
   <script>
-    const drawer = document.getElementById('drawer');
-    let startX = 0;
-    let startY = 0; // Store starting Y-coordinate (for vertical swipe check)
+const drawer = document.getElementById('drawer');
+let startX = 0;
+let startY = 0; // Store starting Y-coordinate (for vertical swipe check)
 
-    document.addEventListener('touchstart', (event) => {
-      startX = event.changedTouches[0].clientX;
-      startY = event.changedTouches[0].clientY; // Capture initial touch position
-    });
+document.addEventListener('touchstart', (event) => {
+  startX = event.changedTouches[0].clientX;
+  startY = event.changedTouches[0].clientY; // Capture initial touch position
+});
 
-    document.addEventListener('touchend', (event) => {
-      const endX = event.changedTouches[0].clientX;
-      const swipeDistanceX = endX - startX;
-      const swipeDistanceY = Math.abs(event.changedTouches[0].clientY - startY); // Absolute value for vertical distance
+document.addEventListener('touchend', (event) => {
+  const endX = event.changedTouches[0].clientX;
+  const swipeDistanceX = endX - startX;
+  const swipeDistanceY = Math.abs(event.changedTouches[0].clientY - startY); // Absolute value for vertical distance
 
-      // Minimum swipe distance threshold (optional, adjust value as needed)
-      const minSwipeDistance = 50;
+  // Minimum swipe distance threshold (optional, adjust value as needed)
+  const minSwipeDistance = 50;
 
-      if (swipeDistanceX > minSwipeDistance && swipeDistanceY < minSwipeDistance) {
-        // Check for right swipe (positive X) and minimal vertical movement
-        drawer.style.display = 'block'; 
-        drawer.classList.add('open');
-      }
-    });
+  if (swipeDistanceX > minSwipeDistance && swipeDistanceY < minSwipeDistance) {
+    // Check for right swipe (positive X) and minimal vertical movement
+    drawer.style.display = 'block';
+    drawer.classList.add('open');
+  }
+});
+
+// Open drawer on clicking the button
+const openButton = document.getElementById('openleftnav');
+if (openButton) { // Check if button exists
+  openButton.addEventListener('click', () => {
+    // Ensure drawer is displayed and class 'open' is added
+    drawer.style.display = 'block'; // Might already be displayed, set for clarity
+    drawer.classList.add('open');
+    event.stopPropagation();
+    console.log("works");
+  });
+}
+
+// Hide drawer on click outside it (excluding button)
+document.addEventListener('click', (event) => {
+  const isDrawerOpen = drawer.classList.contains('open');
+  if (isDrawerOpen && !event.target.closest('#drawer') && event.target !== openButton) {
+    drawer.classList.remove('open');
+  }
+});
+
+      //AJAX call to get data from database
+     
+       function updatePage(){
+           $.ajax({
+                    url: 'fetchUserData.php', //URL of the server-side script
+                    type: 'POST',
+                    success: function(data) {
+                        //Handle the response data
+                        console.log(data);
+                        const response = JSON.parse(data);
+                        console.log(response);
+                        document.getElementById('firstName').value =response[0].firstName;
+                        document.getElementById('lastName').value = response[0].lastName;
+                        document.getElementById('mobileNumber').value = response[0].mobileNumber;
+                        document.getElementById('birthDate').value = response[0].birthDate;
+                        document.getElementById('jobInput').value =response[0].job;
+                     
 
 
-    // Hide drawer on click outside it
-    document.addEventListener('click', (event) => {
-    const isDrawerOpen = drawer.classList.contains('open');
-    if (isDrawerOpen && !event.target.closest('#drawer')) {
-        drawer.classList.remove('open');
-        console.log("I AM FROM DRAWER");
-    }
-    });
+                        //setting phone value
+                        const phone = document.querySelector('.leftname');
+                        phone.textContent = response[0].firstName;
+                        //setting phone value
+                        const email = document.querySelector('.leftfamilyname');
+                        email.textContent = response[0].lastName;
+
+                        //setting site value
+                        const site = document.querySelector('.leftphone');
+                        site.textContent = response[0].mobileNumber;
+                        
+                        //setting address value
+                        const address = document.querySelector('.leftbirthdate');
+                        address.textContent = response[0].birthDate;
+
+
+                        // Get the <p> element with class name "mb-0"
+                        const paragraphElement = document.querySelector('.leftjob');
+                        // Set the text content of the <p> element to the desired value (e.g., response[0].birthDate)
+                        paragraphElement.textContent = response[0].job;
 
 
 
+                    },
+                    error: function(xhr, status, error) {
+                        //Handle any errors
+                        console.error('Error fetching user data:', error);
+                    }
+                    });
+   
+       }
 
 
  
+        //  //save personal data from inputs into database
+         function update_userinfo(){
+
+                    document.querySelector('.save_personal_info').addEventListener('click', function() {
+                    const firstName = document.getElementById('firstName').value;
+                    const lastName = document.getElementById('lastName').value;
+                    const mobileNumber = document.getElementById('mobileNumber').value;
+                    const birthDate = document.getElementById('birthDate').value;
+                    const jobInput = document.getElementById('jobInput').value;
+                   
+      
+                    const formData ={
+                        firstName: firstName,
+                        lastName: lastName,
+                        mobileNumber: mobileNumber,
+                        birthDate: birthDate,
+                        job: jobInput
+
+                    };
+
+                      console.log("formData:", formData);
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('POST', 'userinfochange.php', true);
+                    xhr.setRequestHeader('Content-Type', 'application/json');
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === XMLHttpRequest.DONE) {
+                            if (xhr.status === 200) {
+                                // Log the response from the PHP page
+                                console.log(xhr.responseText);
+                                
+                                    // Handle the response from the PHP page
+                                    try {
+                                        const response = JSON.parse(xhr.responseText);
+                                        // You can now access the data in the response object
+                                        console.log(response);
+                                        
+                                        // Update the input fields with the response data
+                                        document.getElementById('firstName').value = response.additional_data.name;
+                                        document.getElementById('lastName').value = response.additional_data.lastName;
+                                        document.getElementById('mobileNumber').value = response.additional_data.mobileNumber;
+                                        document.getElementById('birthDate').value = response.additional_data.birthDate;
+                                        document.getElementById('jobInput').value = response.additional_data.job;
+                            
+                                        
+
+                                    updatePage();
+
+                                    } catch (error) {
+                                        console.error("Error parsing JSON response: ", error);
+                                    }
+                            }
+
+
+                        }
+                    };
+
+                    xhr.send(JSON.stringify(formData));
+                });
+                 
+           }
+           update_userinfo();
 
 
 
+    
+
+
+
+
+// -------------------
+
+// $(document).ready(function() {
+//   const profilePictureLink = $('#profile-picture-link');
+//   const profilePictureInput = $('#profile-picture-input');
+//   const profilePicture = $('#profile-picture');
+
+//   profilePictureLink.on('click', function(event) {
+//     event.preventDefault();
+//     profilePictureInput.click();
+//   });
+
+//   profilePictureInput.on('change', function(event) {
+//     const file = event.target.files[0];
+//     const reader = new FileReader();
+//     reader.onload = function(e) {
+//       profilePicture.attr('src', e.target.result);
+
+//       const formData = new FormData();
+//       formData.append('profile_pic', file);
+//       formData.append('/* Other user info to update (optional) */', '/* Value */'); // Add other data to update
+
+//       $.ajax({
+//         url: 'uploadprofileimage.php',
+//         type: 'POST',
+//         data: formData,
+//         contentType: false,
+//         processData: false,
+//         success: function(response) {
+//           if (response.success) {
+//             console.log('Profile picture updated successfully!');
+//             // Update the profile picture source or display a success message (optional)
+//           } else {
+//             console.error('Error updating profile picture:', response.error);
+//             // Handle errors (e.g., display error message to user)
+//           }
+//         },
+//         error: function(error) {
+//           console.error('Error uploading profile picture:', error);
+//           // Handle network errors or other issues
+//         }
+//       });
+//     };
+//     reader.readAsDataURL(file);
+//   });
+// });
+
+
+// uploading profile javascript
+document.getElementById("fileImg").addEventListener("change", function(event) {
+  const file = event.target.files[0];
+
+  // Validate file type (recommended for security and user experience)
+  if (!file.type.match('image.*')) {
+    alert("Please select an image file (JPG, PNG, etc.).");
+    return; // Prevent further processing if not an image
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    document.getElementById("image").src = e.target.result;
+    document.getElementById('cancel').style.display = "block";
+    document.getElementById('confirm').style.display = "block";
+    document.getElementById('upload').style.display = "none";
+  };
+  reader.readAsDataURL(file);
+});
+
+document.getElementById('cancel').addEventListener("click", function() {
+  document.getElementById("image").src = "<?php echo $currentImage; ?>"; // Restore original image
+  document.getElementById('cancel').style.display = "none";
+  document.getElementById('confirm').style.display = "none";
+  document.getElementById('upload').style.display = "block";
+});
 
   </script>
 

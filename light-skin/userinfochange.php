@@ -10,9 +10,8 @@ $firstName = $data['firstName'];
 $lastName = $data['lastName'];
 $mobileNumber = $data['mobileNumber'];
 $birthDate = $data['birthDate'];
-$emailAddress = $data['emailAddress'];
-$webSite = $data['webSite'];
-$address = $data['address'];
+$job = $data['job'];
+
 
 // Use the data as needed in your PHP logic
 
@@ -31,9 +30,7 @@ $sql = "UPDATE userinfo SET
         `lastName` = '$lastName',
         `mobileNumber` = '$mobileNumber',
         `birthDate` = '$birthDate',
-        `emailAddress` = '$emailAddress',
-        `webSite` = '$webSite',
-        `Address` = '$address'
+        `job` = '$job'
          WHERE `id` = '" . $_SESSION['id'] . "'";
 
 
@@ -42,7 +39,7 @@ if ($conn->query($sql) === TRUE) {
     $response = array(
         'status' => 'success',
         'message' => 'Record updated successfully',
-        'additional_data' => array('id'=>$_SESSION['id'] ,'name' => $firstName, 'lastName' => $lastName, 'mobileNumber' => $mobileNumber, 'birthDate' => $birthDate, 'emailAddress' => $emailAddress, 'webSite' => $webSite,'Address'=>$address)
+        'additional_data' => array('id'=>$_SESSION['id'] ,'name' => $firstName, 'lastName' => $lastName, 'mobileNumber' => $mobileNumber, 'birthDate' => $birthDate, 'job' => $job)
     );
     echo json_encode($response);
 } else {
