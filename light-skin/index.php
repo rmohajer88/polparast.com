@@ -10,21 +10,43 @@ $currentImage = $user['iconlink']; // Store the current image URL for preview re
 
 
 
-  if(isset($_FILES["fileImg"]["name"])){
+if (isset($_FILES["fileImg"]["name"])) {
     $id = $_POST["id"];
-    $src = $_FILES["fileImg"]["tmp_name"];
-    $imageName =uniqid().$_FILES["fileImg"]["name"]; // Ensure unique filename
 
-    $target ="../assets/media/avatar/".$imageName;
+    // Retrieve the current image path (assuming stored in the database)
+    $query = "SELECT iconlink FROM userinfo WHERE id = $id";
+    $result = mysqli_query($conn, $query);
 
-         
-         move_uploaded_file($src, $target);
-         $query = "UPDATE userinfo SET iconlink= '$target' WHERE id = $id";
-         mysqli_query($conn, $query);
-        header("Location:index.php#profile-content");
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $currentImagePath = $row['iconlink'];
 
-   
+        // Delete the current image file (if it exists)
+        if (file_exists($currentImagePath)) {
+            unlink($currentImagePath);
+        }
+    } else {
+        // Handle case where no current image exists (optional: log or notify)
+        // echo "No current image found for user ID: $id";
     }
+
+    // Generate unique filename and define target path
+    $imageName = uniqid() . $_FILES["fileImg"]["name"];
+    $target = "../assets/media/avatar/" . $imageName;
+
+    // Move uploaded file
+    if (move_uploaded_file($_FILES["fileImg"]["tmp_name"], $target)) {
+        // Update database with new image path
+        $query = "UPDATE userinfo SET iconlink= '$target' WHERE id = $id";
+        mysqli_query($conn, $query);
+
+        // Redirect on success with appropriate message
+        header("Location:index.php#profile-content?success=Image+updated+successfully");
+    } else {
+        // Handle upload failure (e.g., display error message)
+        echo "Error uploading image. Please try again.";
+    }
+}
 
 
 ?>
@@ -1292,7 +1314,7 @@ $currentImage = $user['iconlink']; // Store the current image URL for preview re
                                                     <!-- <img class="injectable hw-18" src="./../assets/media/heroicons/outline/logout.svg" alt=""> -->
                                                  
 
-                                                    <span>خروج</span>
+                                                   <a href="logout.php">خروج</a>
                                                 
                                                 </button>
                                              </form>
@@ -1312,25 +1334,7 @@ $currentImage = $user['iconlink']; // Store the current image URL for preview re
                                         </div>
                                         <!-- Card Details End -->
 
-                                        <!-- Card Options Start -->
-                                        <div class="card-options">
-                                            <div class="dropdown">
-                                                <button class="btn btn-secondary btn-icon btn-minimal btn-sm text-muted text-muted" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <!-- Default :: Inline SVG -->
-                                                    <svg class="hw-20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
-                                                    </svg>
-
-                                                    <!-- Alternate :: External File link -->
-                                                    <!-- <img class="injectable hw-20" src="./../assets/media/heroicons/outline/dots-vertical.svg" alt=""> -->
-                                                </button>
-                                                <div class="dropdown-menu dropdown-menu-left">
-                                                    <a class="dropdown-item" href="#">تغییر عکس پروفایل</a>
-                                                    <a class="dropdown-item" href="#">تغییر شماره</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Card Options End -->
+                      
 
                                     </div>
                                     <!-- Card End -->
@@ -2177,8 +2181,8 @@ document.addEventListener('click', (event) => {
                     });
    
        }
-
-
+         updatePage();
+ 
  
         //  //save personal data from inputs into database
          function update_userinfo(){
@@ -2250,52 +2254,6 @@ document.addEventListener('click', (event) => {
 
 
 
-// -------------------
-
-// $(document).ready(function() {
-//   const profilePictureLink = $('#profile-picture-link');
-//   const profilePictureInput = $('#profile-picture-input');
-//   const profilePicture = $('#profile-picture');
-
-//   profilePictureLink.on('click', function(event) {
-//     event.preventDefault();
-//     profilePictureInput.click();
-//   });
-
-//   profilePictureInput.on('change', function(event) {
-//     const file = event.target.files[0];
-//     const reader = new FileReader();
-//     reader.onload = function(e) {
-//       profilePicture.attr('src', e.target.result);
-
-//       const formData = new FormData();
-//       formData.append('profile_pic', file);
-//       formData.append('/* Other user info to update (optional) */', '/* Value */'); // Add other data to update
-
-//       $.ajax({
-//         url: 'uploadprofileimage.php',
-//         type: 'POST',
-//         data: formData,
-//         contentType: false,
-//         processData: false,
-//         success: function(response) {
-//           if (response.success) {
-//             console.log('Profile picture updated successfully!');
-//             // Update the profile picture source or display a success message (optional)
-//           } else {
-//             console.error('Error updating profile picture:', response.error);
-//             // Handle errors (e.g., display error message to user)
-//           }
-//         },
-//         error: function(error) {
-//           console.error('Error uploading profile picture:', error);
-//           // Handle network errors or other issues
-//         }
-//       });
-//     };
-//     reader.readAsDataURL(file);
-//   });
-// });
 
 
 // uploading profile javascript
