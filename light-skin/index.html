@@ -2450,11 +2450,27 @@
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <label>عکس پروفایل را انتخاب کنید</label>
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="profilePictureInput" accept="image/*">
-                                    <label class="custom-file-label" for="profilePictureInput">انتخاب فایل</label>
+
+                            <form class="" action="" enctype="multipart/form-data" method="post">
+                                <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+
+                                <div class="upload">
+                                    <img src="<?php echo $currentImage; ?>" id="image">
+
+                                    <div class="rightRound" id="upload">
+                                    <input type="file" name="fileImg" id="fileImg" accept="image/*">
+                                    <i class="fa fa-camera"></i>
+                                    </div>
+
+                                    <div class="leftRound" id="cancel" style="display: none;">
+                                    <i class="fa fa-times"></i>
+                                    </div>
+                                    <div class="rightRound" id="confirm" style="display: none;">
+                                    <input type="submit" name="" value="">
+                                    <i class="fa fa-check"></i>
+                                    </div>
                                 </div>
+                            </form>
                             </div>
                         </div>
 

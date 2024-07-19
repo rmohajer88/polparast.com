@@ -1,13 +1,13 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1720695321945,
+    "generatedTime": 1720806412589,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state.json",
-            "size": 21427,
-            "hash": "f2cdb6d0f184133863b097e5e0e5af068e55e68af31ac372c10a31e71b909e00"
+            "size": 22050,
+            "hash": "4387ba398b39242503290b59840314e9b2cf598511cd238b7df1b5611a719508"
         },
         {
             "type": "folder",
@@ -47,11 +47,11 @@
         },
         {
             "type": "folder",
-            "name": "assets/css"
+            "name": "assets/fav"
         },
         {
             "type": "folder",
-            "name": "assets/fav"
+            "name": "assets/css"
         },
         {
             "type": "folder",
@@ -180,8 +180,8 @@
         {
             "type": "file",
             "name": "light-skin/index.php",
-            "size": 170157,
-            "hash": "a9393e931962677706e589850608399b145bb253c129fb2eb18c64253fdb9cf1"
+            "size": 156788,
+            "hash": "40d232ebec82b332b31499365e0474e14aa8326d4095ef6b1a307f06c44b08d3"
         },
         {
             "type": "file",
@@ -204,8 +204,8 @@
         {
             "type": "file",
             "name": "light-skin/signin.php",
-            "size": 6462,
-            "hash": "3f8e0e7d5903dafc5dec8903bcd1af52f12e8cf8b1049b795ce4c954ef60a42d"
+            "size": 6403,
+            "hash": "2943b51301938ee7f1ffe6216d5df0724d9f3833850b53a7fa3d6950eb7514f9"
         },
         {
             "type": "file",
@@ -224,28 +224,6 @@
             "name": "light-skin/usersocialinfochange.php",
             "size": 1177,
             "hash": "4e0d862228e465cbda8c991a38ee1a9b58f88201108e7c40365416211d9e8654"
-        },
-        {
-            "type": "file",
-            "name": "assets/css/app.min.css",
-            "size": 326837,
-            "hash": "123046abed9ce1e6fd088b7430dc10658b8c1bcd2aeba582c2b7495212e7df0a"
-        },
-        {
-            "type": "file",
-            "name": "assets/css/c.css",
-            "size": 2130,
-            "hash": "3df596f8bd865cfcb40b4b839e1d813d98d6d175a1924c1a0c0ff385dd0a9be1"
-        },
-        {
-            "type": "file",
-            "name": "assets/css/landing-page.min.css",
-            "size": 1506,
-            "hash": "e516816aab87c319f69c284d90cedfa6cf36804f9fd9341a1eb4c0a7f094e7af"
-        },
-        {
-            "type": "folder",
-            "name": "assets/css/skins"
         },
         {
             "type": "file",
@@ -270,6 +248,28 @@
             "name": "assets/fav/favicon.ico",
             "size": 15086,
             "hash": "04e10507c83eb50e96c57f4207d20b10bdac967a62b453f74b8c2f50767d703c"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/app.min.css",
+            "size": 326837,
+            "hash": "123046abed9ce1e6fd088b7430dc10658b8c1bcd2aeba582c2b7495212e7df0a"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/c.css",
+            "size": 2178,
+            "hash": "05616fe64a67b1f7f6ce6da3100fb3a82de426e134826a63dbce77e84b259792"
+        },
+        {
+            "type": "folder",
+            "name": "assets/css/skins"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/landing-page.min.css",
+            "size": 1506,
+            "hash": "e516816aab87c319f69c284d90cedfa6cf36804f9fd9341a1eb4c0a7f094e7af"
         },
         {
             "type": "folder",
@@ -363,15 +363,15 @@
         },
         {
             "type": "file",
-            "name": "assets/media/avatar/5.png",
-            "size": 15433,
-            "hash": "586114c00df2bc11e89a4f918a6b219512539b9d7d7589ade55f45ff72e39ee4"
-        },
-        {
-            "type": "file",
             "name": "assets/media/avatar/4.png",
             "size": 21505,
             "hash": "46a2c3db5192d1ac981ff236f637de7b2d2a7a606e5eda859e050edb92f09407"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/5.png",
+            "size": 15433,
+            "hash": "586114c00df2bc11e89a4f918a6b219512539b9d7d7589ade55f45ff72e39ee4"
         },
         {
             "type": "file",
@@ -396,6 +396,12 @@
             "name": "assets/media/icons/development.svg",
             "size": 1875,
             "hash": "94033ae946f3fe81d32a8547e251dbee64cbab3e845366524fdd8928dec8a2ec"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/job.svg",
+            "size": 4269,
+            "hash": "69356f7698a5bc76197c683cc0db80ec2522a4915e4ba3092e78c5769fbff750"
         },
         {
             "type": "file",
