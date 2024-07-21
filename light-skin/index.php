@@ -1,56 +1,3 @@
-<?php
-require 'dataBase.php'; // Assuming 'dataBase.php' contains your database connection logic
-
-// Retrieve user information (assuming you have a session or other mechanism)
-session_start();
-$sessionId = $_SESSION["id"]; // Replace with your logic to get the user ID
-$user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM userinfo WHERE id = $sessionId"));
-$currentImage = $user['iconlink']; // Store the current image URL for preview restoration
-
-
-
-
-if (isset($_FILES["fileImg"]["name"])) {
-    $id = $_POST["id"];
-
-    // Retrieve the current image path (assuming stored in the database)
-    $query = "SELECT iconlink FROM userinfo WHERE id = $id";
-    $result = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $currentImagePath = $row['iconlink'];
-
-        // Delete the current image file (if it exists)
-        if (file_exists($currentImagePath)) {
-            unlink($currentImagePath);
-        }
-    } else {
-        // Handle case where no current image exists (optional: log or notify)
-        // echo "No current image found for user ID: $id";
-    }
-
-    // Generate unique filename and define target path
-    $imageName = uniqid() . $_FILES["fileImg"]["name"];
-    $target = "../assets/media/avatar/" . $imageName;
-
-    // Move uploaded file
-    if (move_uploaded_file($_FILES["fileImg"]["tmp_name"], $target)) {
-        // Update database with new image path
-        $query = "UPDATE userinfo SET iconlink= '$target' WHERE id = $id";
-        mysqli_query($conn, $query);
-
-        // Redirect on success with appropriate message
-        header("Location:index.php#profile-content?success=Image+updated+successfully");
-    } else {
-        // Handle upload failure (e.g., display error message)
-        echo "Error uploading image. Please try again.";
-    }
-}
-
-
-?>
-
 
 
 <!DOCTYPE html>
@@ -1277,10 +1224,10 @@ if (isset($_FILES["fileImg"]["name"])) {
 
 
                                             <form class="" action="" enctype="multipart/form-data" method="post">
-                                            <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
+                                            <input type="hidden" name="id" value="">
 
                                             <div class="upload">
-                                                <img src="<?php echo $currentImage; ?>" id="image">
+                                                <img src="" id="image">
 
                                                 <div class="rightRound" id="upload">
                                                 <input type="file" name="fileImg" id="fileImg" accept="image/*">
@@ -1299,7 +1246,7 @@ if (isset($_FILES["fileImg"]["name"])) {
                                                                                                 
                                             <div class="d-flex flex-column align-items-center namebelowprofilephoto">
                                                 <!-- php code  -->
-                                                <h5><?php   echo $_SESSION['name'];?> </h5>
+                                                <h5 id="topprofilename">امیر</h5>
                                             </div>
 
                                             <div class="d-flex">
@@ -2086,7 +2033,9 @@ if (isset($_FILES["fileImg"]["name"])) {
 
 
 
-  <script>
+<script>
+
+// start  drawer handling
 const drawer = document.getElementById('drawer');
 let startX = 0;
 let startY = 0; // Store starting Y-coordinate (for vertical swipe check)
@@ -2130,8 +2079,11 @@ document.addEventListener('click', (event) => {
     drawer.classList.remove('open');
   }
 });
+// end  drawer handling
 
-      //AJAX call to get data from database
+
+
+// start AJAX call to to update the page
      
        function updatePage(){
            $.ajax({
@@ -2142,7 +2094,9 @@ document.addEventListener('click', (event) => {
                         console.log(data);
                         const response = JSON.parse(data);
                         console.log(response);
+                        document.getElementById('image').src = response[0].iconlink;
                         document.getElementById('firstName').value =response[0].firstName;
+                        document.getElementById("topprofilename").innerHTML =response[0].firstName;
                         document.getElementById('lastName').value = response[0].lastName;
                         document.getElementById('mobileNumber').value = response[0].mobileNumber;
                         document.getElementById('birthDate').value = response[0].birthDate;
@@ -2182,9 +2136,9 @@ document.addEventListener('click', (event) => {
    
        }
          updatePage();
+// end AJAX call to to update the page
  
- 
-        //  //save personal data from inputs into database
+// start save personal data from inputs into database
          function update_userinfo(){
 
                     document.querySelector('.save_personal_info').addEventListener('click', function() {
@@ -2246,42 +2200,74 @@ document.addEventListener('click', (event) => {
                  
            }
            update_userinfo();
-
+// end save personal data from inputs into database
 
 
     
 
 
 
-
-
-
-// uploading profile javascript
-document.getElementById("fileImg").addEventListener("change", function(event) {
-  const file = event.target.files[0];
-
-  // Validate file type (recommended for security and user experience)
-  if (!file.type.match('image.*')) {
-    alert("Please select an image file (JPG, PNG, etc.).");
-    return; // Prevent further processing if not an image
-  }
-
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    document.getElementById("image").src = e.target.result;
-    document.getElementById('cancel').style.display = "block";
-    document.getElementById('confirm').style.display = "block";
-    document.getElementById('upload').style.display = "none";
-  };
-  reader.readAsDataURL(file);
+//start upload profile image script
+document.getElementById('fileImg').addEventListener('change', function() {
+    var file = this.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        document.getElementById('image').src = e.target.result;
+        document.getElementById('cancel').style.display = 'block';
+        document.getElementById('confirm').style.display = 'block';
+        console.log("input picture");
+        changeProfile(file);
+    }
+    reader.readAsDataURL(file);
 });
 
-document.getElementById('cancel').addEventListener("click", function() {
-  document.getElementById("image").src = "<?php echo $currentImage; ?>"; // Restore original image
-  document.getElementById('cancel').style.display = "none";
-  document.getElementById('confirm').style.display = "none";
-  document.getElementById('upload').style.display = "block";
+document.getElementById('cancel').addEventListener('click', function() {
+    document.getElementById('fileImg').value = '';
+    
+    document.getElementById('cancel').style.display = 'none';
+    document.getElementById('confirm').style.display = 'none';
+    console.log("cancel picture");
 });
+
+function changeProfile(file){
+    document.getElementById('confirm').addEventListener('click', function(event) {
+
+        document.getElementById('cancel').style.display = 'none';
+        document.getElementById('confirm').style.display = 'none'
+        event.preventDefault();
+        var formData = new FormData();
+        formData.append("fileImg", file);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'uploadprofileimage.php');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+
+                var response = JSON.parse(xhr.responseText);
+                if(response.success){
+
+                    document.getElementById('image').src = response.imagePath;
+                    console.log(response.imagePath);
+                                       
+                    // Update the icon link in the userinfo table based on the response
+                    // You can handle the response here if needed
+                } else {
+                    // Handle the error if needed
+                         console.log(response.message);
+                }
+            
+
+            } 
+            else {
+                // Handle upload error
+                     console.log("error uploading");
+            }
+        }
+        xhr.send(formData);
+    });
+
+}
+//end upload profile image script
+
 
   </script>
 

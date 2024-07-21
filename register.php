@@ -34,14 +34,13 @@ if ($result->num_rows > 0) {
     
 }
 
-
-
-
-
 // Insert user data into the database
 $name = $_POST['name'];
 $password = $_POST['password'];
 $hashed_password_value = hash('sha256', $password);
+$idd;
+
+
 
 $sql = "INSERT INTO users (name, email, password) VALUES ('$name', '$email', '$hashed_password_value')";
 
@@ -55,18 +54,20 @@ if ($conn->query($sql) === TRUE) {
         while($row = $result->fetch_assoc()) {
         
                 $id = $row['id'];// Storing the value in golobal variable
+
+              
+
   
         }
+
+                //create userinfo user meanwhile new user is added to database
+                 $sqluserinfo = "INSERT INTO userinfo (id,firstName,lastName,mobileNumber,birthDate,job,iconlink) VALUES ('$id','$name',NULL,NULL,NULL,'','' )";
+                 $conn->query($sqluserinfo);
     }
     
 
-    //create usersocialinfo user meanwhile new user is added to database
-    $sqlusersocialinfo = "INSERT INTO usersocialinfo (id,twitterId,instagramId,linkedId) VALUES ('$id','','','')";
-    $conn->query($sqlusersocialinfo);
 
-    //create userinfo user meanwhile new user is added to database
-    $sqluserinfo = "INSERT INTO userinfo (id,firstName,lastName,mobileNumber,birthDate,emailAddress,webSite,Address) VALUES ('$id','$name','','',NULL, '$email','','' )";
-    $conn->query($sqluserinfo);
+   
     
     echo "<script>alert('ثبت نام با موفقیت انجام شد');</script>";
     echo "<script>setTimeout(function(){ window.location='light-skin/signin.php' }, 1000);</script>";
