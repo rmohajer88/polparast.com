@@ -1,13 +1,17 @@
 {
     "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
     "version": "1.0.0",
-    "generatedTime": 1720806412589,
+    "generatedTime": 1721395683864,
     "data": [
         {
             "type": "file",
             "name": ".ftp-deploy-sync-state.json",
-            "size": 22050,
-            "hash": "4387ba398b39242503290b59840314e9b2cf598511cd238b7df1b5611a719508"
+            "size": 22262,
+            "hash": "52095d58106438bc2222e073c703e83ce450bbaf63f779d0623c990efadd891b"
+        },
+        {
+            "type": "folder",
+            "name": "app"
         },
         {
             "type": "folder",
@@ -46,12 +50,18 @@
             "hash": "dded9c82ae335d7f44fe4c4ce77d3ca2c50ab51e1da94a767871a19f76d045a7"
         },
         {
-            "type": "folder",
-            "name": "assets/fav"
+            "type": "file",
+            "name": "app/index.html",
+            "size": 431,
+            "hash": "a5d2f7618442d51453fbb94084554d4cb2f1ab9baafbbaac07f5e34798e3bba8"
         },
         {
             "type": "folder",
             "name": "assets/css"
+        },
+        {
+            "type": "folder",
+            "name": "assets/fav"
         },
         {
             "type": "folder",
@@ -174,20 +184,26 @@
         {
             "type": "file",
             "name": "light-skin/index.html",
-            "size": 210756,
-            "hash": "0264675d09e4110259c0b441d1e31c069806de6febdf36aac74305c430af9ca1"
+            "size": 208617,
+            "hash": "c4eedbd080b78c3a981e9efbce0a71fd0d4d64636fb4e36fed18e66feb9ec9bb"
         },
         {
             "type": "file",
             "name": "light-skin/index.php",
-            "size": 156788,
-            "hash": "40d232ebec82b332b31499365e0474e14aa8326d4095ef6b1a307f06c44b08d3"
+            "size": 167727,
+            "hash": "cd7ccd8ae07dcc10c64669b8af966ca3af8bb670ecc7582551bce4705517160a"
         },
         {
             "type": "file",
             "name": "light-skin/login.php",
             "size": 1160,
             "hash": "beb973683716deb1acc74e22776b6ee775a112769340b3d95ae34bbd3326e26c"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/logout.php",
+            "size": 176,
+            "hash": "a33f6298920c78e9b9db7ae3bf6ddf16382d2392db7e7947bc0d3864374c8fa3"
         },
         {
             "type": "file",
@@ -214,16 +230,54 @@
             "hash": "059307d3c6f434ddc5b19589686721c5f25959ee47a4ebbb943b916e0fb370ae"
         },
         {
+            "type": "folder",
+            "name": "light-skin/u"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/uploadprofileimage.php",
+            "size": 1116,
+            "hash": "119fe6876676a086bc179e94c06c20ac86dbc49d62a09543219d35f6a228845f"
+        },
+        {
             "type": "file",
             "name": "light-skin/userinfochange.php",
-            "size": 2018,
-            "hash": "1d298a5e30b75f49ac4a6e6c1e91600c30177af8c8121358f6ad4f1a57fb497b"
+            "size": 1800,
+            "hash": "900486ef6f72618cc4d4c6ce33ac692e4f6349729c5eca91df5067d993430d01"
         },
         {
             "type": "file",
             "name": "light-skin/usersocialinfochange.php",
             "size": 1177,
             "hash": "4e0d862228e465cbda8c991a38ee1a9b58f88201108e7c40365416211d9e8654"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/app.min.css",
+            "size": 326863,
+            "hash": "8ea2bcb059bb8dc25b414997f33098dcfd89b971d8befabd3faf8a873fe5c254"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/c.css",
+            "size": 4023,
+            "hash": "50628afe85dd1f31b93b8298606848630debd646ecb1bc001eb1987e99d496c3"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/landing-page.min.css",
+            "size": 1506,
+            "hash": "e516816aab87c319f69c284d90cedfa6cf36804f9fd9341a1eb4c0a7f094e7af"
+        },
+        {
+            "type": "file",
+            "name": "assets/css/profile.css",
+            "size": 38705,
+            "hash": "a96eb95866e82edc258e07a7e664752bbb2f97545313cbb2f6179a8a87bebebd"
+        },
+        {
+            "type": "folder",
+            "name": "assets/css/skins"
         },
         {
             "type": "file",
@@ -250,50 +304,28 @@
             "hash": "04e10507c83eb50e96c57f4207d20b10bdac967a62b453f74b8c2f50767d703c"
         },
         {
-            "type": "file",
-            "name": "assets/css/app.min.css",
-            "size": 326837,
-            "hash": "123046abed9ce1e6fd088b7430dc10658b8c1bcd2aeba582c2b7495212e7df0a"
-        },
-        {
-            "type": "file",
-            "name": "assets/css/c.css",
-            "size": 2178,
-            "hash": "05616fe64a67b1f7f6ce6da3100fb3a82de426e134826a63dbce77e84b259792"
-        },
-        {
-            "type": "folder",
-            "name": "assets/css/skins"
-        },
-        {
-            "type": "file",
-            "name": "assets/css/landing-page.min.css",
-            "size": 1506,
-            "hash": "e516816aab87c319f69c284d90cedfa6cf36804f9fd9341a1eb4c0a7f094e7af"
-        },
-        {
             "type": "folder",
             "name": "assets/fonts/vazir"
         },
         {
             "type": "file",
             "name": "assets/js/app.min.js",
-            "size": 2650,
-            "hash": "f759385aa3b58d7539fced51b9bf17b9f0ee4cabddbb43f75cca5f99d003917a"
+            "size": 2632,
+            "hash": "54b239fd399fd2327b83a9470a022139a878d84b47fbf9477b88354cc0bdceee"
         },
         {
             "type": "folder",
             "name": "assets/media/avatar"
         },
         {
-            "type": "folder",
-            "name": "assets/media/icons"
-        },
-        {
             "type": "file",
             "name": "assets/media/logo.svg",
             "size": 1811,
             "hash": "d765d4c076a0df51ace0f47f5d5aed6b4435bd793932e2a0f6336d543537f10c"
+        },
+        {
+            "type": "folder",
+            "name": "assets/media/icons"
         },
         {
             "type": "folder",
@@ -311,11 +343,11 @@
         },
         {
             "type": "folder",
-            "name": "assets/vendors/bootstrap"
+            "name": "assets/vendors/jquery"
         },
         {
             "type": "folder",
-            "name": "assets/vendors/jquery"
+            "name": "assets/vendors/bootstrap"
         },
         {
             "type": "folder",
@@ -328,6 +360,18 @@
         {
             "type": "folder",
             "name": "assets/vendors/svg-inject"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/u/ui.php",
+            "size": 3904,
+            "hash": "370f62d34f738582125a6cd0b5cc102ebf5f5297705b593d736d6366fd15d278"
+        },
+        {
+            "type": "file",
+            "name": "light-skin/u/upload.php",
+            "size": 1085,
+            "hash": "f8140672776b504d0e2468dd69bd6dd6c3379d63de232a6dc4513323a2efbee8"
         },
         {
             "type": "file",
@@ -346,14 +390,32 @@
         {
             "type": "file",
             "name": "assets/media/avatar/1.png",
-            "size": 11826,
-            "hash": "df453357293e118058368406e339adcedb54573bfe8b59da068750c495c80f7b"
+            "size": 446092,
+            "hash": "d137db964c16cdcbd98bcba867859f1d4141289ee1f100850e16ef03cd831017"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/18.png",
+            "size": 478027,
+            "hash": "b85296abdf0ddcc21dc232d2ddc448eac0921759eba0553dd41a03f8b1ad6b6d"
         },
         {
             "type": "file",
             "name": "assets/media/avatar/2.png",
             "size": 23625,
             "hash": "895ae38507f1126494281ba3f29007567474f8f1d1bae6e3f11c89ef0da91183"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/20.png",
+            "size": 415470,
+            "hash": "35bf41600f1e83f50d0fd8a8b0450909bd5bf6af198212770f4f3f1de7318f7b"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/22.png",
+            "size": 758838,
+            "hash": "d6ebcfd172350818177c15d0364d603eb79a31eb7b076632021f6613c730548f"
         },
         {
             "type": "file",
@@ -364,8 +426,8 @@
         {
             "type": "file",
             "name": "assets/media/avatar/4.png",
-            "size": 21505,
-            "hash": "46a2c3db5192d1ac981ff236f637de7b2d2a7a606e5eda859e050edb92f09407"
+            "size": 461562,
+            "hash": "723df3af0a71d2bbdfd4bf415897e460c6c572d749aa58953a72cf9f2790a762"
         },
         {
             "type": "file",
@@ -376,8 +438,26 @@
         {
             "type": "file",
             "name": "assets/media/avatar/6.png",
-            "size": 25463,
-            "hash": "c6f1699a46d677442e8905926cc38f7ba8c1fdc10aa6a924b0d8de8e7910d7c2"
+            "size": 688491,
+            "hash": "845228e270defd832613b33e922ed1c4f9336211a24e7d96546322912f720424"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/669913c62ab705.jpg",
+            "size": 156955,
+            "hash": "2cec8178d003d2ebe2d0d2d75998ca28339936697fb5df8266506f4e1fa91e62"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/669a207819f38img3.jpg",
+            "size": 1194532,
+            "hash": "d2d7deca411db60180b3c780db2768817923b4ce67ecd803db7af0e4a97eb342"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/669a678a02df6OIP.jfif",
+            "size": 19291,
+            "hash": "957d8eec1159848e972349201db252f01468527bb7f7e0f8453ce609c76e4307"
         },
         {
             "type": "file",
@@ -388,8 +468,20 @@
         {
             "type": "file",
             "name": "assets/media/avatar/8.png",
-            "size": 22622,
-            "hash": "9bbe5b6828a3f2d27c57d067d02872f922c09ca063eab4facab8ebfac14f67ae"
+            "size": 656110,
+            "hash": "140cf0170343ebf4844c923df90f762500c1432b7149bee82264333574ac9cdf"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/avatar/noprofile.jpg",
+            "size": 8684,
+            "hash": "2e60a65477e7fbb1d145219ea68544e88db224fd699897d2867911419cfc09d7"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/datebirth.svg",
+            "size": 1111,
+            "hash": "78208c478d7b72cb6859ed9227fee4f919e3da4d6648308597ea55095a621eb8"
         },
         {
             "type": "file",
@@ -399,9 +491,27 @@
         },
         {
             "type": "file",
+            "name": "assets/media/icons/family.svg",
+            "size": 1647,
+            "hash": "c14c55adee8c6f82aff767395bbf2cd3cee5be3245292ec2eb45f8aba6e86dd1"
+        },
+        {
+            "type": "file",
             "name": "assets/media/icons/job.svg",
             "size": 4269,
             "hash": "69356f7698a5bc76197c683cc0db80ec2522a4915e4ba3092e78c5769fbff750"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/mobile.svg",
+            "size": 2098,
+            "hash": "7609fe13aae70a5fda0819a6a714ac4ee855a9445f5c3b0bf3884dc90b9910c3"
+        },
+        {
+            "type": "file",
+            "name": "assets/media/icons/name.svg",
+            "size": 1350,
+            "hash": "9d611f6a9b11955deed2f8023ee6e172a99fdb38d92b18d3e5057472a1705ae8"
         },
         {
             "type": "file",
@@ -495,15 +605,15 @@
         },
         {
             "type": "file",
-            "name": "assets/vendors/bootstrap/bootstrap.bundle.min.js",
-            "size": 81085,
-            "hash": "3d5cac646e4cfda09ca1253d8617019f0213c822249ae13f4e1573cd0d8ab71a"
-        },
-        {
-            "type": "file",
             "name": "assets/vendors/jquery/jquery-3.5.0.min.js",
             "size": 89493,
             "hash": "c4dccdd9ae25b64078e0c73f273de94f8894d5c99e4741645ece29aeefc9c5a4"
+        },
+        {
+            "type": "file",
+            "name": "assets/vendors/bootstrap/bootstrap.bundle.min.js",
+            "size": 81085,
+            "hash": "3d5cac646e4cfda09ca1253d8617019f0213c822249ae13f4e1573cd0d8ab71a"
         },
         {
             "type": "file",
@@ -567,12 +677,6 @@
         },
         {
             "type": "file",
-            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Regular.ttf",
-            "size": 118876,
-            "hash": "c2191f8e5b5071a5c1639c21f5324e618a535f1272bbcb6b948a148f2b536e5f"
-        },
-        {
-            "type": "file",
             "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-SemiBold.ttf",
             "size": 119048,
             "hash": "d97341d72a8da62c0674a59ebd89e6d5f06f5fa2eed5562443844bfd43e4bb0f"
@@ -582,6 +686,12 @@
             "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Thin.ttf",
             "size": 120232,
             "hash": "ec2657b6e9906162a3928fed6d606814d54fafdb041ad3ca974283162905a5f6"
+        },
+        {
+            "type": "file",
+            "name": "assets/fonts/vazir/ttf/Vazirmatn-FD-Regular.ttf",
+            "size": 118876,
+            "hash": "c2191f8e5b5071a5c1639c21f5324e618a535f1272bbcb6b948a148f2b536e5f"
         },
         {
             "type": "file",

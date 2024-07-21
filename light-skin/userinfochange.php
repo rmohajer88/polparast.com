@@ -13,18 +13,12 @@ $birthDate = $data['birthDate'];
 $job = $data['job'];
 
 
-// Use the data as needed in your PHP logic
+//upate the user info attribute name 
+// I should check the id of the user 
+$sql = "UPDATE users SET `name` = '$firstName' WHERE `id` = '" . $_SESSION['id'] . "'"; // just did not have where conditons and updated all forms
+$conn->query($sql);
 
-// // Get the form data
-// $firstName = $_POST['firstName'];
-// $lastName = $_POST['lastName'];
-// $mobileNumber = $_POST['mobileNumber'];
-// $birthDate = $_POST['birthDate'];
-// $emailAddress = $_POST['emailAddress'];
-// $webSite = $_POST['webSite'];
-// $address = $_POST['address'];
-
-// Update the user information in the database
+// Update the userinfo information in the database
 $sql = "UPDATE userinfo SET 
         `firstName` = '$firstName',
         `lastName` = '$lastName',
