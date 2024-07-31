@@ -12,10 +12,10 @@ $mobileNumber = $data['mobileNumber'];
 $birthDate = $data['birthDate'];
 $job = $data['job'];
 
-
-//upate the user info attribute name 
+echo $_SESSION['id'];
+//upate the user  attribute phone number 
 // I should check the id of the user 
-$sql = "UPDATE users SET `name` = '$firstName' WHERE `id` = '" . $_SESSION['id'] . "'"; // just did not have where conditons and updated all forms
+$sql = "UPDATE users SET `phone_number` = '$mobileNumber' WHERE `id` = '" . $_SESSION['id'] . "'"; // just did not have where conditons and updated all forms
 $conn->query($sql);
 
 // Update the userinfo information in the database
