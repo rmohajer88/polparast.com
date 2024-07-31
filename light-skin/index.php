@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["verifiedNumber"])) {
+    header("Location: login.html");
+    exit;  // Ensure you exit after redirection
+}
+?>
 
 
 <!DOCTYPE html>
@@ -228,7 +236,7 @@
                                             </div>
                                         </a>
                                     </li>
-                                    <!-- Chat Item End -->
+                                   <!-- Chat Item End --> 
 
                                     <!-- Chat Item Start -->
                                     <li class="contacts-item groups">
@@ -2202,71 +2210,79 @@ document.addEventListener('click', (event) => {
            update_userinfo();
 // end save personal data from inputs into database
 
+$(document).ready(function() {
+  let previousImageSrc;
 
-    
-
-
-
-//start upload profile image script
-document.getElementById('fileImg').addEventListener('change', function() {
-    var file = this.files[0];
+  $("#fileImg").change(function(event) {
+    var file = event.target.files[0];
     var reader = new FileReader();
+
+    previousImageSrc = $("#image").attr("src");
+
     reader.onload = function(e) {
-        document.getElementById('image').src = e.target.result;
-        document.getElementById('cancel').style.display = 'block';
-        document.getElementById('confirm').style.display = 'block';
-        console.log("input picture");
-        changeProfile(file);
-    }
+      $("#image").attr("src", e.target.result);
+      $("#cancel").show();
+      $("#confirm").show();
+      console.log("Input picture");
+    };
+
     reader.readAsDataURL(file);
-});
+  });
 
-document.getElementById('cancel').addEventListener('click', function() {
-    document.getElementById('fileImg').value = '';
-    
-    document.getElementById('cancel').style.display = 'none';
-    document.getElementById('confirm').style.display = 'none';
-    console.log("cancel picture");
-});
+  $("#cancel").click(function() {
+    $("#image").attr("src", previousImageSrc);
+    $("#fileImg").val("");
+    $("#cancel").hide();
+    $("#confirm").hide();
+    console.log("Cancel picture");
+  });
 
-function changeProfile(file){
-    document.getElementById('confirm').addEventListener('click', function(event) {
+  $("#confirm").click(function(event) {
+    event.preventDefault();
+    const file = $("#fileImg")[0].files[0]; // Get the current file
+    changeProfile(file);
+  });
 
-        document.getElementById('cancel').style.display = 'none';
-        document.getElementById('confirm').style.display = 'none'
+  function changeProfile(file) {
+    // Ensure the confirm button listener is only added once
+    if (!$("#confirm").hasClass("confirmed")) {
+      $("#confirm").click(function(event) {
+        // Use PHP
+        $(this).hide(); // Hide confirm button on click using jQuery
+        $("#cancel").hide();
         event.preventDefault();
+
         var formData = new FormData();
         formData.append("fileImg", file);
+
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'uploadprofileimage.php');
+
         xhr.onload = function() {
-            if (xhr.status === 200) {
-
-                var response = JSON.parse(xhr.responseText);
-                if(response.success){
-
-                    document.getElementById('image').src = response.imagePath;
-                    console.log(response.imagePath);
-                                       
-                    // Update the icon link in the userinfo table based on the response
-                    // You can handle the response here if needed
-                } else {
-                    // Handle the error if needed
-                         console.log(response.message);
-                }
-            
-
-            } 
-            else {
-                // Handle upload error
-                     console.log("error uploading");
+          if (xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            if (response.success) {
+              $("#image").attr("src", response.imagePath);
+              console.log(response.imagePath);
+              // Update the icon link in the userinfo table based on the response
+              // You can handle the response here if needed
+            } else {
+              // Handle the error if needed
+              console.log(response.message);
             }
-        }
-        xhr.send(formData);
-    });
+          } else {
+            // Handle upload error
+            console.log("Error uploading");
+          }
+        };
 
-}
-//end upload profile image script
+        xhr.send(formData);
+      });
+      $("#confirm").addClass("confirmed"); // Add a class to track listener addition
+    }
+  }
+});
+
 
 
   </script>

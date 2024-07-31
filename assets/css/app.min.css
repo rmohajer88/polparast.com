@@ -1,4 +1,8 @@
-
+.enamad{
+    display: block !important;
+    position: absolute !important;
+    bottom: 0 !important;
+}
 
 @font-face {
     font-family: "body-font";

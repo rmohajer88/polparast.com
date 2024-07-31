@@ -1,35 +1,62 @@
-<?php session_start(); ?>
 <?php
-include 'dataBase.php';
 
-// Process form data
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $hashed_password_value = hash('sha256', $password);
-    // SQL query to select user with the given email and password
-    $sql = "SELECT * FROM users WHERE email = '$email' and password = '$hashed_password_value'";
-    $result = $conn->query($sql);
- 
-    if ($result->num_rows > 0) {
-      
-        while($row = $result->fetch_assoc()) {
-            //echo "id: " . $row["id"]. " - Name: " . $row["username"]. " - Email: " . $row["email"]. "<br>";
-            $_SESSION['id'] = $row['id'];       // Storing the value in session
-            $_SESSION['name'] = $row['name'];   // Storing the value in session
-            $_SESSION['email'] =$row['email'];  // Storing the value in session
-        }
-        header('Location: index.php');
-        exit();
-    } else{
-        $message = "ایمیل یا رمز اشتباه است";
-        $url = "signin.php?message=" . urlencode($message);
-        header("Location: " . $url);
-       
-    }
 
-    $conn->close();
+// Database connection details (replace with your actual details)
+require_once 'sms.php';
+require_once 'dataBase.php';
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
 }
 
+// Check if initial login form is submitted (send code)
+if (isset($_POST["phone_number"])) {
+  $phoneNumber = $_POST["phone_number"];
+
+  // Generate a verification code (replace with your preferred method)
+  $verificationCode = rand(1000, 9999);
+
+  // Check if phone number already exists in database
+  $sql = "SELECT * FROM users WHERE phone_number = '$phoneNumber'";
+  $result = $conn->query($sql);
+
+  // If phone number exists, proceed with login verification
+  if ($result->num_rows > 0) {
+    // Create verification record or update existing one
+  $sql = "UPDATE users SET verification_code = '$verificationCode' WHERE phone_number = '$phoneNumber'"; // Corrected SQL statement
+         
+  } else {
+    // Phone number not found, potentially prompt for registration
+    echo "phonenotexist";
+    exit();
+  }
+
+  if ($conn->query($sql) === TRUE) {
+    // Send verification code SMS
+    $message = "Your login verification code is: " . $verificationCode;
+    $response = Send($phoneNumber, $message);
+    
+    // Handle SMS sending response (check for success or error)
+    if ($response) {
+        $_SESSION['verifiedNumber']= $phoneNumber;
+        echo "success";
+        
+       // Redirect user to verification form with phone number pre-filled (assuming verification.html exists)
+       // on success show a message and wait some time and then redirect to verification page
+      // header("Location: verification.html?phone_number=" . urlencode($phoneNumber));
+      exit();
+    } else {
+      echo "Failedtosendverificationcode: ";
+    }
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+$conn->close();
 
 ?>

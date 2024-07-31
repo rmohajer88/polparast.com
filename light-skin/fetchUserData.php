@@ -15,7 +15,8 @@ if(mysqli_num_rows($result) > 0) {
   //this echo is needed in other part of index page do not delete it
   echo json_encode($userData);
 } else {
-  echo 'کاربری پیدا نشد';
+      $userData ='کاربری پیدا نشد';
+  echo json_encode($userData);
 }
 
 //Close the database connection
