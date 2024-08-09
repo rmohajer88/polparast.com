@@ -2044,29 +2044,29 @@ if (!isset($_SESSION["verifiedNumber"])) {
 <script>
 
 // start  drawer handling
-const drawer = document.getElementById('drawer');
-let startX = 0;
-let startY = 0; // Store starting Y-coordinate (for vertical swipe check)
+// const drawer = document.getElementById('drawer');
+// let startX = 0;
+// let startY = 0; // Store starting Y-coordinate (for vertical swipe check)
 
-document.addEventListener('touchstart', (event) => {
-  startX = event.changedTouches[0].clientX;
-  startY = event.changedTouches[0].clientY; // Capture initial touch position
-});
+// document.addEventListener('touchstart', (event) => {
+//   startX = event.changedTouches[0].clientX;
+//   startY = event.changedTouches[0].clientY; // Capture initial touch position
+// });
 
-document.addEventListener('touchend', (event) => {
-  const endX = event.changedTouches[0].clientX;
-  const swipeDistanceX = endX - startX;
-  const swipeDistanceY = Math.abs(event.changedTouches[0].clientY - startY); // Absolute value for vertical distance
+// document.addEventListener('touchend', (event) => {
+//   const endX = event.changedTouches[0].clientX;
+//   const swipeDistanceX = endX - startX;
+//   const swipeDistanceY = Math.abs(event.changedTouches[0].clientY - startY); // Absolute value for vertical distance
 
-  // Minimum swipe distance threshold (optional, adjust value as needed)
-  const minSwipeDistance = 50;
+//   // Minimum swipe distance threshold (optional, adjust value as needed)
+//   const minSwipeDistance = 50;
 
-  if (swipeDistanceX > minSwipeDistance && swipeDistanceY < minSwipeDistance) {
-    // Check for right swipe (positive X) and minimal vertical movement
-    drawer.style.display = 'block';
-    drawer.classList.add('open');
-  }
-});
+//   if (swipeDistanceX > minSwipeDistance && swipeDistanceY < minSwipeDistance) {
+//     // Check for right swipe (positive X) and minimal vertical movement
+//     drawer.style.display = 'block';
+//     drawer.classList.add('open');
+//   }
+// });
 
 // Open drawer on clicking the button
 const openButton = document.getElementById('openleftnav');
@@ -2081,12 +2081,12 @@ if (openButton) { // Check if button exists
 }
 
 // Hide drawer on click outside it (excluding button)
-document.addEventListener('click', (event) => {
-  const isDrawerOpen = drawer.classList.contains('open');
-  if (isDrawerOpen && !event.target.closest('#drawer') && event.target !== openButton) {
-    drawer.classList.remove('open');
-  }
-});
+// document.addEventListener('click', (event) => {
+//   const isDrawerOpen = drawer.classList.contains('open');
+//   if (isDrawerOpen && !event.target.closest('#drawer') && event.target !== openButton) {
+//     drawer.classList.remove('open');
+//   }
+// });
 // end  drawer handling
 
 
@@ -2204,6 +2204,13 @@ document.addEventListener('click', (event) => {
                     };
 
                     xhr.send(JSON.stringify(formData));
+
+                    // close the drawer on click
+                      const isDrawerOpen = drawer.classList.contains('open');
+                      if (isDrawerOpen) {
+                       
+                            drawer.classList.remove('open');
+                          }
                 });
                  
            }

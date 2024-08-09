@@ -22,7 +22,7 @@ if (isset($_POST["verification_code"]) && isset($_POST["phone_number"])) {
     $verificationCode = $_POST["verification_code"];
 
     // Prepare and execute the SQL statement to retrieve user information
-    if ($stmt = $conn->prepare("SELECT verification_code,id,verified FROM users WHERE phone_number = ?")) {
+    if ($stmt = $conn->prepare("SELECT verification_code,id,verified,verification_code_expiry FROM users WHERE phone_number = ?")) {
         $stmt->bind_param("s", $phoneNumber);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -31,9 +31,13 @@ if (isset($_POST["verification_code"]) && isset($_POST["phone_number"])) {
             $row = $result->fetch_assoc();
             $dbVerificationCode = $row["verification_code"];
             $verified = $row["verified"];
+            $expiryTime = $row['verification_code_expiry'];
             
             // Check if submitted code matches database code
-            if ($verificationCode ==$dbVerificationCode) {
+            if ($verificationCode ==$dbVerificationCode ) {
+                
+              if(strtotime("now") < strtotime($expiryTime)){
+
                 if ($verified == 1) {
                     $_SESSION['verifiedNumber']=$phoneNumber;
                     $_SESSION['id']=$row["id"];
@@ -55,13 +59,19 @@ if (isset($_POST["verification_code"]) && isset($_POST["phone_number"])) {
 
                         } else {
 
-                            echo json_encode(['status' => 'error', 'message' => 'Error updating verification status.']);
+                            echo json_encode(['status' => 'errorsettingstatus', 'message' => 'Error updating verification status.']);
                         }
                         $updateStmt->close();
                     }
                 }
+
+             }else {
+                echo json_encode(['status' => 'errorcodeexpiration', 'message' => 'کد  منقضی شده است ، دوباره امتحان کنید.']);
+            }
+
+
             } else {
-                echo json_encode(['status' => 'error', 'message' => 'کد اشتباه است دوباره امتحان کنید.']);
+                echo json_encode(['status' => 'errorwrongcode', 'message' => 'کد اشتباه است ، کد درست را وارد کنید.']);
             }
         } else {
             echo json_encode(['status' => 'error', 'message' => 'شماره تلفن یا کد فرستاده نشده.']);

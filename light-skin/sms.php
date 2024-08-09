@@ -13,7 +13,7 @@ function Send($recipients , $text){
      
         $params = array(
             'ApiKey' =>$GLOBALS["ApiKey"] ,
-            'Text' => urlencode($text),
+            'Text' => $text,
             'Sender' => $GLOBALS['Sender'],
             'Recipients' => $recipients,
         );
