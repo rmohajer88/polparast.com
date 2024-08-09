@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <meta name="keywords" content="InstaC, chat, messenger, conversation, social, communication" />
+  <meta name="description" content="InstaC is a Bootstrap based modern and fully responsive Messaging template to help build Messaging or Chat application fast and easy." />
+  <meta name="subject" content="communication">
+  <title>قالب HTML چت و گفتگو کاربران - InstaC Chat Template</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/fav/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/fav/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/fav/favicon-16x16.png">
+  <link rel="shortcut icon" href="assets/fav/favicon.ico" />
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="assets/css/app.min.css">
+</head>
+
+<body class="authentication-page">
+<!-- enamad -->
+  <div class="main-layout card-bg-1 is-rtl">
+    <div class="container d-flex flex-column">
+      <div class="row no-gutters text-center align-items-center justify-content-center min-vh-100">
+        <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+          <h1 class="font-weight-bold">ثبت نام</h1>
+          <p class="text-dark mb-3">ما متفاوت هستیم، ما شما را متفاوت می کنیم.</p>
+          <form id="registrationForm">
+            <div class="form-group">
+              <label for="tel" class="sr-only"> </label>
+              <input type="tel" class="form-control form-control-md" id="phone_number" name="phone_number" placeholder="شماره موبایل خودتان را وارد کنید" required>
+             <div id="phone_number_error" class="text-danger"></div>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block text-uppercase font-weight-semibold" type="button" id="registerButton">ثبت نام</button>
+          </form>
+          <p>حساب کاربری دارید؟ <a class="font-weight-semibold" href="light-skin/login.html">وارد شوید</a>.</p>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+<script src="assets/vendors/jquery/jquery-3.5.0.min.js"></script>
+<script>
+            $(document).ready(function() {
+            $("#phone_number").keyup(function() {
+            var phoneNumber = $(this).val();
+            var phoneRegex = /^[\+]?[0-9]{10,14}$/; // Regular expression for mobile number format
+
+            // Validate phone number format
+            if (phoneRegex.test(phoneNumber)) {
+            $("#phone_number_error").text(""); // Clear any previous error message
+            $("#registerButton").removeAttr("disabled"); // Enable register button
+            } else {
+            $("#phone_number_error").text(" شماره موبایل را کامل وارد کنید "); // Display error message (فارسی: "شماره موبایل واردشده معتبر نیست")
+            $("#registerButton").attr("disabled", true); // Disable register button
+            }
+            });
+            });
+
+  
+       $(document).ready(function() {
+       $("#registerButton").click(function() {
+       var phoneNumber = $("#phone_number").val();
+
+         $.ajax({
+            url: "light-skin/reg.php",
+            type: "POST",
+            data: { phone_number: phoneNumber },
+            success: function(response) {
+            response = JSON.parse(response); 
+            if (response === "success") {
+            sessionStorage.setItem("phoneNumber", phoneNumber);
+            window.location.href = "light-skin/verification.html";
+            } else if (response === "login") {
+            $("#phone_number_error").text(" شماره موبایل استفاده شده است، با استفاده از شماره موبایل وارد حسابتان شوید "); // Display error message (فارسی: "شماره موبایل            window.location.href = "login.html";
+            } else {
+            alert("یک مشکل رخ داده است");
+            }
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+            alert("Error: " + textStatus + ", " + errorThrown);
+            }
+         });
+      });
+   });
+            
+  </script>
+
+
+</body>
+</html>

@@ -22,24 +22,28 @@ if (isset($_POST["phone_number"])) {
     } else {
 
         // Send verification code (assuming sms.php function works correctly)
-        $message = "Your verification code is: " . $verificationCode;
+           // Generate verification code
+        $verificationCode = rand(1000, 9999);
+        $message = "کد فعال سازی: " . $verificationCode;
         $response = Send($phoneNumber, $message);
 
         if ($response) {
 
-                // Generate verification code
-                $verificationCode = rand(1000, 9999);
-
+             
+                $expirationTime = date("Y-m-d H:i:s", strtotime("+1 minutes")); // Set expiration time to 5 minutes from now
                 // Create new user
-                $sql = "INSERT INTO users (phone_number, verification_code) VALUES (?, ?)";
+                $sql = "INSERT INTO users (phone_number, verification_code, verification_code_expiry) VALUES (?, ?, ?)";
                 $stmt = $conn->prepare($sql);
-                $stmt->bind_param("si", $phoneNumber, $verificationCode);
+                $stmt->bind_param("sss", $phoneNumber, $verificationCode, $expirationTime);
                 $stmt->execute();
 
-                // queery to select the id fo the new insert user
-                $newsql = "SELECT * FROM users WHERE phone_number = '$phoneNumber'";
-                $result = $conn->query($newsql);
-                $id;
+                // Query to select the id for the new insert user
+                $newsql = "SELECT * FROM users WHERE phone_number = ?";
+                $stmt = $conn->prepare($newsql);
+                $stmt->bind_param("s", $phoneNumber);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $id = null;
                 if ($result->num_rows > 0) {
                 
                     while($row = $result->fetch_assoc()) {
@@ -48,9 +52,11 @@ if (isset($_POST["phone_number"])) {
                             $_SESSION['id']=$id;
                     }
                 }
-                //create userinfo user meanwhile new user is added to database
-                $sqluserinfo = "INSERT INTO userinfo (id,firstName,lastName,mobileNumber,birthDate,job,iconlink) VALUES ('$id','NULL',NULL,NULL,NULL,'','' )";
-                $conn->query($sqluserinfo);
+                // Create user info meanwhile new user is added to the database
+                $sqluserinfo = "INSERT INTO userinfo (id, firstName, lastName, mobileNumber, birthDate, job, iconlink) VALUES (?, 'NULL', NULL, NULL, NULL, '', '')";
+                $stmt = $conn->prepare($sqluserinfo);
+                $stmt->bind_param("i", $id);
+                $stmt->execute();
 
                 $mess = "success";
                 echo json_encode($mess);
