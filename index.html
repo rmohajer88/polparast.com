@@ -1,121 +1,49 @@
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-import React, { useState } from "react";
-
-function App() {
-  const [currentPage, setCurrentPage] = useState("languageSelection");
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case "languageSelection":
-        return (
-          <div className="text-center">
-            <button
-              onClick={() => setCurrentPage("phoneNumber")}
-              className="text-green-400 flex items-center space-x-2"
-            >
-              <span>Language | زبان</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 3h18M3 12h18m-9 9h9"
-                />
-              </svg>
-            </button>
-            <div className="text-gray-400 mt-4">
-              انتخاب گزینه ورود به منزله پذیرفتن{" "}
-              <a href="#" className="text-green-400 underline">
-                قوانین استفاده
-              </a>{" "}
-              و{" "}
-              <a href="#" className="text-green-400 underline">
-                حریم خصوصی
-              </a>{" "}
-              می‌باشد.
-            </div>
-            <button
-              onClick={() => setCurrentPage("phoneNumber")}
-              className="bg-green-500 mt-6 w-full py-3 rounded-lg text-white font-bold"
-            >
-              ورود
-            </button>
-          </div>
-        );
-
-      case "phoneNumber":
-        return (
-          <div className="text-center">
-            <h2 className="text-white mb-4">شماره تلفن خود را وارد کنید:</h2>
-            <input
-              type="tel"
-              placeholder="09123456789"
-              className="w-full p-3 rounded bg-gray-700 text-white mb-4"
-            />
-            <button
-              onClick={() => setCurrentPage("countrySelection")}
-              className="bg-green-500 w-full py-3 rounded-lg text-white font-bold"
-            >
-              ادامه
-            </button>
-          </div>
-        );
-
-      case "countrySelection":
-        return (
-          <div className="text-center">
-            <h2 className="text-white mb-4">کشور خود را انتخاب کنید:</h2>
-            <select
-              className="w-full p-3 rounded bg-gray-700 text-white mb-4"
-              defaultValue="Iran"
-            >
-              <option value="Iran">ایران</option>
-              <option value="Afghanistan">افغانستان</option>
-              <option value="Other">سایر کشورها</option>
-            </select>
-            <button
-              onClick={() => setCurrentPage("verificationCode")}
-              className="bg-green-500 w-full py-3 rounded-lg text-white font-bold"
-            >
-              ادامه
-            </button>
-          </div>
-        );
-
-      case "verificationCode":
-        return (
-          <div className="text-center">
-            <h2 className="text-white mb-4">کد تأیید را وارد کنید:</h2>
-            <input
-              type="text"
-              placeholder="123456"
-              className="w-full p-3 rounded bg-gray-700 text-white mb-4"
-            />
-            <button
-              onClick={() => alert("ورود موفقیت‌آمیز!")}
-              className="bg-green-500 w-full py-3 rounded-lg text-white font-bold"
-            >
-              تأیید
-            </button>
-          </div>
-        );
-
-      default:
-        return null;
-    }
-  };
-
-  return (
-    <div className="min-h-screen bg-black text-white flex flex-col justify-center items-center p-4">
-      {renderPage()}
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- صفحه انتخاب زبان -->
+    <div id="language-selection" class="screen">
+        <div class="language-container">
+            <h1>Language | زبان</h1>
+            <button id="continue-to-login">ورود</button>
+            <p>
+                انتخاب گزینهٔ ورود به منزلهٔ پذیرش 
+                <a href="#">قوانین استفاده</a> و 
+                <a href="#">حریم خصوصی</a> می‌باشد.
+            </p>
+        </div>
     </div>
-  );
-}
 
-export default App;
+    <!-- صفحه ورود شماره تلفن -->
+    <div id="phone-login" class="screen hidden">
+        <h2>شماره همراه</h2>
+        <p>لطفاً کشور و شماره همراه خود را وارد کنید.</p>
+        <div class="input-group">
+            <select id="country-code">
+                <option value="+98">ایران (+98)</option>
+                <option value="+93">افغانستان (+93)</option>
+                <!-- کشورها دیگر -->
+            </select>
+            <input type="text" id="phone-number" placeholder="شماره همراه">
+        </div>
+        <button id="submit-phone">تایید و ادامه</button>
+    </div>
+
+    <!-- صفحه تایید کد -->
+    <div id="code-verification" class="screen hidden">
+        <h2>کد ورود</h2>
+        <p>کد ورودی که به شمارهٔ شما ارسال شده است را وارد کنید.</p>
+        <input type="text" id="verification-code" placeholder="کد ورود">
+        <p>۷۲ ثانیه تا درخواست کد جدید</p>
+        <button id="submit-code">تایید و ادامه</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
