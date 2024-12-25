@@ -1,21 +1,19 @@
-name: Deploy to FTP
-
 on:
   push:
     branches:
-      - main  # فقط زمانی اجرا شود که به شاخه اصلی تغییراتی اضافه شود
-
+    - main
+name: Deploy website on push
 jobs:
   web-deploy:
-    name: deploy 
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
+    - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Upload to FTP server
-      uses: SamKirkland/FTP-Deploy-Action@4.3.5
+    - name: Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: polparast.com
-        username: GitHub@polparast.com
+        username: github@polparast.com
         password: ${{ secrets.FTP_PASSWORD }}
