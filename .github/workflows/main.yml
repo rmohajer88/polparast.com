@@ -19,4 +19,3 @@ jobs:
         server: polparast.com
         username: GitHub@polparast.com
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html  # مسیر مقصد روی هاست
