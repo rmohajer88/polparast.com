@@ -16,9 +16,7 @@ jobs:
     - name: Upload to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.3.5
       with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
+        server: polparast.com
+        username: GitHub@polparast.com
         password: ${{ secrets.FTP_PASSWORD }}
-        protocol: ftps
-        local-dir: ./  # پوشه محلی که باید آپلود شود
         server-dir: /public_html/  # مسیر مقصد روی هاست
