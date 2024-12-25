@@ -1,118 +1,69 @@
-import React, { useState } from "react";
+// App.js
+import React from "react";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("languageSelection");
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case "languageSelection":
-        return (
-          <div className="text-center">
-            <button
-              onClick={() => setCurrentPage("phoneNumber")}
-              className="text-green-400 flex items-center space-x-2"
-            >
-              <span>Language | زبان</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3 3h18M3 12h18m-9 9h9"
-                />
-              </svg>
-            </button>
-            <div className="text-gray-400 mt-4">
-              انتخاب گزینه ورود به منزله پذیرفتن{" "}
-              <a href="#" className="text-green-400 underline">
-                قوانین استفاده
-              </a>{" "}
-              و{" "}
-              <a href="#" className="text-green-400 underline">
-                حریم خصوصی
-              </a>{" "}
-              می‌باشد.
-            </div>
-            <button
-              onClick={() => setCurrentPage("phoneNumber")}
-              className="bg-green-500 mt-6 w-full py-3 rounded-lg text-white font-bold"
-            >
-              ورود
-            </button>
-          </div>
-        );
-
-      case "phoneNumber":
-        return (
-          <div className="text-center">
-            <h2 className="text-white mb-4">شماره تلفن خود را وارد کنید:</h2>
-            <input
-              type="tel"
-              placeholder="09123456789"
-              className="w-full p-3 rounded bg-gray-700 text-white mb-4"
-            />
-            <button
-              onClick={() => setCurrentPage("countrySelection")}
-              className="bg-green-500 w-full py-3 rounded-lg text-white font-bold"
-            >
-              ادامه
-            </button>
-          </div>
-        );
-
-      case "countrySelection":
-        return (
-          <div className="text-center">
-            <h2 className="text-white mb-4">کشور خود را انتخاب کنید:</h2>
-            <select
-              className="w-full p-3 rounded bg-gray-700 text-white mb-4"
-              defaultValue="Iran"
-            >
-              <option value="Iran">ایران</option>
-              <option value="Afghanistan">افغانستان</option>
-              <option value="Other">سایر کشورها</option>
-            </select>
-            <button
-              onClick={() => setCurrentPage("verificationCode")}
-              className="bg-green-500 w-full py-3 rounded-lg text-white font-bold"
-            >
-              ادامه
-            </button>
-          </div>
-        );
-
-      case "verificationCode":
-        return (
-          <div className="text-center">
-            <h2 className="text-white mb-4">کد تأیید را وارد کنید:</h2>
-            <input
-              type="text"
-              placeholder="123456"
-              className="w-full p-3 rounded bg-gray-700 text-white mb-4"
-            />
-            <button
-              onClick={() => alert("ورود موفقیت‌آمیز!")}
-              className="bg-green-500 w-full py-3 rounded-lg text-white font-bold"
-            >
-              تأیید
-            </button>
-          </div>
-        );
-
-      default:
-        return null;
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col justify-center items-center p-4">
-      {renderPage()}
+    <div className="min-h-screen bg-black text-white flex flex-col justify-between items-center">
+      {/* Header */}
+      <div className="w-full flex justify-end p-4">
+        <button className="text-gray-400">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 3v1.5m0 15V21m8.25-8.25H21m-15 0H3m12.364-6.364l-.708.708m-8.486 8.486l-.708.708m13.656 0l.708-.708m-8.486-8.486l.708-.708"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Language Selection */}
+      <div className="text-center">
+        <button className="text-green-400 flex items-center space-x-2">
+          <span>Language | زبان</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 3h18M3 12h18m-9 9h9"
+            />
+          </svg>
+        </button>
+      </div>
+
+      {/* Terms and Conditions */}
+      <div className="text-center px-4 text-sm text-gray-400">
+        انتخاب گزینه ورود به منزله پذیرفتن{" "}
+        <a href="#" className="text-green-400 underline">
+          قوانین استفاده
+        </a>{" "}
+        و{" "}
+        <a href="#" className="text-green-400 underline">
+          حریم خصوصی
+        </a>{" "}
+        می‌باشد.
+      </div>
+
+      {/* Login Button */}
+      <div className="w-full p-4">
+        <button className="bg-green-500 w-full py-3 rounded-lg text-white font-bold">
+          ورود
+        </button>
+      </div>
     </div>
   );
 }
