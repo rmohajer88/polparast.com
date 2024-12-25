@@ -17,4 +17,3 @@ jobs:
         server: polparast.com
         username: github@polparast.com
         password: ${{ secrets.FTP_PASSWORD }}
-  dangerous-clean-slate: true
