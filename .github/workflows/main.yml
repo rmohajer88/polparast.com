@@ -16,7 +16,7 @@ jobs:
     - name: Upload to FTP server
       uses: SamKirkland/FTP-Deploy-Action@4.4.0
       with:
-        server: ftp://your-ftp-server.com
+        server: ftp://polparast.com
         username: your-ftp-username
         password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./  # پوشه محلی که باید آپلود شود
