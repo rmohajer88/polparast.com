@@ -46,4 +46,4 @@ input, select {
     max-width: 300px;
     border-radius: 5px;
     border: 1px solid #ccc;
-}
+} 
