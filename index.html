@@ -1,18 +1,20 @@
- 
-<div class="w-full max-w-xs">
-  <label for="phone" class="block text-sm font-medium text-gray-200">
+<div class="w-full max-w-xs mx-auto">
+  <label for="phone" class="block text-sm font-medium text-gray-200 mb-1">
     Select Country
   </label>
-  <div class="flex">
+  <div class="flex flex-col sm:flex-row">
+    <!-- Dropdown for Country Selection -->
     <div
-      class="relative inline-flex items-center px-3 py-2 border border-gray-600 bg-gray-800 rounded-l-md w-40"
+      class="relative inline-flex items-center px-3 py-2 border border-gray-600 bg-gray-800 rounded-t-md sm:rounded-l-md sm:rounded-t-none w-full sm:w-40"
     >
       <select
         class="appearance-none bg-transparent focus:outline-none text-sm text-gray-300 w-full"
         name="country-code"
         id="country-code"
+        required
       >
-        <option selected="" value="93" data-countrycode="AF">🇦🇫 +93</option>
+        <option selected disabled value="">Select Country</option>
+        <option value="93" data-countrycode="AF">🇦🇫 +93</option>
         <option value="98" data-countrycode="IR">🇮🇷 +98</option>
         <option value="92" data-countrycode="PK">🇵🇰 +92</option>
         <option value="90" data-countrycode="TR">🇹🇷 +90</option>
@@ -36,12 +38,50 @@
         ></path>
       </svg>
     </div>
+
+    <!-- Input for Phone Number -->
     <input
-      class="w-full px-3 py-2 border border-gray-600 bg-gray-900 text-gray-300 rounded-r-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+      class="w-full px-3 py-2 border border-gray-600 bg-gray-900 text-gray-300 rounded-b-md sm:rounded-r-md sm:rounded-b-none focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
       placeholder="Phone number"
       name="phone"
       id="phone"
       type="tel"
+      required
     />
   </div>
+
+  <!-- Error Message -->
+  <p id="error-message" class="mt-1 text-xs text-red-500 hidden">
+    Please enter a valid phone number.
+  </p>
 </div>
+
+<!-- JavaScript for Validation -->
+<script>
+  const form = document.querySelector("form");
+  const phoneInput = document.getElementById("phone");
+  const countrySelect = document.getElementById("country-code");
+  const errorMessage = document.getElementById("error-message");
+
+  form?.addEventListener("submit", (e) => {
+    let valid = true;
+
+    if (!phoneInput.value.trim()) {
+      errorMessage.textContent = "Phone number is required.";
+      errorMessage.classList.remove("hidden");
+      valid = false;
+    } else if (!countrySelect.value) {
+      errorMessage.textContent = "Please select a country.";
+      errorMessage.classList.remove("hidden");
+      valid = false;
+    } else {
+      errorMessage.classList.add("hidden");
+    }
+
+    if (!valid) e.preventDefault();
+  });
+
+  // Hide error message on input change
+  phoneInput.addEventListener("input", () => errorMessage.classList.add("hidden"));
+  countrySelect.addEventListener("change", () => errorMessage.classList.add("hidden"));
+</script>
